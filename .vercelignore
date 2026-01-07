@@ -1,0 +1,11 @@
+# Ignore backend folder (Laravel)
+backend/
+documentation/
+
+# Ignore node_modules
+node_modules/
+
+# Other unnecessary files
+*.log
+.DS_Store
+.git/

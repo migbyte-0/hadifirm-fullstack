@@ -1,0 +1,78 @@
+/*--------------------------------------------------------------
+COUNTER CSS
+--------------------------------------------------------------*/
+
+
+// Style two 
+.counter {
+ &-area { 
+ }
+ 
+ &-item-2 {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+} 
+ 
+ &-title {
+  color:#8B9F9F; 
+  font-size: 120px; 
+  font-weight: 600; 
+  letter-spacing: -2.4px;
+  @media #{$lg} {
+    font-size: 80px;
+  }
+  @media #{$md} {
+    font-size: 40px;
+  }
+  @media #{$sm} {
+    font-size: 50px;
+  }
+ }
+ 
+ &-wrap-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  @media #{$xs} {
+    flex-wrap: wrap;
+    justify-content: space-around; 
+  }
+ }
+ 
+ &-text-2 {
+  color: #8B9F9F;
+  font-family: var(--font-family-cormorant);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 34px;
+  text-transform: capitalize;
+  margin-top: -47px;
+  z-index: 9;
+  position: relative;
+  max-width: 110px;
+ }
+ 
+ &-circle-2 {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+  border-radius: 100px;
+  background-color: #1b2a2a;
+ }
+ 
+ &-circle-sm {
+  width: 17px;
+  height: 17px;
+  background: linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%);
+  border-radius: 100px;
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+ }
+ 
+}

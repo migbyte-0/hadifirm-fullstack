@@ -1,0 +1,748 @@
+/*--------------------------------------------------------------
+RTL (Right-to-Left) Support for Arabic
+--------------------------------------------------------------*/
+
+/* Global RTL Settings */
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] body {
+  font-family: 'Tajawal', 'Cormorant Garamond', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+/* Typography RTL */
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6,
+html[dir="rtl"] p,
+html[dir="rtl"] span,
+html[dir="rtl"] a,
+html[dir="rtl"] li {
+  font-family: 'Tajawal', sans-serif;
+}
+
+/* Flexbox Direction RTL */
+html[dir="rtl"] .d-flex {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .d-flex.flex-column {
+  flex-direction: column;
+}
+
+html[dir="rtl"] .d-flex.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+
+html[dir="rtl"] .d-flex.flex-row {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .flex-md-row {
+  flex-direction: row-reverse !important;
+}
+
+/* Keep certain flex items in normal order */
+html[dir="rtl"] .hero-btn,
+html[dir="rtl"] .section-btn,
+html[dir="rtl"] .header-btn {
+  flex-direction: row-reverse;
+}
+
+/* Text Alignment RTL */
+html[dir="rtl"] .text-start {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .text-end {
+  text-align: left !important;
+}
+
+html[dir="rtl"] .text-left {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .text-right {
+  text-align: left !important;
+}
+
+/* Margin & Padding RTL */
+html[dir="rtl"] .ms-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+html[dir="rtl"] .me-auto {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+html[dir="rtl"] .ms-1, html[dir="rtl"] .ms-2, html[dir="rtl"] .ms-3, html[dir="rtl"] .ms-4, html[dir="rtl"] .ms-5 {
+  margin-right: inherit !important;
+  margin-left: 0 !important;
+}
+
+html[dir="rtl"] .me-1, html[dir="rtl"] .me-2, html[dir="rtl"] .me-3, html[dir="rtl"] .me-4, html[dir="rtl"] .me-5 {
+  margin-left: inherit !important;
+  margin-right: 0 !important;
+}
+
+html[dir="rtl"] .ps-1, html[dir="rtl"] .ps-2, html[dir="rtl"] .ps-3, html[dir="rtl"] .ps-4, html[dir="rtl"] .ps-5 {
+  padding-right: inherit !important;
+  padding-left: 0 !important;
+}
+
+html[dir="rtl"] .pe-1, html[dir="rtl"] .pe-2, html[dir="rtl"] .pe-3, html[dir="rtl"] .pe-4, html[dir="rtl"] .pe-5 {
+  padding-left: inherit !important;
+  padding-right: 0 !important;
+}
+
+/* Header RTL */
+html[dir="rtl"] .header .logo-area {
+  text-align: right;
+}
+
+html[dir="rtl"] .nav-left-bg {
+  border-radius: 0 0 0 30px;
+}
+
+html[dir="rtl"] .main-menu ul {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .main-menu ul li {
+  margin-left: 0;
+  margin-right: 30px;
+}
+
+html[dir="rtl"] .main-menu ul li:first-child {
+  margin-right: 0;
+}
+
+html[dir="rtl"] .sub-menu {
+  left: auto;
+  right: 0;
+  text-align: right;
+}
+
+/* Hero Section RTL */
+html[dir="rtl"] .hero-content {
+  text-align: right;
+}
+
+html[dir="rtl"] .hero-content-left {
+  text-align: right;
+}
+
+html[dir="rtl"] .section-title-lg {
+  text-align: right;
+}
+
+html[dir="rtl"] .entry-sub-title {
+  text-align: right;
+}
+
+/* Service Cards RTL */
+html[dir="rtl"] .card-body {
+  text-align: right;
+}
+
+html[dir="rtl"] .card-icon {
+  left: 20px;
+  right: auto;
+}
+
+html[dir="rtl"] .service-card-title {
+  text-align: right;
+}
+
+/* About Section RTL */
+html[dir="rtl"] .about-content {
+  text-align: right;
+}
+
+html[dir="rtl"] .about-title {
+  text-align: right;
+}
+
+html[dir="rtl"] .about-subtitle {
+  text-align: right;
+}
+
+html[dir="rtl"] .section-entry-title {
+  text-align: right;
+}
+
+html[dir="rtl"] .section-subtitle {
+  text-align: right;
+}
+
+/* About images RTL - images on right, text on left */
+html[dir="rtl"] .about-text-contnet {
+  direction: rtl;
+}
+
+html[dir="rtl"] .about-text-contnet .left-img {
+  order: 2;
+}
+
+html[dir="rtl"] .about-text-contnet .col-lg-7 {
+  order: 1;
+}
+
+/* Inner row with image on right, text on left in RTL */
+html[dir="rtl"] .about-text-contnet .row.justify-content-between .col-lg-5 {
+  order: 2;
+}
+
+html[dir="rtl"] .about-text-contnet .row.justify-content-between .col-lg-6 {
+  order: 1;
+}
+
+/* Footer RTL */
+html[dir="rtl"] .footer-content {
+  text-align: right;
+}
+
+html[dir="rtl"] .footer-left {
+  text-align: right;
+}
+
+html[dir="rtl"] .footer-title {
+  text-align: right;
+}
+
+html[dir="rtl"] .footer-list {
+  text-align: right;
+  padding-right: 0;
+}
+
+html[dir="rtl"] .footer-list li {
+  text-align: right;
+}
+
+html[dir="rtl"] .footer-right {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .footer-nav-menu,
+html[dir="rtl"] .footer-nav-item {
+  text-align: right;
+}
+
+html[dir="rtl"] .copyright-text {
+  text-align: right;
+}
+
+html[dir="rtl"] .social-icon {
+  flex-direction: row-reverse;
+}
+
+/* Call Service RTL */
+html[dir="rtl"] .call-service {
+  text-align: right;
+}
+
+html[dir="rtl"] .call-content {
+  text-align: right;
+}
+
+html[dir="rtl"] .call {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .call-icon {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+/* Counter Section RTL */
+html[dir="rtl"] .counter-text {
+  text-align: right;
+}
+
+html[dir="rtl"] .project-status-content {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .project-list {
+  text-align: right;
+}
+
+/* Newsletter RTL */
+html[dir="rtl"] .newlatter {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .footer-newsleter {
+  text-align: right;
+}
+
+html[dir="rtl"] .newslatter-input {
+  text-align: right;
+  padding-right: 20px;
+  padding-left: 50px;
+}
+
+html[dir="rtl"] .btn-newsletter {
+  left: 5px;
+  right: auto;
+}
+
+/* Offcanvas Menu RTL */
+html[dir="rtl"] .offcanvas {
+  left: 0;
+  right: auto;
+}
+
+html[dir="rtl"] .offcanvas.offcanvas-end {
+  left: 0;
+  right: auto;
+  transform: translateX(-100%);
+}
+
+html[dir="rtl"] .offcanvas.offcanvas-end.show {
+  transform: translateX(0);
+}
+
+html[dir="rtl"] .menu_list {
+  text-align: right;
+  padding-right: 0;
+}
+
+html[dir="rtl"] .menu_list li {
+  text-align: right;
+}
+
+html[dir="rtl"] .sub-menu {
+  padding-right: 20px;
+  padding-left: 0;
+}
+
+/* Buttons RTL */
+html[dir="rtl"] .btn-fill {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .btn-icon-black {
+  margin-right: 10px;
+  margin-left: 0;
+  transform: scaleX(-1);
+}
+
+/* Icons RTL - flip directional icons */
+html[dir="rtl"] .arrow-icon,
+html[dir="rtl"] .card-icon img,
+html[dir="rtl"] .btn-icon-black {
+  transform: scaleX(-1);
+}
+
+/* Slider RTL */
+html[dir="rtl"] .slick-slider {
+  direction: rtl;
+}
+
+html[dir="rtl"] .slick-track {
+  direction: rtl;
+}
+
+html[dir="rtl"] .slick-slide {
+  float: right;
+}
+
+/* Shapes Position RTL */
+html[dir="rtl"] .hero-line-1 {
+  left: auto;
+  right: 0;
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .about-shape-1 {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .about-shape-2 {
+  right: auto;
+  left: 0;
+}
+
+html[dir="rtl"] .footer-shape-1 {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .footer-shape-2 {
+  right: auto;
+  left: 0;
+}
+
+/* Gap adjustments RTL */
+html[dir="rtl"] .gap-2 {
+  gap: 0.5rem;
+}
+
+/* Row RTL adjustments */
+html[dir="rtl"] .row {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .row.justify-content-between {
+  flex-direction: row-reverse;
+}
+
+/* Keep slick dots centered */
+html[dir="rtl"] .slick-dots {
+  direction: ltr;
+}
+
+/* Phone and contact info RTL */
+html[dir="rtl"] .phone {
+  direction: ltr;
+  text-align: right;
+}
+
+html[dir="rtl"] .call-link {
+  direction: ltr;
+}
+
+/* Language selector RTL */
+html[dir="rtl"] .country-select-box {
+  text-align: right;
+}
+
+/* Banner social links RTL */
+html[dir="rtl"] .banner-left-content {
+  left: auto;
+  right: 20px;
+}
+
+html[dir="rtl"] .text-gap-box {
+  text-align: right;
+}
+
+/* Animations adjustment for RTL */
+html[dir="rtl"] .fade-slide.left {
+  transform: translateX(50px);
+}
+
+html[dir="rtl"] .fade-slide.right {
+  transform: translateX(-50px);
+}
+
+/* Input fields RTL */
+html[dir="rtl"] input[type="text"],
+html[dir="rtl"] input[type="email"],
+html[dir="rtl"] input[type="tel"],
+html[dir="rtl"] textarea {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Lists RTL */
+html[dir="rtl"] ul,
+html[dir="rtl"] ol {
+  padding-right: 0;
+  padding-left: 40px;
+}
+
+html[dir="rtl"] ul li,
+html[dir="rtl"] ol li {
+  text-align: right;
+}
+
+/* Card hover effects RTL */
+html[dir="rtl"] .card-group:hover .card-icon {
+  left: 10px;
+  right: auto;
+}
+
+/* Dropdown menus RTL */
+html[dir="rtl"] .dropdown-menu {
+  left: auto;
+  right: 0;
+  text-align: right;
+}
+
+/* Border radius adjustments for RTL */
+html[dir="rtl"] .nav-left-bg {
+  border-radius: 0 0 0 30px;
+}
+
+/* Keep video icon centered */
+html[dir="rtl"] .hero-content-video {
+  margin: 0 auto;
+}
+
+/* Justify content adjustments */
+html[dir="rtl"] .justify-content-start {
+  justify-content: flex-end !important;
+}
+
+html[dir="rtl"] .justify-content-end {
+  justify-content: flex-start !important;
+}
+
+html[dir="rtl"] .justify-content-center {
+  justify-content: center !important;
+}
+
+html[dir="rtl"] .justify-content-between {
+  justify-content: space-between !important;
+}
+
+/* Circle text animation - keep spinning correctly */
+html[dir="rtl"] .circle_textwrap {
+  direction: ltr;
+}
+
+/* Additional RTL Layout Enhancements */
+
+/* Portfolio Accordion RTL */
+html[dir="rtl"] .portfolio-accordion-item {
+  text-align: right;
+}
+
+html[dir="rtl"] .portfolio-acc-title {
+  text-align: right;
+}
+
+html[dir="rtl"] .accordion-button {
+  text-align: right;
+}
+
+html[dir="rtl"] .accordion-body {
+  text-align: right;
+}
+
+/* Team Cards RTL */
+html[dir="rtl"] .team-card {
+  text-align: right;
+}
+
+html[dir="rtl"] .team-card-body {
+  text-align: right;
+}
+
+html[dir="rtl"] .team-title {
+  text-align: right;
+}
+
+html[dir="rtl"] .member-social-profile {
+  right: 20px;
+  left: auto;
+}
+
+html[dir="rtl"] .team-arrow-icon {
+  transform: scaleX(-1);
+}
+
+/* Gallery Grid RTL */
+html[dir="rtl"] .gallery-card-grid {
+  direction: rtl;
+}
+
+html[dir="rtl"] .gallery-card-grid article {
+  text-align: right;
+}
+
+/* Blog Cards RTL */
+html[dir="rtl"] .blog-card {
+  text-align: right;
+}
+
+html[dir="rtl"] .blog-title {
+  text-align: right;
+}
+
+html[dir="rtl"] .blog-category {
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .blog-date {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Testimonial Cards RTL */
+html[dir="rtl"] .testimonial-card-list {
+  text-align: right;
+}
+
+html[dir="rtl"] .testimonail-content {
+  text-align: right;
+}
+
+html[dir="rtl"] .member-details {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .member-info {
+  text-align: right;
+  margin-right: 15px;
+  margin-left: 0;
+}
+
+/* Round Button RTL */
+html[dir="rtl"] .round-btn {
+  text-align: center;
+}
+
+/* Container RTL */
+html[dir="rtl"] .container,
+html[dir="rtl"] .container-one {
+  direction: rtl;
+}
+
+/* Grid Items RTL */
+html[dir="rtl"] .col-12,
+html[dir="rtl"] .col-md-4,
+html[dir="rtl"] .col-md-6,
+html[dir="rtl"] .col-lg-6,
+html[dir="rtl"] .col-xl-4 {
+  text-align: right;
+}
+
+/* Portfolio Items RTL */
+html[dir="rtl"] .portfolio-content {
+  direction: rtl;
+}
+
+html[dir="rtl"] .portfolio-top-wrap {
+  text-align: right;
+}
+
+/* Case Study Grid RTL */
+html[dir="rtl"] .service-title {
+  text-align: right;
+}
+
+html[dir="rtl"] article .text {
+  text-align: right;
+}
+
+/* Hero Section Text RTL */
+html[dir="rtl"] .banner-social-list {
+  text-align: right;
+}
+
+html[dir="rtl"] .banner-social-link {
+  direction: ltr;
+}
+
+/* Form Elements RTL */
+html[dir="rtl"] .newletter-form {
+  direction: rtl;
+}
+
+html[dir="rtl"] form {
+  direction: rtl;
+}
+
+/* Additional Alignment Fixes */
+html[dir="rtl"] p,
+html[dir="rtl"] span,
+html[dir="rtl"] div {
+  text-align: inherit;
+}
+
+/* Title Border RTL */
+html[dir="rtl"] .title-border {
+  display: inline-block;
+}
+
+html[dir="rtl"] .title-yellow {
+  display: inline-block;
+}
+
+/* Ensure Bootstrap Grid Respects RTL */
+html[dir="rtl"] .row > * {
+  text-align: right;
+}
+
+/* Counter Section Enhanced RTL */
+html[dir="rtl"] .fact {
+  direction: rtl;
+}
+
+html[dir="rtl"] .count-project {
+  direction: ltr;
+  text-align: center;
+}
+
+/* Image Positioning RTL */
+html[dir="rtl"] .img img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Button Group RTL */
+html[dir="rtl"] .hero-btn,
+html[dir="rtl"] .section-btn {
+  direction: rtl;
+}
+
+/* Ensure Proper Text Flow */
+html[dir="rtl"] * {
+  direction: inherit;
+}
+
+/* Force RTL for Main Content Areas */
+html[dir="rtl"] main,
+html[dir="rtl"] section,
+html[dir="rtl"] article {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Menu Items RTL */
+html[dir="rtl"] .main-menu {
+  direction: rtl;
+}
+
+html[dir="rtl"] .menu-item {
+  text-align: right;
+}
+
+/* Review Section RTL */
+html[dir="rtl"] .count-member {
+  text-align: right;
+}
+
+html[dir="rtl"] .review {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* Entry Content RTL */
+html[dir="rtl"] .entry-content {
+  text-align: right;
+}
+
+/* Card Text RTL */
+html[dir="rtl"] .card-text {
+  text-align: right;
+}
+
+/* Section Title RTL */
+html[dir="rtl"] .section-title {
+  text-align: right;
+}
+
+html[dir="rtl"] .section-title-lg {
+  text-align: right;
+}
+
+/* About Circle Text - Adjust for Arabic */
+html[dir="rtl"] .about-text-circle {
+  right: 0;
+  left: auto;
+}

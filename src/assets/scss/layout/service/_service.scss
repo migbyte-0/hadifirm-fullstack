@@ -1,0 +1,855 @@
+/*--------------------------------------------------------------
+SERVICE CSS
+--------------------------------------------------------------*/
+
+
+/*=======================================================================
+ Service Card Area Start Hear
+=========================================================================*/
+.text-card {
+  &::before {
+    content: "";
+    background-image: url(../images/svg/10-shap.svg);
+    width: 70px;
+    height: 60px;
+    left: 16px;
+    top: -4px;
+    position: absolute;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &::after {
+    content: "";
+    background-image: url(../images/svg/10-shap.svg);
+    width: 70px;
+    height: 60px;
+    right: 16px;
+    bottom: -4px;
+    position: absolute;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .card {
+    background: var(--text-dark);
+    transition: all 0.5s ease-out;
+
+    .card-body {
+      padding: 50px;
+      @media #{$lg} {
+        padding: 20px;
+      }
+
+      .img {
+        width: 50px;
+        height: 80px;
+        margin-bottom: 50px;
+         @media #{$lg} {
+          margin-bottom: 0px;
+        }
+         @media #{$sm} {
+          margin-bottom: 30px;
+        }
+      }
+
+      .support-icon {
+        width: 80px;
+      }
+    }
+  }
+}
+
+.service-card .slick-slide {
+  margin-right: 7px;
+}
+
+.text-card .card .card-body .payment-icon {
+  width: 90px;
+}
+
+.service-slider {
+  position: relative;
+  z-index: 9;
+}
+
+.service-icon {
+  position: absolute;
+  top: 9%;
+  left: 14%;
+  @media #{$sm} {
+    display: none;
+  }
+}
+
+.text-card {
+  .card .card-body {
+    .img img {
+      width: 100%;
+    }
+
+    .card-title {
+      color: var(--white);
+    }
+
+    .card-icon {
+      border-radius: 50%;
+      cursor: pointer;
+      background: var(--text-light);
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &:hover .card .card-body {
+    .btn-hover-radius {
+      &:after {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    .card-icon-black {
+      filter: brightness(0);
+    }
+    .card-title {
+      text-decoration: underline;
+    }
+  }
+}
+
+.slick-dots {
+  width: 100%;
+  bottom: 0 !important;
+
+  .slick-active {
+    background: var(--main-tertiary);
+  }
+}
+
+.slick-track {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.slick-dots li {
+  width: 10px !important;
+  height: 10px !important;
+  border: 1px solid var(--main-primary);
+  border-radius: 50%;
+}
+
+.service-shape::before {
+  content: "";
+  background-image: url(../images/svg/mask.svg);
+  width: 300px;
+  height: 300px;
+  left: -140px;
+  top: -120px;
+  position: absolute;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 0;
+}
+
+.service-card {
+  background-image: url(../images/banners/mask.png);
+  background-repeat: no-repeat !important;
+  background-position: right top !important;
+  background-color: var(--main-secondary);
+}
+
+.service-card-title {
+  color: var(--white); 
+  font-family: var(--font-family-cormorant);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.2;
+  display: inline-block;
+  text-transform: capitalize;
+  transition: var(--transition);
+  max-width: 253px;
+  padding-bottom: 13px;
+  @media #{$lg} {
+    padding-top: 20px;
+  }
+  &:hover {
+    color: var(--orange-dark);
+    text-decoration: underline;
+  }
+}
+
+/*=======================================================================
+Our Service Area Start Hear
+=========================================================================*/
+
+.our-service {
+  .btn-fill {
+    padding: 25px 30px;
+  }
+}
+
+
+.gallery-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 30px;
+  align-items: stretch;
+  transition: all 0.5s ease-out;
+
+  article {
+    background-color: var(--main-secondary);
+  }
+ 
+  article {
+    &:hover {
+      .btn-hover-gradiant {
+        &:after {
+          height: 100%;
+          width: 100%;
+          border-radius: 0;
+          visibility: visible;
+          opacity: 1;
+        }
+        svg {
+          filter: brightness(0);
+        }
+        img {
+          filter: brightness(0);
+        }
+      } 
+
+      .btn-fill::before { 
+        width: 100%;
+      }
+      .btn-fill::after { 
+        width: 100%;
+      } 
+    }
+
+    .img {
+      overflow: hidden;
+
+      img {
+        transition: all 0.5s ease-out;
+      }
+    }
+
+    .team-arrow-icon {
+      &:hover {
+      transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.our-service {
+  .text {
+    padding: 0px 12px 30px 16px;  
+    margin-top: -50px;
+    .img img {
+      width: 50px;
+    }
+  }
+}
+
+.card-icon-wrap {
+  width: 87px;
+  height: 95px;
+  padding: 22px;
+  display: inline-block;
+  background-color: #0F1F1F;
+  box-shadow: 0px 50px 50px 0px rgba(0, 0, 0, 0.05); 
+  transition: var(--transition);
+  margin-bottom: 22px;
+}
+
+
+
+.service-title {
+  color: var(--white); 
+  font-family: var(--font-family-cormorant);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700; 
+  text-transform: capitalize;
+  padding-bottom: 15px;
+}
+
+.service-shape-1 {
+  position: absolute;
+  top: 0%;
+  z-index: -1;
+  right: 0;
+}
+
+.service-shape-2 {
+  position: absolute;
+  bottom: -5%;
+  left: 0%;
+  z-index: -1;
+}
+
+.project-icon-two { 
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1b2a2a;
+  transition: var(--transition);
+  margin-left: 18px;
+  @media #{$sm} {
+    margin-left: 0px;
+  }
+  &:hover {
+    background-color: var(--orange-dark);
+    .service-arrow-icon {
+      filter: brightness(0);
+    }
+  }
+}
+
+.service-img {
+  padding-left: 25px;
+  margin-top: -60px;
+   @media #{$lg} {
+    padding-left: 0px;
+    margin-top: -0px;
+  }
+}
+
+.service-content-2 {
+  @media #{$lg} {
+   max-width: 436px;
+  } 
+}
+
+.our-service-shape-1 {
+  position: absolute;
+  top: -2%;
+  left: -2%;
+  z-index: -1;
+}
+
+.our-service-shape-2 {
+  position: absolute;
+  bottom: -28%;
+  right: 0%;
+  z-index: -1;
+}
+
+.service-two {
+  background-color: var(--main-secondary);
+  .section-title { 
+    max-width: 600px;
+    margin: 0 auto;
+    @media #{$md} {
+      max-width: 580px;
+    }
+  } 
+  .slick-dots {
+    @media #{$md} { 
+      bottom: -10% !important;
+    } 
+    @media #{$sm} { 
+      bottom: -8% !important;
+    } 
+  }
+}
+
+.service-slide-iconwrap {
+  width: 87px;
+  height: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--text-dark);
+  border-right: 2px solid var(--orange-dark);
+  margin-right: 12px;
+  transition: var(--transition); 
+  border-right: 2px solid var(--orange-dark); 
+  transition: var(--transition); 
+  &:hover {
+    background-color: var(--orange-dark); 
+    .service-slide-icon {
+      filter: brightness(0);
+    }
+  }
+}
+
+.service-two-slide{
+  position: relative;
+  transition: var(--transition);
+  overflow: hidden;
+  &::before {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: linear-gradient(178deg, rgba(15, 31, 31, 0.00) 34.98%, rgba(15, 31, 31, 0.90) 78.61%);
+    transition: var(--transition); 
+  }
+  &::after {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 0%;
+    height: 100%;
+    content: "";
+    background: linear-gradient(178deg, rgba(15, 31, 31, 0.60) 34.98%, rgba(15, 31, 31, 0.90) 78.61%); 
+    transition: var(--transition);
+  }
+  &:hover:after {
+    width: 100%;
+  }
+  
+}
+
+.service-slideText-wrap {
+  display: grid;
+  grid-template-columns: 90px auto;
+  gap: 25px;
+  position: absolute;
+  margin: -170px 0px 0px 50px;
+  align-items: self-end;
+  z-index: 99;
+  @media only screen and (max-width: 1500px) {
+    gap: 10px;
+    margin: -117px 0px 0px 0px; 
+  } 
+}
+
+.service-two .service-slide-title {
+  color: var(--white);
+  font-family: var(--font-family-cormorant);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: -2px;
+  transition: var(--transition);
+  &:hover {
+    color: var(--orange-dark);
+  }
+}
+
+.service-slide-text {
+  color:#8B9F9F; 
+  font-size: 16px; 
+  font-weight: 400;
+  max-width: 240px;
+  @media only screen and (max-width: 1500px) {
+     font-size: 14px; 
+     max-width: 206px; 
+  } 
+   
+}
+
+.service-two-shape-1 {
+  position: absolute;
+  bottom: 5%;
+  left: 0%;
+  @media #{$lg} {
+    display: none;
+  }
+}
+
+.service-slide-img {
+  img {
+    @media #{$sm} {
+       width: 100%;
+    } 
+  }
+}
+
+.service-slider-two {
+  position: relative;
+  z-index: 9;
+}
+
+.service-two-shape-2 {
+  position: absolute;
+  top: 5%;
+  right: 0%;
+  @media #{$lg} {
+    display: none;
+  }
+}
+
+.service-thumb-img {
+  width: 100%;
+}
+
+/*=======================================================================
+Business Planes Area Start Hear 
+=========================================================================*/
+
+.service-card-2 { 
+  margin-top: -15%;
+}
+
+
+/*=======================================================================
+ Home Page Two Service Area Start Hear 
+=========================================================================*/
+
+.project-item .project-list {
+  display: grid;
+  grid-template-columns: 81px 380px 83px;
+  justify-content: start;
+  align-items: center;
+  margin: 24px 0 24px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 12px;
+  @media #{$sm} {
+    grid-template-columns: 1fr;
+  }
+  &:last-child {
+    border-bottom: 0px solid;
+  }
+
+  .project-img {
+    margin-right: 16px;
+  }
+
+  .project-icon i {
+    color: var(--white);
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: var(--text-light);
+    transform: rotate(-45deg);
+    transition: all 5s ease-in-out;
+
+    &:hover {
+      background: var(--main-tertiary);
+    }
+  }
+}
+
+.our-service-title {
+  color: var(--white);
+  font-family: var(--font-family-cormorant);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700; 
+  line-height: 1.2;
+  text-transform: capitalize;
+  padding-bottom: 15px;
+}
+
+.our-service .project-item {
+  max-width: 553px;
+}
+
+/* *************************************************************************
+[38]================Service Details Page Layout  start Hear============================
+****************************************************************************/
+.check-text .check-item .check-list { 
+  font-weight: 400;
+
+  i {
+    color: var(--orange-dark);
+    margin-right: 12px;
+  }
+}
+
+.simple-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+  align-items: stretch;
+  transition: all 0.5s ease-out;
+
+  .simple-card-list {
+    background-color: var(--main-secondary);
+    padding: 12px 22px;
+  }
+}
+
+.content-box {
+  padding: 32px;
+  background-color: var(--main-secondary);
+}
+
+.contact-list {
+  i {
+    color: var(--orange-dark);
+    margin-right: 12px;
+    line-height: 30px;
+    font-size: 24px;
+  }
+
+  .text small {
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.service-item {
+  .contact-list {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:last-child {
+      border-bottom: 0px;
+    }
+  }
+}
+
+.content-box {
+  .consultancy-box .section-btn .btn-fill {
+    background: var(--main-tertiary) !important;
+    color: var(--text-dark) !important;
+    transition: all 0.5s ease-out;
+    box-shadow: 0 0 200px var(--orange-dark), 0 0 0px var(--orange-dark), 0 0 0px var(--orange-dark), 0 0 0px var(--orange-dark);
+
+    i {
+      color: var(--text-dark) !important;
+    }
+  }
+
+  .newlatter a i {
+    transform: rotate(0deg);
+  }
+}
+
+/*=======================================================================
+Mission Vision Area Start Hear 
+=========================================================================*/
+
+.mission-vision {
+  background-color: var(--main-secondary);
+}
+
+.mission-vision-content .mv-list {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+
+  .text h4 {
+    font-size: 32px;
+    line-height: 26px;
+  } 
+}
+
+.parent-skill {
+  width: 120px;
+  height: auto;
+}
+
+.skill {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .progress {
+    width: 85%;
+    height: 85%;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    background-color: #0f1f1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .progress-number {
+    color: var(--main-primary);
+    font-family: var(--font-family-cormorant);
+    font-style: italic;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+
+/*=======================================================================
+More Service Area Start Hear 
+=========================================================================*/
+
+.more-service {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 30px;
+  align-items: stretch;
+  transition: all 0.5s ease-out; 
+  @media #{$xl} {
+    grid-gap: 15px;
+  }
+  @media #{$lg} {
+    grid-gap: 20px;
+  }
+  
+  .more-service-list {
+    .card-group .card {
+      background-color: var(--main-secondary);
+      border-radius: 100px;
+
+      .card-body {
+        img {
+          width: 50px;
+        }
+
+        a i {
+          border: 1px solid rgba(139, 159, 159, 0.1);
+          background-color: transparent;
+
+          &:hover {
+            background: var(--main-tertiary) !important;
+          }
+        }
+      }
+    }
+
+    .text-card-two::after {
+      content: "";
+      background-image: url(../images/svg/10-shap.svg);
+      width: 70px;
+      height: 60px;
+      right: 37%;
+      bottom: -4px;
+      position: absolute;
+      margin: 0 auto;
+      text-align: center;
+      z-index: 1;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    .text-card::before {
+      background-image: none;
+    }
+  }
+}
+
+.card-group {
+  transition: all 0.3s;
+
+  &:hover .card-img-top {
+    filter: brightness(0) saturate(100%) invert(94%) sepia(64%) saturate(958%) hue-rotate(311deg) brightness(102%) contrast(100%);
+  }
+}
+
+.image-list {
+  .img .scroll-icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(340%, -50%) !important;
+    color: white;
+    padding: 20px;
+    background: var(--main-tertiary);
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-out;
+
+    i {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &:hover .img .scroll-icon {
+    opacity: 1;
+  }
+}
+
+.tag-list-tow .image-list .img .project-details {
+  justify-content: start;
+
+  img {
+    background-color: transparent;
+    border-right: none !important;
+  }
+}
+
+/*=======================================================================
+Call Service Area Start Hear 
+=========================================================================*/
+
+.call-service-three .call-service {
+  background: var(--main-secondary) !important;
+
+  .call {
+    p {
+      color: var(--orange-dark);
+    }
+
+    i {
+      background: var(--main-tertiary);
+      color: var(--main-secondary);
+    }
+  }
+}
+
+
+// Style Five 
+.service {
+  &-area-5 {
+    .gallery-card-grid-3 .slick-dots { 
+      bottom: -70px !important;
+    }    
+  }
+}
+.service-shape-five {
+  position: absolute;
+  left: 0%;
+  bottom: 8%;
+  z-index: -1;
+  @media #{$lg} {
+    display: none;
+  }
+}
+
+.none-lg {
+  @media only screen and (min-width: 1024px) and (max-width: 1100px) {
+    display: none;
+  }
+  
+}
+
+.service-btn {
+   @media only screen and (min-width: 768px) and (max-width: 991px) {
+    display: none;
+  } 
+}

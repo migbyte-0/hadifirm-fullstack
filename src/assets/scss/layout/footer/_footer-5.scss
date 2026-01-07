@@ -1,0 +1,20 @@
+/*--------------------------------------------------------------
+FOOTER CSS
+--------------------------------------------------------------*/
+.footer {
+ &-area-5 {
+  background-color: #0C1A1A;
+  margin-top: -50px;
+  @media #{$sm} {
+   margin-top: 0px;
+  }
+  .footer-content {
+   span {
+    color: #D89A26;
+   }
+  }
+  .footer-subtitle {
+   padding-bottom: 10px;
+  }
+ }
+}

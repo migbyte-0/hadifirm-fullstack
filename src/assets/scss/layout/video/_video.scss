@@ -1,0 +1,204 @@
+/*--------------------------------------------------------------
+VIDEO CSS
+--------------------------------------------------------------*/
+
+/*=======================================================================
+Video Area Start Hear 
+=========================================================================*/
+
+.video-area {
+  margin-left: 100px;
+  @media #{$md} { 
+    margin-left: 0px;
+  }
+}
+
+.video-title {
+  font-family: var(--font-family-manrope);
+  font-size: 150px;
+  font-weight: 800;
+  line-height: 26px;
+  color: var(--text-dark);
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.1),
+  1px 1px 0 rgba(255, 255, 255, 0.1), 1px -1px 0 rgba(255, 255, 255, 0.1),
+  -1px -1px 0 rgba(255, 255, 255, 0.1);
+  opacity: 0.4;
+  margin-left: 172px;
+  @media #{$xxl} {
+   font-size: 120px;
+  }
+  @media #{$lg} {
+   font-size: 100px;
+  }
+  @media #{$sm} {
+   font-size: 40px;
+   margin-left: 10px;
+  }
+}
+
+.video-play-icon {
+  filter: brightness(0) invert(1);
+}
+
+.video-icon {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -357%); 
+  @media #{$xxl} {
+    transform: translate(-50%, -278%);
+  }
+  @media #{$xl} {
+    transform: translate(-50%, -266%);
+  }
+  @media #{$lg} {
+    transform: translate(-50%, -328%);
+  }
+}
+
+.video-play { 
+  width: 176px;
+  height: 176px; 
+  border-radius: 100px;
+  border: 1px solid var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media #{$lg} {
+   width: 100px;
+   height: 100px;
+  }
+}
+
+.video .container .section-space-bottom .video-service {
+  transform: translate(0%, -50%);
+}
+
+.hero-content-right .company-round-logo {
+  animation: rotateCircles 5.5s linear infinite;
+}
+
+.video-banner {
+  width: 100%;
+}
+
+/*=======================================================================
+Video content
+=========================================================================*/
+@media only screen and (max-width: 1200px) {
+  .video-content h2 {
+    font-size: 70px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .hero-content-left-two .entry-content .hero-btn {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .video-content h2 {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .service-card-2 {
+    transform: translate(0, 0%);
+  }
+}
+
+@media only screen and (max-width: 445px) {
+  .hero-content-left-two .entry-content .hero-btn {
+    flex-direction: column;
+
+    a:first-child {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+/*=======================================================================
+Modal Area  Start Hear
+=========================================================================*/
+
+.video-modal-content {
+  .modal-body {
+    padding: 0;
+    background: var(--shade-bg-4);
+
+    video {
+      width: -webkit-fill-available;
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 0;
+    right: -30px;
+    border: none;
+    background: none;
+
+    i {
+      font-size: 25px;
+      color: var(--white);
+    }
+  }
+
+  border: 0;
+}
+
+// Video area style two 
+.video {
+  &-area-2 {  
+    background-color: #0C1A1A; 
+    .video-title {
+      @media #{$xl} {
+        font-size: 90px;
+      } 
+      @media #{$lg} {
+        font-size: 50px;
+      } 
+      @media #{$sm} {
+        font-size: 32px;
+      } 
+    }
+  }
+  &-shape-two-1 {
+    position: absolute;
+    left: 0.6%;
+    bottom: 0%;
+    @media #{$lg} {
+      display: none;
+    }
+  }
+ 
+}
+
+.video-text-2 {
+  position: absolute;
+  top: 37%;
+  left: -1%;
+  color: var(--white);
+  text-align: center; 
+  font-size: 16px; 
+  font-weight: 400;
+  line-height: 26px;
+  text-transform: capitalize;
+  transform: rotate(90deg);
+  z-index: 9;
+   @media #{$md} {
+    display: none;
+   }
+}
+
+.modal-close {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 100px;
+}

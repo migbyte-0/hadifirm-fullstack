@@ -1,0 +1,263 @@
+/*--------------------------------------------------------------
+TEAM CSS
+--------------------------------------------------------------*/
+
+
+/*=======================================================================
+Team Area End Hear
+=========================================================================*/
+
+.team-card {
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+
+  .team-card-body .team-card-text {
+    .title {
+      color: var(--white);
+    }
+
+    a i {
+      color: var(--main-primary);
+      transform: rotate(-45deg);
+      padding: 6px;
+      cursor: pointer;
+      border-radius: 50%;
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -ms-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out;
+
+      &:hover {
+        background: var(--main-tertiary);
+        color: var(--white);
+      }
+    }
+  }
+  &:hover {
+    .member-social-profile {
+      right: 0;
+    }
+  }
+}
+
+.team-card-body {
+  padding: 12px 30px 20px 28px;
+}
+
+.team-title {
+  color: var(--white);
+  font-family: var(--font-family-cormorant);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700; 
+  text-transform: capitalize;
+  transition: var(--transition);
+  &:hover {
+    color: var(--orange-dark);
+  }
+  @media #{$xl} {
+    font-size: 16px;
+  }
+  @media #{$sm} {
+    font-size: 18px;
+  }
+}
+
+.member-social-profile {
+  position: absolute;
+  bottom: 0;
+  right: -30px;
+  transition: 0.4s;
+
+  .social-list {
+    width: 60px;
+    height: 60px;
+    background-color: var(--text-dark);
+    border-bottom: 1px solid var(--text-light);
+    cursor: pointer;
+    visibility: visible;
+    transform: translateY(0) scale(1); 
+    transition: var(--transition);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: var(--main-tertiary);
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.4s;
+    }
+    .team-social-icon {
+      z-index: 2;
+      position: relative;
+    }
+    @media #{$xl} {
+      width: 40px;
+      height: 40px;
+    }
+    &:last-child {
+      border-bottom: 0px;
+    }
+  }
+}
+
+
+.member-social-profile .social-list:hover {
+  &:after {
+    visibility: visible;
+    opacity: 1;
+  }
+  .team-social-icon {
+    filter: brightness(0) saturate(100%);
+  }
+}
+
+.team-thumb-img {
+  @media #{$xs} {
+    width: 100%;
+  }
+  width: 100%;
+}
+
+.team-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition); 
+}
+    
+.team-arrow-icon {
+  transition: var(--transition);
+  &:hover {
+    filter: brightness(0) saturate(100%) invert(58%) sepia(70%) saturate(517%) hue-rotate(0deg) brightness(95%) contrast(84%);
+  }
+}
+
+.team-card:hover .member-social-profile .social-list {
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.team-shape-1 {
+  position: absolute;
+  bottom: 20%;
+  right: 112px;
+}
+
+.team-shape-2 {
+  position: absolute;
+  top: 10%;
+  right: 0%;
+  z-index: -1;
+}
+
+
+// Style two 
+.team {
+  &-area-2 {
+    .team-shape-1 { 
+     bottom: -23%; 
+      @media #{$lg} {
+      display: none; 
+    } 
+    }
+    
+    .team-shape-2 { 
+      top: 16%; 
+      @media #{$lg} {
+      display: none; 
+      }
+    }
+    
+    .team-shape-3 {
+    position: absolute;
+    left: 0%;
+    bottom: -68%;
+    z-index: -1;
+    @media #{$lg} {
+      display: none; 
+    }
+   }
+    
+  }
+}
+
+// Style three
+.team {
+  &-area-3 {
+    background-color: var(--main-secondary);
+    @media #{$sm} {
+      padding-bottom: 100px;
+    }
+    .gallery-card-grid article {
+      background-color: var(--text-dark);
+    }
+    .slick-dots {
+      bottom: 44% !important;
+      left: -80%;
+      @media only screen and (max-width: 1400px) {
+        bottom: -11% !important;
+        left: 0;
+      } 
+       
+    }
+    
+    .team-member-top {
+      @media #{$md} { 
+        text-align: center;
+        margin: 0 auto;
+        max-width: 500px;
+      } 
+    }
+    .section-title { 
+      font-size: 40px; 
+    }
+  }
+}
+
+.attorneys-shape {
+  position: absolute;
+  left: 0%;
+  bottom: 16%;
+  z-index: -1;
+  @media #{$lg} {
+    display: none;
+  }
+}
+
+// Team style four 
+.team-area-4 {
+  background-color: var(--main-secondary);
+  padding-top: 344px;
+  margin-top: -197px;
+  @media #{$xxl} {
+    padding-top: 260px;
+  }
+  .team-yellow-shape {
+    position: absolute;
+    top: 40%;
+    left: 4%;
+    @media #{$xxl} {
+      top: 28%;
+    }
+     @media #{$xl} {
+       display: none;
+    }
+  }
+}
+

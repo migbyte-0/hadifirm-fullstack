@@ -1,0 +1,59 @@
+/*--------------------------------------------------------------
+HEEADER CSS
+--------------------------------------------------------------*/
+
+.header {
+ &-area-3 {
+ .main-menu {
+   padding-left: 40px;
+   padding-top: 26px;
+   padding-bottom: 26px;
+  }
+  
+  .country-select-box { 
+    border-left: 0px; 
+   }
+   
+  .header-btn {
+   margin-right: -10px; 
+  }
+  
+  .btn-fill-2 { 
+   padding: 28px 32px; 
+   @media only screen and (min-width: 1200px) and (max-width: 1280px) {
+    padding: 28px 20px; 
+   }
+  }
+  
+  .nav-menu-box-three {
+   border-left: 10px solid transparent;
+  }
+
+  .header-logo-three {
+    height: 164px;
+    background-color: #0C1A1A;
+     @media #{$md} {
+      height: auto;
+    }
+  }
+
+  .header-three-bg{ 
+    background-color: var(--main-secondary);
+    padding: 12px 0px;
+    margin-left: 1px;
+    @media #{$lg} {
+     padding: 35px 0px;
+    }
+    @media #{$md} {
+     padding: 15px 0px;
+    }
+  }
+ }
+}
+
+.header-top-menu-3 {
+ padding: 15px 0px 14px;
+  @media #{$md} {
+   padding: 0px;
+ }
+}

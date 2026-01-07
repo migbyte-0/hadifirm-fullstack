@@ -1,0 +1,185 @@
+/*--------------------------------------------------------------
+HERO CSS
+--------------------------------------------------------------*/
+.header-three-fixed {
+  background-color: transparent;
+}
+
+.hero {
+  &-area-3 {
+    margin-top: 0;
+    background-image: url(../images/bg/hero-bg-3.webp);
+    padding: 330px 0px 230px;
+    overflow: hidden;
+     @media #{$lg} {
+      padding: 320px 0px 140px;
+    }
+     @media #{$sm} {
+      padding: 170px 0px 60px;
+    }
+    .section-title-lg { 
+      max-width: 960px;
+      margin: 0 auto;
+      @media #{$xl} {
+        max-width: 828px;
+        padding-bottom: 10px;
+      }
+      @media #{$lg} {
+        max-width: 600px;
+        padding-bottom: 10px;
+      }
+    }
+    .hero-two-contact {
+      top: 50%;
+      right: -1%;
+      z-index: 99;
+      @media #{$lg} {
+        top: 60%;
+        right: -5%;
+      }
+      @media #{$md} {
+        right: -8%;
+      }
+      @media #{$sm} {
+       display: none;
+      }
+        
+    }
+    .hero-two-phone { 
+      background: #0F1F1F;
+    } 
+    .hero-two-textwrap { 
+      left: -3%;
+      top: 49%;
+      z-index: 9;
+      @media #{$md} {
+        left: -8%;
+        top: 30%; 
+        transform: rotate(90deg);
+      }
+      @media #{$sm} {
+       display: none;
+      }
+    }
+    .hero-text-left {
+      color: #ffffff; 
+    }
+    .btn-fill {
+      background-color: #0C1A1A;
+    } 
+    
+    .slick-dots { 
+      bottom: -40% !important;
+      left: -64%;
+      z-index: 99; 
+      @media #{$xxl} {
+        left: -48%;
+      }
+      @media #{$xl} {
+        left: -45%;
+      }
+      @media #{$lg} {
+        left: 0%;
+        bottom: -15% !important;
+      }
+      @media #{$sm} {
+        left: -0%;
+        bottom: -6% !important;
+      }
+    }
+    .slick-dots .slick-active {
+      background: #0F1F1F !important;
+    }
+    
+    .section-subtitle::before { 
+      @media #{$sm} {
+        left: 18px; 
+      } 
+    }
+    
+  }
+  
+  &-btn-3{
+    position: relative;
+    z-index: 9;  
+     @media #{$xs} {
+      flex-wrap: wrap;
+    }
+  }
+  
+  &-shape-three-1 {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    @media #{$xxl} {
+      width: 20%;
+    }
+    @media #{$lg} {
+      display: none;
+    }
+  }
+
+  &-shape-three-2 {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    @media #{$xxl} {
+      width: 20%;
+    }
+    @media #{$lg} {
+      display: none;
+    }
+  }
+  
+  &-shape-three-3 {
+    position: absolute;
+    left: 34%;
+    bottom: 0%;
+  }
+
+}
+
+.hero-content-slider {
+  position: relative;
+  z-index: 9;
+}
+
+.hero-circle-3 {
+  position: absolute;
+  top: 27%;
+  right: 10%;
+  @media #{$lg} {
+    top: 27%;
+    right: 3%;
+  }
+  @media #{$md} {
+    top: 17%;
+  }
+  @media #{$sm} {
+    display: none !important;
+  }
+}
+
+.h-3-nav-bottom, .logo-area-three {
+  background-color: var(--main-secondary);
+}
+
+.h-three-btn {
+  background: var(--main-tertiary) !important;
+  color: var(--text-dark);
+}
+
+.header-active {
+  background-color: var(--main-secondary);
+}
+.hero-text-3{
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-text-3.mb-30 {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}

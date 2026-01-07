@@ -1,0 +1,180 @@
+/*--------------------------------------------------------------
+BLOG CSS
+--------------------------------------------------------------*/
+
+/*=======================================================================
+Blog Area Start Hear
+=========================================================================*/
+
+.gallery-blog-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-gap: 30px;
+  align-items: stretch;
+  transition: all 0.5s ease-out;
+}
+
+.blog-thumb {
+  transition: var(--transition);
+  &:hover {
+    transform: scale(1.3);
+  }
+}
+
+.blog-thumb-wrap {
+   overflow: hidden;
+}
+
+.blog-thumb {
+   @media #{$sm} {
+    width: 100%;
+  }
+}
+
+.blog-card {
+  background: transparent !important; 
+  .text {
+    padding: 0;
+
+    .head span {
+      background: var(--main-tertiary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding-right: 20px; 
+    }
+
+    .head-2 {
+      padding-left: 20px;
+    }
+  }
+
+  .date p .fa-calendar-days {
+    padding-right: 6px;
+  }  
+}
+
+.blog-btn {
+  color: var(--main-primary);
+  cursor: pointer; 
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  &:hover {
+   color: var(--orange-dark); 
+   .blog-icon {
+    filter: brightness(0) saturate(100%) invert(64%) sepia(57%) saturate(615%) hue-rotate(359deg) brightness(91%) contrast(85%);
+   }
+  }
+} 
+
+
+.blog-title {
+  color: var(--white);
+  font-family: var(--font-family-cormorant);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700; 
+  line-height: 1.3;
+  text-transform: capitalize;
+  transition: all 0.3s;
+  display: inline-block;
+  border-bottom: 1px solid #ffffff10;
+  padding-bottom: 20px;
+  &:hover {
+    color: var(--orange-dark);
+  }
+  @media #{$lg} {
+    font-size: 22px;
+  }
+}
+
+.blog-date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.blog-category {
+  color:#8B9F9F;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  transition: all 0.3s;
+  &:hover {
+    color: var(--orange-dark);
+  } 
+  
+  &::before {
+    position: absolute;
+    top: 6px;
+    left: -9px;
+    width: 1px;
+    height: 12px;
+    background-color: #8b9f9f42;
+    content: "";
+  }
+}
+
+/* *************************************************************************
+================Blog layout 2 Page  start Hear===================
+****************************************************************************/
+
+.banner-19 {
+  background-image: url(../images/banner/banner-19.png);
+}
+
+.banner-20 {
+  background-image: url(../images/banner/banner-20.png);
+}
+
+.border-title {
+  border-left: 5px solid var(--orange-dark);
+  outline-left: 5px solid var(--orange-dark);
+  color: var(--white);
+  padding-left: 10px;
+}
+
+.medidle-content {
+  padding: 30px;
+  background-color: var(--main-secondary);
+  gap: 20px;
+
+  i {
+    padding: 12px;
+    background-color: var(--text-dark);
+  }
+}
+
+.blog-consulatanry-box {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 100px;
+  background-color: var(--main-secondary);
+  @media #{$lg} {
+      padding: 40px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .comments-box, .blog-consulatanry-box {
+    padding: 30px 20px;
+  }
+
+  .comments-box .reply-comment {
+    padding-left: 10px;
+  }
+
+  .contact-info-card {
+    transform: translate(-50%, 0%);
+    margin-bottom: 30px;
+  }
+
+  .contact-consultation {
+    margin-top: 0px;
+  }
+
+  .contact-info-card .card-content .card-item {
+    padding: 30px;
+  }
+}

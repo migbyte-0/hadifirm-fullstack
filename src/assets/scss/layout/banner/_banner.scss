@@ -1,0 +1,236 @@
+/*--------------------------------------------------------------
+BANNER CSS
+--------------------------------------------------------------*/
+.banner-area {
+  background-color: #0C1A1A;
+  padding: 100px 0px 40px;
+  position: relative;  
+  @media #{$xxl} {
+    padding: 54px 0px 0px;
+  }
+  @media #{$xl} {
+    padding: 46px 0px 0px;
+  }
+  @media #{$lg} {
+    padding: 100px 0px 0px;
+  }
+  @media #{$md} {
+    padding: 100px 0px 60px;
+  }
+  .hero-two-contact { 
+   top: 51%;
+   right: -4%;
+    @media #{$xxl} {
+      right: -5%; 
+    } 
+    @media #{$xl} {
+      right: -7%; 
+    } 
+    @media #{$lg} {
+      top: 60%;   
+    } 
+    @media #{$sm} {
+      right: -60px; 
+    } 
+  }
+}
+.banner-wrapper { 
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
+  padding: 245px 0px 210px;
+  position: relative;
+  &::before {
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+   height: 100%;
+   opacity: 0.9;
+   background-color:#0C1A1A;
+   content: "";
+  }
+  &::after {
+   position: absolute;
+   top: 8%;
+   left: 16%;
+   width: 100%;
+   height: 100%; 
+   background-image: url(../images/banners/banner-line.png);
+   background-repeat: no-repeat;
+   content: ""; 
+   @media #{$xxl} {
+    top: 18%;
+    height: 62%;
+    padding: 230px 0px 210px;
+  }
+  @media #{$lg} {
+    position: unset;
+  } 
+  }
+  
+  @media #{$lg} {
+    padding: 115px 0px 165px;
+  }
+  @media #{$md} {
+    background-size: cover; 
+  }
+  @media #{$sm} { 
+    padding: 80px 0px 90px;
+  }
+}
+
+.banner-content {
+ text-align: center;
+ position: relative;
+ z-index: 9;
+}
+
+.banner-shape {
+  position: absolute;
+  left: 0%;
+  bottom: 10%;
+  @media #{$xxl} {
+    bottom: 18%;   
+  }
+  @media #{$xl} {
+    bottom: 22%;   
+  }
+  @media #{$lg} {
+    display: none;    
+  }
+}
+
+.breadcrumbs-list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.breadcrumbs-item { 
+ font-size: 16px;
+ font-weight: 400;
+ color: var(--white); 
+  &:nth-child(1) {
+   position: relative;
+  &::before {
+    position: absolute;
+    top: 6px;
+    right: -11px;
+    width: 1px;
+    height: 15px;
+    background-color: var(--white);
+    content: "";
+    transform: rotate(14deg);
+  }
+ }
+}
+
+.banner-social {
+ position: absolute;
+ left: 2%;
+ bottom: 16%;
+ @media #{$md} {
+  display: none;
+ }
+}
+
+.banner-social-list {
+ transform: rotate(-90deg);
+ margin-bottom: 20px;
+}
+
+.breadcrumbs-link { 
+ font-size: 16px;
+ font-weight: 400;
+ color: var(--white);
+ transition: var(--transition);
+ &:hover {
+  color: #D89A26;
+ }
+}
+
+.banner-social-link {
+ color:#8B9F9F; 
+ font-size: 16px; 
+ font-weight: 400; 
+ text-transform: uppercase;
+ transition: var(--transition);
+ &:hover {
+  color: var(--orange-dark); 
+ }
+}
+
+.attorneys-wrapper { 
+  padding: 700px 0px 50px; 
+  @media #{$xxl} {
+    padding: 560px 0px 0px; 
+  } 
+  @media #{$xl} {
+    background-size: cover;
+  } 
+  @media #{$md} {
+    padding: 380px 0px 0px; 
+  } 
+  &::before {
+    background: linear-gradient(180deg, rgba(15, 31, 31, 0.90) 0%, rgba(15, 31, 31, 0.50) 100%);
+  }
+  &::after {   
+   left: 16.5%;
+   height: 90%; 
+    background-image: url(../images/shapes/attorneys-line.png); 
+   @media #{$xxl} {
+    top: 18%;
+    height: 62%;
+  }
+    
+  }
+}
+
+.attorneys-detail-shape {
+  position: absolute;
+  left: 0%;
+  bottom: 1%;
+  width: 22%;
+  @media #{$xxl} {
+    bottom: 0%;
+  }
+  @media #{$xl} {
+    bottom: 3%;
+  }
+  @media #{$lg} {
+    display: none;
+  }
+}
+
+.banner-content {
+  .sidebar-social { 
+    position: absolute;
+    right: 12%;
+    bottom: 0%;
+    @media #{$sm} {
+     right: 0%;
+    }
+  }
+  .sidebar-social-link {
+    width: 60px;
+    height: 60px; 
+    border-bottom: 1px solid #ffffff05;
+    transition: var(--transition);
+    &:hover {
+      .social-icon {
+      filter: brightness(0) saturate(100%);
+    }
+    }
+  }
+  
+}
+
+.attorneys-area {
+  padding: 100px 0px 100px;
+  .banner-social { 
+    left: 2%;
+    bottom: 8%;
+  }
+}

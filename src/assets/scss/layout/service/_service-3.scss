@@ -1,0 +1,127 @@
+/*--------------------------------------------------------------
+SERVICE CSS
+--------------------------------------------------------------*/
+.service {
+ &-area-3 {
+  @media #{$sm} {
+    margin-bottom: 50px;
+  } 
+  .slick-dots {
+   width: 100%;
+   bottom: 0 !important;
+   left: -98%;
+   @media #{$md} {
+    left: 0%;
+    bottom: -36px !important; 
+   }
+  }  
+
+}
+
+.service-img-3 {
+  @media #{$sm} {
+    width: 100%;
+  } 
+}
+
+
+.service-topwrap-3 {
+   @media #{$md} {
+    max-width: 500px;
+    margin: 0 auto;
+   } 
+} 
+
+ 
+.service-left-4 {
+ @media #{$md} {
+  padding-bottom: 30px;
+ }
+ 
+}
+
+ &-item-3 {
+  background-color: #0C1A1A;
+  padding-bottom: 45px;
+  background-image: url(../images/shapes/dot-shape.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 94%;
+  background-position-y: 96%;
+ }
+ 
+ &-text {
+  margin-top: -50px;
+  margin-left: 50px;
+  position: relative;
+  z-index: 9;
+ }
+ 
+ &-iconwrap-3 {
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  background-color: #0F1F1F;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+ }
+ 
+ &-title-3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family-cormorant);
+  color: var(--white);  
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 700; 
+  line-height: 1.2;
+  padding: 24px 0px 10px;
+  text-transform: capitalize;
+  transition: var(--transition);
+  &:hover {
+   color: var(--orange-dark);
+  }
+  @media #{$lg} {
+   font-size: 24px;
+  }
+ }
+ 
+ &-btn-3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--main-primary); 
+  font-size: 16px;
+  font-weight: 700; 
+  transition: var(--transition);
+  &:hover {
+   color: var(--orange-dark);
+   .service-icon-3 {
+    filter: brightness(0) saturate(100%) invert(76%) sepia(93%) saturate(2022%) hue-rotate(340deg) brightness(89%) contrast(89%);
+   }
+  }
+ }
+ 
+ &-shape-three-1 {
+  position: absolute;
+  bottom: 3%;
+  left: 0%;
+  width: 26%;
+  z-index: -1;
+ }
+ &-img-3 {
+   @media #{$xs} {
+    width: 100%;
+  }
+  
+ }
+ 
+}
+
+// Style service card three 
+.service-card-3 {
+  background-color: #0F1F1F;
+}

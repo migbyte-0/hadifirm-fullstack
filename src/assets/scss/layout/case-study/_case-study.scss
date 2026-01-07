@@ -1,0 +1,97 @@
+/*--------------------------------------------------------------
+CASE STUDY CSS
+--------------------------------------------------------------*/
+
+/*=======================================================================
+study Planes Area Start Hear 
+=========================================================================*/
+
+.study-right .image-list:after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(180deg, transparent 0, transparent 60%, #000);
+  opacity: 1;
+}
+
+.study-left ul li {
+  a i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    margin-right: 16px;
+    background-color: var(--text-light);
+    color: var(--white);
+  }
+
+  &:hover a i {
+    background: var(--main-tertiary);
+  }
+
+  a p {
+    font-family: var(--font-family-cormorant);
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 26px;
+  }
+}
+
+.case-study .slick-dots {
+  position: absolute;
+  bottom: 45px;
+  display: block;
+  width: fit-content;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  left: 18px;
+
+  li {
+    border: 1px solid var(--main-primary);
+    border-radius: 50%;
+  }
+
+  .slick-active {
+    background: var(--main-tertiary) !important;
+  }
+}
+
+/* *************************************************************************
+================Case Study Page Layout  start Hear============================
+****************************************************************************/
+
+.banner-10 {
+  background-image: url(../images/banner/banner-10.png);
+}
+
+.case-study-gallery .tag-list {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-gap: 30px;
+  align-items: stretch;
+  transition: all 0.5s ease-out;
+}
+
+// Case Detail Css 
+.case-detail-process-title {
+  color: var(--white);
+  font-family: var(--font-family-cormorant);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700; 
+  text-transform: capitalize;
+}
+
+.case-detail-process-text {
+  max-width: 220px;
+}

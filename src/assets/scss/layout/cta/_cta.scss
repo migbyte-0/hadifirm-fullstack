@@ -1,0 +1,103 @@
+/*--------------------------------------------------------------
+CTA CSS
+--------------------------------------------------------------
+*/
+.cta {
+ &-area {
+  margin-top: -190px;
+  .btn-fill  {
+   background-color: #0C1A1A;
+  }
+ }
+ &-wrapper {
+  position: relative;
+  background-image: url(../images/bg/cta-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--orange-dark); 
+  padding: 70px 85px 80px 110px;
+  @media #{$lg} {
+   padding: 70px 46px 70px 50px;
+  }
+  @media #{$md} {
+   padding: 70px 20px 70px 20px;
+  }
+  @media #{$sm} {
+   text-align: center;
+  }
+ } 
+ 
+ &-img {
+  position: absolute;
+  top: -37px;
+  right: 85px;
+  z-index: 9;
+  @media #{$xxl} {
+   top: auto;
+   bottom: 0px;
+  }
+  @media #{$md} {
+   top: auto;
+   bottom: 0px;
+   right: 20px;
+   width: 35%;
+  }
+  @media #{$sm} {
+   display: none;
+  }
+ }  
+ 
+ &-text { 
+  color: var(--white); 
+  font-size: 24px; 
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 10px 0px 45px;
+  @media #{$lg} {
+   font-size: 18px;
+  }
+  @media #{$sm} {
+    padding: 15px 0px 25px; 
+    text-align: center;
+  }
+ }
+ &-shape {
+  position: absolute;
+  top: -7%;
+  right: 10%;
+   @media #{$lg} {
+   display: none;
+  }
+ }
+ 
+}
+
+// Style two 
+.cta-area-2 {
+  position: relative;
+  z-index: 9;
+  .btn-fill {
+    background-color: #0C1A1A; 
+  }
+  .cta-img {
+    @media #{$xxl} {
+      top: -29px;
+      right: 85px; 
+      width: 24%; 
+    } 
+    @media #{$xl} {
+      width: 28%; 
+    } 
+    @media #{$lg} {
+      top: 2px;
+    } 
+    @media #{$md} {
+      top: 33px;
+      right: 4%;
+    } 
+    @media #{$md} {
+     display: none;
+    } 
+   
+  }
+}

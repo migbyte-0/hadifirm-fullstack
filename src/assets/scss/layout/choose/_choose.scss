@@ -1,0 +1,331 @@
+/*--------------------------------------------------------------
+COMPANY CSS
+--------------------------------------------------------------*/
+/*=======================================================================
+Choose Our Service Area Start Hear 
+=========================================================================*/
+
+.choose-our-project {
+  background-color: var(--main-secondary);
+  padding: 24px 24px 0 24px;
+}
+
+.latest-project-slider {
+  transform: translate(-80px, 0px);
+}
+
+.choose-our-project .project-list {
+  border: none;
+  margin: 0 !important;
+
+  .project-content h4 {
+    color: var(--white);
+  }
+}
+
+.latest-project-slider .slick-dots {
+  position: absolute;
+  bottom: -45px;
+  display: block;
+  width: fit-content;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  left: 40%;
+
+  li {
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--main-primary);
+    border-radius: 50%;
+  }
+
+  .slick-active {
+    background: var(--main-tertiary) !important;
+  }
+}
+
+.choose-area .slick-dots {
+  bottom: -12% !important;
+  @media #{$lg} {
+    bottom: -7%;    
+  }
+  @media #{$sm} {
+    bottom: -3% !important;    
+  }
+}
+
+.choose-wrapper {
+  display: grid;
+  grid-template-columns: 856px auto;
+  position: relative;
+  @media #{$md} {
+    grid-template-columns: 1fr;
+  }
+}
+.choose-right {
+  background-color:#0C1A1A;
+}
+
+.choose-right-slider {
+  position: absolute;
+  bottom: 24%;
+  right: 0px;
+  width: 636px;
+  padding: 70px 80px 93px;
+  background-color: #0C1A1A;
+  @media #{$lg} {
+    bottom: -19px;    
+  }
+  @media #{$md} {
+    position: unset;
+     width: 100%;
+    padding: 40px 50px 93px; 
+  }
+  @media #{$sm} { 
+    padding: 40px 21px 57px 20px;
+    position: unset; 
+    width: 100%;
+  }
+}
+
+.choose-list {
+  display: grid;
+  grid-template-columns: 65px 355px 74px;
+  gap: 20px;
+  transform: translate(-55px, 0px);
+  padding-bottom: 40px;
+  &:last-child {
+    padding-bottom: 0px;
+  }
+  @media #{$sm} {  
+    grid-template-columns: 1fr;
+    gap: 20px;
+    transform: translate(-30px, 0px);
+    padding-bottom: 23px;
+  }
+}
+
+.project-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #8B9F9F;
+  border-radius: 100px; 
+  transition: var(--transition);
+  &:hover {
+    background:linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%); 
+    border: 1px solid transparent; 
+    .choose-icon {
+      filter: brightness(0);
+    }
+  }
+}
+
+.choose-title {
+  color: var(--white);
+  font-family: var(--font-family-cormorant);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700; 
+  text-transform: capitalize;
+  padding-bottom: 20px;
+  @media #{$sm} {
+  padding-bottom: 10px;
+  }
+}
+
+.choose-text {
+  color:#8B9F9F; 
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 350px;
+  @media #{$sm} {
+    max-width: 300px;
+  }
+}
+
+.choose-shape-2 {
+  position: absolute;
+  top: 6%;
+  right: 0%;
+  z-index: -1;
+  @media #{$md} {
+    display: none;
+  }
+}
+
+.case-study-shapetwo-3 {
+  position: absolute;
+  bottom: -4%;
+  right: 5%;
+  z-index: -1;
+  @media #{$md} {
+    display: none;
+  }
+  
+}
+
+.choose-shape-1 {
+  position: absolute;
+  bottom: -4%;
+  right: 5%;
+  z-index: -1;
+  @media #{$md} {
+    display: none;
+  }
+}
+
+.choose {
+  &-area-2 {
+    padding-top: 230px; 
+    @media #{$md} {
+     padding-top: 80px;
+    }
+    .slick-dots { 
+      bottom: -12% !important;
+    }
+  }
+}
+
+.choose {
+  &-area-3 {
+    .slick-dots {
+       @media #{$sm} {
+        bottom: -4% !important;
+      } 
+    }
+    .choose-shape-2 { 
+      top: 11%; 
+      width: 24%;
+    }
+  }
+}
+
+.service-detail-inner-text {
+  color: var(--main-primary);  
+  font-size: 16px; 
+  font-weight: 400; 
+  padding-bottom: 10px;
+}
+
+.check-text {
+  padding-left: 76px;
+  @media #{$lg} {
+   padding-left: 0px;
+  }
+  @media #{$sm} {
+   padding-left: 15px;
+  }
+}
+
+.service-detail-area {
+  .about-shape-four-1 { 
+    top: -10%; 
+  }
+}
+
+.service-detail-shape {
+  position: absolute;
+  bottom: 7%;
+  left: 5%;
+  z-index: -1;
+  @media #{$lg} {
+    display: none; 
+  }
+}
+
+.service-detail-title{
+  @media #{$xs} {
+    font-size: 32px; 
+  } 
+}
+
+.check-text .check-item .check-list {
+  @media #{$xs} {
+    font-size: 12px;
+  }
+}
+
+.choose {
+ &-area-3 {
+  .choose-right-slider { 
+    bottom: 17%; 
+    @media #{$lg} {
+      bottom: 0%;
+    }
+  }
+  .section-title {
+    @media #{$lg} {
+      margin-bottom: 40px;
+    }  
+    @media #{$md} {
+      margin-bottom: 0px;
+    }  
+  }
+  .slick-dots { 
+    bottom: -12% !important;  
+    @media #{$sm} {
+      bottom: -5% !important;
+      left: -26%;
+    }
+  }
+  .choose-shape-1 { 
+    bottom: -7%;  
+  }
+ }
+}
+
+.choose-shape-three-3 {
+  position: absolute;
+  left: 0%;
+  bottom: -57%;
+  z-index: -1;
+  @media #{$lg} {
+    display: none;
+  }
+}
+
+// Choose style four 
+.choose-area-4 {
+ background-color: #0C1A1A;
+  .choose-list {  
+   transform: translate(20px, 0px); 
+   @media #{$sm} {
+    padding-bottom: 20px;
+   }
+ }
+ 
+ .choose-right-4 {
+  position: relative;
+  z-index: 9;
+ }
+ 
+ .project-icon {
+  &:hover {
+    background-color: unset;
+  }
+ }
+
+}
+.choose-shape-four-2 {
+  position: absolute;
+  top: 6%;
+  right: 0%;
+  @media #{$lg} {
+    display: none; 
+  }
+}
+
+.choose-shape-four-1.moveLeft {
+  position: absolute;
+  bottom: -18%;
+  right: 5%;
+  z-index: 9;
+  @media #{$lg} {
+    display: none; 
+  }
+}

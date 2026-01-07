@@ -1,0 +1,301 @@
+/*--------------------------------------------------------------
+SERVICE CSS
+--------------------------------------------------------------*/
+/*=======================================================================
+ Call Service Area Start Hear
+=========================================================================*/
+
+.call-service {
+  background: var(--main-tertiary);   
+  padding: 32px 0px;
+
+  .call-icon {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 50%;
+    background: var(--main-secondary);
+    color: var(--orange-dark);
+    margin-right: 8px;
+  }
+
+  .call p {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32.78px;
+    text-align: left;
+    color: var(--main-secondary);
+  }
+}
+
+.call-content { 
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+  color: var(--white);
+  @media #{$lg} {
+    font-size: 20px;
+  }
+  @media #{$md} {
+    font-size: 17px;
+  }  
+  @media #{$sm} {
+    font-size: 25px;
+    text-align: center;
+  }  
+}
+
+.call {
+  @media #{$sm} { 
+    justify-content: center;
+  } 
+}
+
+.call-link {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+  color: #0F1F1F;
+  transition: all 0.3s;
+  @media #{$md} {
+    font-size: 18px; 
+  }
+
+  &:hover {
+    color: var(--white);
+  }
+}
+
+ .call-icon-3 {
+  width: 45px;
+  height: 45px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%);  
+  margin-right: 8px;
+}
+
+.call-link-3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+  color: var(--orange-dark);
+  transition: all 0.3s;
+  @media #{$md} {
+    font-size: 18px; 
+  }
+
+  &:hover {
+    color: var(--white);
+  }
+}
+
+.call-service-3 {
+ background-image: url(../images/bg/call-bg.png);
+ background-repeat: no-repeat;
+ background-color: #0C1A1A;
+ padding: 37px 0px;
+ @media #{$md} {
+   margin-top: 50px;
+   background-image: none;
+  }
+  
+}
+
+.emargency-case  {
+  .btn-fill {
+   background-color: #0C1A1A;
+  }
+}
+
+// Emagenecy area CSS 
+.emargency-shape-1 {
+ position: absolute;
+ top: -19%;
+ left: 0%;
+ z-index: -1;
+ @media #{$xxl} {
+    width: 23%;
+  }
+  @media #{$lg} {
+    display: none;
+  }
+}
+
+.emargency-shape-2 {
+ position: absolute;
+ bottom: 6%;
+ right: 0%;
+ z-index: -1;
+  @media #{$xxl} {
+    width: 23%;
+  }
+  @media #{$lg} {
+    display: none;
+  }
+}
+
+.emargency-text {
+ max-width: 90%;
+ padding-bottom: 55px;
+}
+
+.emargency-subtitle {
+ color: var(--white);
+ font-family: var(--font-family-cormorant);
+ font-size: 24px; 
+ font-weight: 700; 
+ line-height: 1.3;
+ text-transform: capitalize;
+ padding: 25px 0px 15px;
+ @media #{$lg} {
+   font-size: 22px;
+  }
+}
+
+.emargency-case .section-btn{
+  @media #{$lg} {
+    padding-top: 25px; 
+  }
+}
+
+.emargency-shape-two-1 {
+  position: absolute;
+  top: 11%;
+  left: 9%;
+  @media #{$lg} {
+   display: none;
+  }
+}
+
+// Style Call service four
+.call-service-4 {    
+  background-color: #0C1A1A; 
+  .call-link-3 { 
+    color: #0F1F1F;
+  } 
+}
+
+.call-service-wrap-4 {
+  margin-right: 189px;
+  margin-left: 50px;
+  padding: 28px 0px 27px; 
+  background: linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%); 
+  position: relative;
+  @media #{$lg} {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  &::before {
+    position: absolute;
+    top: 0%;
+    left: 30px;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/shapes/bar-shape.png);
+    background-repeat: no-repeat;
+    content: "";
+    @media #{$sm} {
+      display: none;
+    }
+  }
+  &::after {
+    position: absolute;
+    top: 0%;
+    right: 41px;
+    width: 3%;
+    height: 100%;
+    background-image: url(../images/shapes/bar-shape.png);
+    background-repeat: no-repeat;
+    content: "";  
+    @media #{$sm} {
+      display: none;
+    }
+  }
+}
+
+// emargency case style two 
+.emargency-case-2 {
+  .emargency-text { 
+    padding-left: 205px; 
+     @media #{$lg} { 
+      padding-left: 0px;
+    }
+     @media #{$sm} { 
+      padding-left: 0px;
+      padding-bottom: 20px;
+    }
+  }
+  .emargency-shape-1 { 
+    top: -32%; 
+  }
+
+  .emargency-shape-2 { 
+    bottom: 12%; 
+  }
+  .section-btn.w-fit {
+    @media #{$lg} {
+      padding-top: 30px;
+    } 
+  }
+}
+
+.emargency-left-2 { 
+  padding-left: 100px;
+  padding-right: 50px;
+  @media #{$lg} {
+    padding-right: 0px;
+    padding-left: 15px;
+  }
+  @media #{$sm} {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+
+.emargency-right-2 {
+  padding-left: 50px;
+  padding-right: 100px;
+   @media #{$lg} {
+    padding-left: 0px;
+    padding-right: 15px;
+  }
+}
+.emargency-shape-two-3 {
+  position: absolute;
+  left: 0%;
+  bottom: 40%;
+  @media #{$lg} {
+    display: none;
+  }
+}
+
+// Call service style five 
+.call-service-5 {
+  position: relative;
+  z-index: 9;
+  .call-content {
+    color: #0F1F1F;
+  }
+
+  .call-link-3 {
+    color: #0F1F1F;
+    &:hover {
+      color: var(--white);
+    }
+  }
+  .call-icon-3 { 
+    background: #0F1F1F; 
+  }
+}
+.call-service-wrap-5 {
+  background-image: url(../images/bg/call-service-5.png);
+  background-repeat: no-repeat;
+  padding: 32px 0px 23px;
+  color: #0F1F1F;
+  @media #{$sm} {
+    background-image: none;
+    background: linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%);
+  }
+}

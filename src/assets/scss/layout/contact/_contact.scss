@@ -1,0 +1,271 @@
+/*--------------------------------------------------------------
+CONTACT CSS
+--------------------------------------------------------------*/
+
+/* *************************************************************************
+================Contact  Page Layout  start Hear===================
+****************************************************************************/
+
+.contact-info-card {
+  position: relative;
+  transform: translate(-50%, -40%);
+  left: 50%;
+
+  .card-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-gap: 20px;
+    align-items: stretch;
+
+    .card-item {
+      padding: 60px;
+      background-color: var(--main-secondary);
+    }
+  }
+}
+
+.contact-consultation {
+  margin-top: -100px;
+}
+
+.contact-info-title {
+  color: var(--main-primary);
+  font-size: 24px;
+  font-weight: 700;
+  transition: var(--transition);
+  padding-bottom: 15px;
+}
+.contact-info-text {
+  background: linear-gradient(125deg, #d89a26 14.31%, #ffcd70 86.5%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  transition: var(--transition);
+}
+
+.contact-info-link {
+  color: var(--main-primary);
+  font-size: 24px;
+  font-weight: 700;
+  transition: var(--transition);
+  display: inline-block;
+  padding-bottom: 6px;
+  &:hover {
+    color: var(--orange-dark);
+  }
+}
+
+.contact-info-img {
+  display: block;
+  padding-bottom: 20px;
+}
+
+.map-area {
+  .blog-detail-shape {
+    position: absolute;
+    top: -30%;
+  }
+}
+.map-2 {
+  width: 100%;
+  height: 623px;
+  filter: grayscale(100%) invert(100%) contrast(83%);
+  @media #{$sm} {
+    height: 400px;
+  }
+}
+/*=======================================================================
+Location Area Start Hear 
+=========================================================================*/
+
+.location {
+  .contact-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+
+  .responsive-map {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 1000px;
+
+    iframe {
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+  }
+}
+
+.map {
+  height: 100vh;
+  width: 100%;
+  filter: grayscale(100%) invert(100%) contrast(83%);
+  @media #{$sm} {
+    height: 450px;
+  }
+}
+
+.contact-location {
+  input,
+  textarea {
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+  }
+}
+
+// Contact
+.form-input {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 13px 20px;
+  margin-bottom: 12px;
+  background-color: #243030;
+  color: var(--main-primary);
+  font-size: 14px;
+  font-weight: 400;
+  &::placeholder {
+    color: var(--main-primary);
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+.form-textarea {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 13px 20px;
+  background-color: #243030;
+  margin-bottom: 12px;
+  color: var(--main-primary);
+  font-size: 14px;
+  font-weight: 400;
+  &::placeholder {
+    color: var(--main-primary);
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.form-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--main-primary);
+  span {
+    background: linear-gradient(125deg, #d89a26 14.31%, #ffcd70 86.5%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.form-wrap {
+  .btn-fill {
+    background-color: #0c1a1a;
+  }
+}
+
+.form-shape {
+  position: absolute;
+  left: -13%;
+  bottom: -23%;
+  @media #{$md} {
+    bottom: -6%;
+  }
+}
+
+.form-wrap {
+  position: relative;
+  z-index: 9;
+}
+
+.blog-consulatanry-box {
+  .section-title {
+    @media #{$md} {
+      max-width: 400px;
+    }
+  }
+}
+
+// Style Two
+.contact {
+  &-area-2 {
+    background-image: url(../images/bg/map-bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    .form-shape {
+      left: -18%;
+      bottom: -18%;
+    }
+    .form-wrap {
+      position: relative;
+      z-index: 9;
+    }
+  }
+}
+
+.contact-left-2 {
+  background-color: #0c1a1ae8;
+  padding: 150px 85px 150px 310px;
+  @media #{$xxl} {
+    padding: 100px 85px 100px 70px;
+  }
+  @media #{$sm} {
+    padding: 30px;
+  }
+}
+
+.contact-two-shape-2 {
+  position: absolute;
+  left: 6%;
+  top: 15%;
+  @media #{$lg} {
+    display: none;
+  }
+}
+.contact-two-shape-1 {
+  position: absolute;
+  left: 0%;
+  bottom: -7%;
+  @media #{$lg} {
+    display: none;
+  }
+}
+
+// Stye contact three
+.contact-area-3 {
+  background-color: #0c1a1a;
+  .contact-two-shape-1 {
+    left: 0%;
+    bottom: -18%;
+  }
+  .contact-two-shape-2 {
+    left: 6%;
+    top: 7%;
+  }
+  .form-input {
+    margin-bottom: 0px;
+  }
+}
+.contact-left-3 {
+  padding-right: 80px;
+  @media #{$lg} {
+    padding-right: 0px;
+  }
+}
+
+.contact-right-3 {
+  iframe {
+    @media #{$lg} {
+      width: 100%;
+    }
+  }
+}

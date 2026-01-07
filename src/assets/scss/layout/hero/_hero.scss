@@ -1,0 +1,684 @@
+/*--------------------------------------------------------------
+HERO CSS
+--------------------------------------------------------------*/
+
+
+/*=======================================================================
+Hero Area Start Hear
+=========================================================================*/
+.hero-content-wrap {
+  padding: 130px 0px 230px;
+  @media #{$md} {
+      padding: 100px 0px;
+  }
+}
+.banner {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center top !important;
+}
+
+.banner-1 {
+  background-image: url("../images/banners/banner-1.webp");
+  z-index: 99;
+}
+
+.hero {
+  margin-top: 135px;
+}
+
+.hero-line-1 {
+  position: absolute;
+  left: 16%;
+  top: 0%;
+  z-index: -1;
+  @media #{$lg} {
+    display: none;
+  }
+}
+
+.hero-one {
+  background-color: var(--text-dark);
+  .banner-1 {  
+    overflow: hidden;
+  }
+}
+
+.hero .container-one .hero-content .row .hero-content-left {
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;  
+}
+
+.hero-shape {
+  position: absolute;
+  left: 0px;
+  bottom: 33%;
+}
+
+.hero-content-left .entry-content .hero-btn .h-btn {
+  background-color: var(--main-secondary);
+  margin-right: 30px;
+  transition: all 0.5s ease-out;
+
+  i {
+    color: var(--orange-dark);
+    transition: all 0.5s ease-out;
+  }
+
+  &:hover {
+    color: var(--text-dark);
+
+    i {
+      color: var(--text-dark);
+    }
+  }
+}
+
+.hero-content-right .hero-content-video img {
+  width: 30px;
+  height: 30px;
+  @media #{$sm} {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.hero-1-slider .slick-dots {
+  width: auto;
+  bottom: 50px !important;
+  margin-left: 65px;
+  @media #{$sm} {
+    bottom: 18px !important;
+    margin-left: 20px;
+  }
+  .slick-active {
+    background: var(--main-tertiary) !important;
+  }
+}
+
+.slick-active {
+  border: none !important;
+}
+
+.hero-1-slider .slick-dots li {
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--main-primary);
+  border-radius: 50%;
+}
+
+.hero-one {
+  .banner-social-list {
+    transform: rotate(0deg);
+    margin-bottom: 20px;
+  }
+}
+
+
+.hero .container-one .hero-content .row {
+  .hero-content-left {
+    .entry-content .entry-sub-title {
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 26px;
+      text-transform: capitalize;
+      max-width: 400px;
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -ms-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out;
+      @media #{$sm} {
+        font-size: 16px;
+      }
+    }
+
+    .company {
+      small {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        color: var(--text-light);
+      }
+
+      .company-logo img {
+        margin-right: 45px;
+      }
+    }
+  }
+
+  
+}
+
+.hero-content-right .hero-content-video { 
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid #ffffff2e; 
+  position: relative;
+  @media #{$sm} {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.video-pulse-effect { 
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    -webkit-animation: pulse-border 2s ease infinite;
+    animation: pulse-border 2s ease infinite;
+    z-index: -1;
+    transition: 0.4s;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    -webkit-animation: ripple2 2s ease infinite;
+    animation: ripple2 2s ease infinite;
+    z-index: -1;
+    transition: 0.4s;
+  }
+}
+
+.hero-content-2 {
+  max-width: 71%;
+}
+  
+.hero-shape-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-btn {
+  padding-left: 10px;
+  @media #{$sm} {
+    padding-left: 0px;
+  }
+}
+
+.banner-one-shape {
+  content: "";
+  background-image: url(../images/svg/yello-crecle.svg);
+  width: 100px;
+  height: 100px;
+  right: -50px;
+  bottom: -50px;
+  position: absolute;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+  box-shadow: 0 0 160px var(--orange-dark), 0 0 0px var(--orange-dark), 0 0 0px var(--orange-dark), 0 0 0px var(--main-primary);
+}
+
+.banner-left-content {
+  position: absolute;
+  left: -7%;
+  transform: rotate(-90deg);
+  bottom: 100px;
+}
+
+.hero-line-shape {
+  position: absolute;
+  top: 3%;
+  left: 21%;
+  height: -webkit-fill-available;
+  z-index: 999;
+}
+
+.banner-left-content .text-gap-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  span {
+    text-transform: uppercase;
+  }
+}
+
+.banner-right-content {
+  position: absolute;
+  right: -10%;
+  transform: rotate(-90deg);
+  bottom: 50%;
+
+  span {
+    color: var(--main-primary);
+  }
+
+  .height {
+    width: 190px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 0 20px;
+  }
+
+  i {
+    padding: 8px;
+    border-radius: 50%;
+    background: var(--main-tertiary);
+    color: var(--text-dark);
+    margin-right: 12px;
+  }
+
+  p {
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32.78px;
+    text-align: left;
+  }
+}
+
+.hero-one {
+  .entry-sub-title {
+    @media #{$md} {
+      text-align: center;
+    }
+    @media #{$sm} {
+      text-align: left;
+    }
+  }
+}
+
+
+/*=======================================================================
+ Hero Area Responsive Start Hear
+=========================================================================*/
+@media only screen and (max-width: 991px) {
+  .hero .container .hero-content .row {
+    .hero-content-left .entry-content .entry-title .own-rounded::before {
+      width: 174px;
+      height: 53px;
+      position: absolute;
+      top: 11px;
+      left: -35px;
+    }
+
+    .hero-content-right .hero-content-video {
+      width: 100px;
+      height: 100px;
+      top: 30%;
+      left: 40%;
+    }
+
+    .hero-content-left .entry-content .entry-sub-title br {
+      display: none;
+    }
+  }
+
+  .hero-content-left .entry-content .hero-btn {
+    flex-direction: column-reverse;
+
+    .h-btn {
+      width: fit-content;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+  }
+
+  .video-modal-content button {
+    top: -26px !important;
+    right: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .hero .container .hero-content .row .hero-content-left {
+    .entry-content .entry-title .own-rounded::before {
+      width: 134px;
+      height: 33px;
+      top: 11px;
+      left: -25px;
+    }
+
+    .company .company-logo img {
+      margin-right: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+
+
+/* *************************************************************************
+================Home Page Layout 2 start Hear============================
+****************************************************************************/
+
+.main-menu-area .nav-menu-box .menu-top-two .phone span {
+  color: var(--orange-dark);
+}
+
+.section-title-two h6 {
+  color: var(--orange-dark);
+  margin: 0;
+}
+
+.hero-two .container-one .hero-content .row .hero-content-left .entry-content .entry-title span {
+  /* color: var(--main-primary); */
+  border: none;
+}
+
+.hero-content-left .entry-content .hero-btn .h-two-btn {
+  background: var(--main-tertiary);
+  color: var(--text-dark);
+}
+
+
+/*=======================================================================
+Home page Layout Four Area Responsive End Hear
+=========================================================================*/
+@media only screen and (max-width: 991px) {
+  .main-menu-area .header-logo-common-bg {
+    background-color: var(--main-secondary);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .hero-four-card {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+
+/* *************************************************************************
+================Home Page Layout 4 start Hear============================
+****************************************************************************/
+
+.header-four {
+  height: 100px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 0;
+  z-index: 100;
+  position: fixed;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.hero-banner-outside-container {
+  width: 100vw;
+  position: relative;
+  left: -23%;
+  margin-left: -8vw;
+  margin-right: 1vw;
+}
+
+.hero-content-left-four .entry-content h2 span {
+  font-family: var(--font-family-cormorant);
+  background: var(--main-tertiary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+/* *************************************************************************
+================Service Page Layout  start Hear============================
+****************************************************************************/
+.banner-6, .banner-7 {
+  background-image: url(../images/banner/banner-6.png);
+}
+
+/* *************************************************************************
+================Attorneys Page Layout  start Hear============================
+****************************************************************************/
+
+.banner-8 {
+  background-image: url(../images/banner/banner-7.png);
+}
+
+.attorneys-btn .round-btn {
+  width: 180px;
+  height: 180px;
+}
+
+/* *************************************************************************
+================Attorneys Page Details Layout  start Hear============================
+****************************************************************************/
+
+.banner-9 {
+  background-image: url(../images/banner/banner-9.png);
+}
+
+
+/*=======================================================================
+Home page Three Service Area Start Hear 
+=========================================================================*/
+
+.pattern-shape {
+  background-image: url(../images/shapes/circle.svg);
+  background-repeat: no-repeat !important;
+  background-position: left bottom !important;
+}
+
+.gallery-slide-content {
+  .text .card-icon {
+    padding: 10px;
+    transform: translate(0, -50%);
+    background-color: var(--text-dark);
+    border-radius: 50%;
+  }
+
+  .h-3-btn {
+    color: var(--main-primary);
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  article .img img {
+    width: 100%;
+  }
+
+  .text {
+    padding: 0 16px 24px 24px;
+    background-color: var(--main-secondary);
+    color: var(--white);
+
+    .h-3-btn i {
+      transform: rotate(-45deg);
+      margin-left: 8px;
+
+      &:hover {
+        color: var(--orange-dark);
+      }
+    }
+  }
+}
+
+.gallery-card-grid-2 .slick-dots {
+  position: absolute;
+  bottom: 40px;
+  display: block;
+  width: fit-content;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  left: -51%;
+
+  li {
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--main-primary);
+    border-radius: 50%;
+  }
+
+  .slick-active {
+    background: var(--main-tertiary) !important;
+  }
+}
+
+.company-grid-three article {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+}
+
+.hero-two {
+  padding-top: 132px;
+}
+.hero-two  .btn-fill {
+  background-color:#0C1A1A;
+}
+
+.hero-two-shape {
+  position: absolute;
+  bottom: -17%;
+  left: 7%;
+  z-index: -1;
+}
+
+.hero-two-textwrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transform: rotate(-90deg);
+  position: absolute;
+  left: -5%;
+  top: 56%;
+  @media #{$xxl} {
+    left: -8%;
+  }
+  @media #{$lg} {
+    top: 112%;
+    left: -11%;
+  }
+  @media #{$md} {
+    transform: rotate(0deg);
+    top: 76%;
+    left: 30px; 
+  }
+  @media #{$sm} {
+    display: none;
+  }
+}
+
+.hero-text-left {
+  color:#8B9F9F;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.hero-contact-link {
+  color: var(--white);
+  font-size: 24px; 
+  font-weight: 700; 
+  transition: var(--transition);
+  &:hover {
+    color: var(--orange-dark);
+  }
+  @media #{$lg} {
+    font-size: 20px;
+  }  
+}
+
+.hero-btn-2 {
+  @media #{$sm} {
+    flex-wrap: wrap;
+  }  
+}
+
+.hero-content-2.mb-30 {
+  @media #{$sm} {
+    max-width: 330px;
+    padding-top: 20px;
+  }   
+} 
+
+.hero-two-phone {
+  width: 45px;
+  height: 45px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%);
+}
+
+.hero-two {
+  .section-subtitle {
+    @media #{$xxl} {
+      font-size: 13px; 
+    } 
+  }
+}
+
+.hero-two-contact {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  transform: rotate(-90deg);
+  @media #{$xxl} {
+    top: 30%;
+    right: -6%;
+  }  
+  @media #{$xl} {
+    top: 34%;
+    right: -5%;
+  }  
+  @media #{$lg} {
+    display: none;
+  }   
+}
+
+.hero-two-circle {
+  margin-top: 120px;
+  @media #{$md} {
+    margin-top: -88px;
+  }  
+  @media #{$sm} {
+    margin-top: 50px;
+  }  
+}
+
+.hero-two {
+  .section-title-lg {
+    @media #{$md} {
+      font-size: 75px;
+    } 
+    @media #{$sm} {
+      font-size: 50px;
+    } 
+  }
+}

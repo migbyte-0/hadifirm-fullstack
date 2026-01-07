@@ -1,0 +1,107 @@
+/*--------------------------------------------------------------
+FAQ CSS
+--------------------------------------------------------------*/
+.faq {
+ &-area { 
+  .portfolio-accordion .portfolio-accordion-item .accordion-header .accordion-button {
+   padding: 16px 30px 20px 30px;
+   border-bottom: 1px solid #ffffff10;
+   @media only screen and (max-width: 767px) {
+      padding: 16px 30px 20px 15px;
+   }
+  }
+  .portfolio-accordion .portfolio-accordion-item { 
+   border-bottom: 0px solid var(--text-light); 
+ }
+ .portfolio-accordion-2 { 
+  padding: 0px;
+ }
+ 
+ .accordion-button::after {
+  background-image: url("../images/icons/arrow-top-yellow.svg"); 
+ }
+ 
+ .accordion-button:not(.collapsed)::after {
+  background-image: url("../images/icons/arrow-bottom-yellow-lg.svg");
+  height: 42px;
+  transform: rotate(0deg);
+ }
+ 
+ .accordion-button::after {
+   @media only screen and (max-width: 767px) {
+    top: 28%; 
+    right: 12px;
+  }
+  
+ }
+ .section-title {
+  @media #{$md} {
+    max-width: 600px;
+  }
+  }
+}
+ &-text {
+  padding-bottom: 140px;
+  @media #{$lg} {
+    padding-bottom: 30px;
+  }
+ }
+ 
+ &-item-title {
+  color: var(--white);
+  font-family: var(--font-family-cormorant);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700; 
+  line-height: 1.2;
+  text-transform: capitalize;
+ }
+ 
+ &-content { 
+  color: #8B9F9F;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 24px 30px 24px 30px;
+  border-bottom: 1px solid #ffffff10; 
+ }
+ &-shape {
+  position: absolute;
+  bottom: -13%;
+  left: 7%;
+  width: 34%;
+  z-index: -1; 
+ }
+  
+}
+
+// Faq style two 
+.faq {
+  &-area-2 {
+    .portfolio-accordion-2 {
+    background-color: transparent;
+    padding: 0 0px;
+    border: 1px solid #172727;
+  }
+  .portfolio-accordion .portfolio-accordion-item .accordion-header .accordion-button {
+    padding: 20px 30px 20px 30px; 
+  }
+  }
+}
+
+// Faq style three 
+.faq-area-3 {
+  .accordion-button::after {
+    background-image: url("../images/icons/arrow-top-yellow.svg");
+  }
+  .portfolio-accordion .portfolio-accordion-item .accordion-header .accordion-button {
+    @media #{$sm} {
+      padding: 20px 30px 20px 15px;
+    } 
+  }
+  .accordion-button::after {
+    @media #{$sm} {
+      top: 23%; 
+      right: 10px;
+    } 
+  }
+}

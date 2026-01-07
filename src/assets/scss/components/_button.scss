@@ -1,0 +1,330 @@
+/*--------------------------------------------------------------
+BUTTON CSS
+--------------------------------------------------------------*/
+.btn-fill {
+  background: var(--text-light);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21.86px;
+  color: var(--white);
+  padding: 23px 35px;
+  border: none;
+  display: inline-flex;
+  gap: 10px;
+  overflow: hidden;
+  transition: var(--transition);
+  position: relative;
+  z-index: 1;
+  &::before {
+    position: absolute;
+    top: 0%;
+    width: 50%;
+    left: 0%;
+    height: 0%;
+    content: "";
+    background: linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%);
+    z-index: -1;
+    transition: var(--transition);
+  }
+  &::after {
+    position: absolute;
+    bottom: 0%; 
+    right: 0%;
+    width: 50%;
+    height: 0%;
+    content: "";
+    background: linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%);
+    z-index: -1; 
+    transition: var(--transition);
+  }
+  &:hover::before { 
+    height: 100%;
+    width: 100%;
+  }
+  &:hover::after { 
+    height: 100%;
+    width: 100%;
+  }
+  &:hover { 
+    .btn-icon-black {
+      filter: brightness(0);
+    }
+  }
+  
+}
+
+.btn-fill-2 {
+  background: var(--main-tertiary);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21.86px;
+  color: var(--text-dark);
+  padding: 14px 32px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden; 
+  position: relative;
+  transition: var(--transition);  
+  &::before {
+   position: absolute;
+    top: 0px;
+    left: 0%;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.06);
+    content: "";
+    transition: all 0.6s;  
+  }
+  &::after {
+    position: absolute;
+    top: 0px;
+    right: 0%;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.06);
+    content: "";
+    transition: all 0.6s;  
+  }
+  &:hover {
+    color: var(--white);
+    box-shadow: 10px 2px 20px 0px rgba(117, 112, 126, 0.26),
+      -7px -4px 9px 0px rgba(255, 255, 255, 0.1) inset;
+  }
+  &:hover:before {
+    width: 50%;
+  }
+  &:hover:after {
+    width: 50%;
+  }
+}
+
+.round-btn {
+  width: 180px;
+  height: 180px;
+  background: var(--main-secondary);
+  font-size: 16px; 
+  font-weight: 700;
+  line-height: 21.86px;
+  color: #8B9F9F;
+  border: none;
+  border-radius: 100%;
+  display: inline-block;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition); 
+  z-index: 1;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%);
+    height: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    transition: var(--transition); 
+    border-radius: 100%;
+    visibility: hidden;
+    opacity: 0; 
+    z-index: -1;
+  }
+  svg {
+    z-index: 2;
+     transition: var(--transition); 
+    position: relative;
+  }
+  img {
+    z-index: 2;
+     transition: var(--transition); 
+    position: relative;
+  }
+  .btn-text {
+    position: relative;
+    z-index: 2;
+  }
+  &:hover {
+    color: #0F1F1F; 
+    z-index: 99;
+    &:after {
+      height: 100%;
+      width: 100%;
+      border-radius: 100%;
+      visibility: visible;
+      opacity: 1; 
+    }
+    svg {
+      filter: brightness(0);
+    }
+    img {
+      filter: brightness(0);
+    }
+  }
+}
+
+.round-btn:hover .btn-icon-black {
+  filter: brightness(0);
+}
+
+.btn-gradiant {
+  color: #0F1F1F;
+  font-size: 16px;
+  font-weight: 700;
+  background: linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%);
+  padding: 22px 45px;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+  justify-content: center; 
+  position: relative;
+  z-index: 1;
+  &::before {
+   position: absolute;
+    top: 0px;
+    left: 0%;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.06);
+    content: "";
+    transition: all 0.6s;  
+  }
+  &::after {
+    position: absolute;
+    top: 0px;
+    right: 0%;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.06);
+    content: "";
+    transition: all 0.6s;  
+  } 
+  &:hover:before {
+    width: 50%;
+  }
+  &:hover:after {
+    width: 50%;
+  }
+}
+
+.btn-search {
+  width: 56px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%); 
+  position: relative;
+  z-index: 99;
+  cursor: pointer;
+} 
+
+.btn-hover-gradiant {
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%);
+    height: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.4s;
+    visibility: hidden;
+    opacity: 0;
+  }
+  svg {
+    z-index: 2;
+    transition: 0.4s;
+    position: relative;
+  }
+  img {
+    z-index: 2;
+    transition: 0.4s;
+    position: relative;
+  }
+  .btn-text {
+    position: relative;
+    z-index: 2;
+  }
+  &:hover {
+    &:after {
+      height: 100%;
+      width: 100%;
+      visibility: visible;
+      opacity: 1;
+    }
+    svg {
+      filter: brightness(0);
+    }
+    img {
+      filter: brightness(0);
+    }
+  }
+}
+
+.btn-hover-radius {
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s; 
+  border-radius: 50%;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%);
+    height: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.4s;
+    visibility: hidden;
+    border-radius: 50%;
+    opacity: 0;
+  }
+  svg {
+    z-index: 2;
+    transition: 0.4s;
+    position: relative;
+  }
+  
+  img {
+    z-index: 2;
+    transition: 0.4s;
+    position: relative;
+  }
+  .btn-text {
+    position: relative;
+    z-index: 2;
+  }
+  &:hover { 
+    &:after {
+      height: 100%;
+      width: 100%;
+      visibility: visible;
+      opacity: 1;  
+      border-radius: 50%;
+    }
+    
+    svg {
+      filter: brightness(0);
+    }
+    .card-icon-black {
+      filter: brightness(0);
+    }
+    
+    img {
+      filter: brightness(0);
+    } 
+  }
+  
+   
+}

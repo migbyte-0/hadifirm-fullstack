@@ -1,0 +1,161 @@
+/*--------------------------------------------------------------
+CONSULTANCY CSS
+--------------------------------------------------------------*/
+
+/*=======================================================================
+Consultancy Area Start Hear  
+=========================================================================*/
+
+.consultancy {
+  background-image: linear-gradient(
+      rgba(15, 31, 31, 0.9),
+      rgba(15, 31, 31, 0.9)
+    ),
+    url(../images/bg/cousultation-bg.webp);
+  background-attachment: fixed;
+  .section-title {
+    font-size: 82px;
+    max-width: 700px;
+    padding-bottom: 6px;
+    @media #{$lg} {
+      font-size: 60px;
+    }
+    @media #{$sm} {
+      font-size: 50px;
+    }
+  } 
+  .video-play {
+    width: 120px;
+    height: 120px; 
+    border: 1px solid #ffffff29; 
+  }
+}
+
+.consultancy-text {
+  max-width: 268px;
+  color: var(--white);
+}
+
+.consultancy-box { 
+  background-image: url(../images/shapes/form-shape.png);
+  background-repeat: no-repeat;
+  padding: 40px;
+  background-color: var(--main-secondary);
+  max-width: 416px; 
+  padding: 50px 30px; 
+  .btn-fill {
+    background-color: #0C1A1A;
+  }
+}
+
+.consultancy-left .video {
+  .video-icon {
+    position: inherit;
+    transform: translate(0, 0);
+  }
+
+  p {
+    margin-left: 40px;
+  }
+}
+
+.consultancy-box {
+ 
+  input,
+  textarea {
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.05);
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.40);
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
+
+  .section-btn .btn-fill {
+    width: fit-content;
+  }
+}
+
+/*=======================================================================
+[05] consultancy  Area Responsive Start Hear
+=========================================================================*/
+@media only screen and (max-width: 1600px) {
+  .consultancy-box-two {
+    margin-left: 250px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .consultancy-box-two {
+    margin-left: 200px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .consultancy-box-two {
+    margin-left: 100px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .consultancy-box-two {
+    margin-left: 30px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .consultancy-left .video p {
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .consultancy-box {
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .location .responsive-map {
+    height: 1040px;
+  }
+}
+
+// Style two 
+.consultancy {
+  &-area-2 {
+    padding: 200px 0px 220px;
+    @media #{$md} {
+      padding: 150px 0px;
+    }
+    @media #{$sm} {
+      padding: 100px 0px;
+    }
+    .section-title { 
+      max-width: 1020px; 
+      margin: 0 auto; 
+      padding-bottom: 20px;
+      @media #{$sm} {
+        font-size: 40px;
+      }
+    }
+  }  
+}
+
+.video-icon-2 {
+  border-radius: 100px;
+  background: var(--gray, linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%));
+  box-shadow: 0px 7px 60px 0px rgba(0, 0, 0, 0.07);
+}
+
+.consultancy-text-2 {
+  max-width: 270px;
+  color: var(--white);
+}

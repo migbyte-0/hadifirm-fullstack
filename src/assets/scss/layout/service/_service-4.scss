@@ -1,0 +1,128 @@
+/*--------------------------------------------------------------
+SERVICE CSS
+--------------------------------------------------------------*/
+.service {
+ &-area-4 {
+  .section-title { 
+   margin: 0 auto;
+   max-width: 700px;
+    @media #{$md} {
+     max-width: 450px;
+    }
+  }
+ }
+ 
+ &-item-4 {
+   border-radius: 100px;
+   background-color: #0C1A1A;
+   text-align: center;
+   padding: 50px 30px 54px;
+   transition: var(--transition);
+   background-image: url(../images/shapes/dot-shape.png);
+   background-repeat: no-repeat;
+   background-position-x: 50%;
+   background-position-y: 92%;
+  &:hover { 
+    .service-btn-4 {
+     background-color: var(--orange-dark);
+    .service-icon-4 {
+     filter: brightness(0);
+    } 
+   }
+   .service-img-4 {
+    filter: brightness(0) saturate(100%) invert(76%) sepia(93%) saturate(2022%) hue-rotate(340deg) brightness(89%) contrast(89%);
+   }
+  }
+ }
+ 
+ &-left-4 {
+  @media #{$md} {
+    text-align: center;
+    max-width: 500px;
+    margin: auto;
+    padding-bottom: 25px;
+  }
+}
+
+&-content-3 {
+   @media #{$md} {
+      text-align: center;
+    } 
+}
+ 
+ &-title-4 {
+  color: var(--white);
+  font-family: var(--font-family-cormorant);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700;
+  text-transform: capitalize;
+  transition: var(--transition);
+  display: inline-block;
+  padding: 40px 0px 0px;
+  transition: var(--transition);
+  &:hover {
+   color: var(--orange-dark);
+  }
+ }
+ 
+ &-text-4 {
+  color:#8B9F9F;
+  text-align: center;  
+  font-size: 16px; 
+  font-weight: 400; 
+  padding: 15px 0px 23px;
+   
+ }
+ 
+ &-btn-4 {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  border: 1px solid #ffffff50;
+  margin: 0 auto;
+  transition: var(--transition); 
+ }
+ 
+ &-shape-four-1 {
+  position: absolute;
+  left: 0%;
+  bottom: -22%;
+  z-index: -1;
+ }
+ 
+}
+
+// Style five
+.service {
+  &-area-5 {
+    @media #{$sm} {
+      margin-bottom: 50px;  
+    } 
+  }
+  
+}
+
+// Style Six 
+.service {
+  &-area-6 {
+    .service-item-4 { 
+      background-color: transparent; 
+      padding: 50px 30px 54px;    
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      background-color:#0F1F1F;
+    }
+    @media #{$lg} {
+      padding-top: 50px;  
+    } 
+  }
+  
+  &-topwrap-6 {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+}

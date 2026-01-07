@@ -1,0 +1,94 @@
+/*--------------------------------------------------------------
+HEEADER CSS
+--------------------------------------------------------------*/
+.header {
+  &-area-2  {
+  .btn-fill-2 { 
+    padding: 28px 32px; 
+     @media only screen and (min-width: 1200px) and (max-width: 1280px) {
+     padding: 20px 14px;
+    }
+     @media only screen and (min-width: 1024px) and (max-width: 1100px) {
+     padding: 20px 14px;
+     margin-top: 20px;
+    }
+   }
+  
+  .nav-left-bg {
+   background-color: #0C1A1A; 
+   }
+   .main-menu-area { 
+    background-color: #0C1A1A;
+  }
+  
+  .main-menu {
+   padding-left: 0;
+  }
+ }
+}
+
+.header-text-2 {
+ color:#8B9F9F; 
+ font-size: 16px; 
+ font-weight: 400;  
+ padding-left: 60px;
+ @media only screen and (min-width: 1200px) and (max-width: 1280px) {
+  font-size: 13px;
+ }
+ @media #{$xl} {
+  padding-left: 0px;
+ }
+ 
+}
+
+.menu-top-2 {
+  padding: 20px 0 28px 16px;
+  border-bottom: 1px solid #ffffff10;
+  background-color: var(--main-secondary);
+  @media #{$md} {
+  border-bottom: 0px;
+ }
+}
+
+.menu-right-2 {
+ transform: translate(0px, 10px); 
+ @media #{$md} {
+  transform: translate(0px, -5px);  
+ }
+}
+
+.header-mail-2 {
+ background: linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%);
+ background-clip: text;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ font-size: 16px;
+ font-weight: 700;
+ transition: var(--transition);
+ &:hover {
+  color: var(--white);
+ }
+}
+
+.header-menuwrap-2 {
+ background-color: #0F1F1F;
+ box-shadow: 0px 30px 50px 0px #0C1919;
+ transform: translate(80px, -11px);
+ padding: 35px 50px;
+ @media #{$xxl} {
+   transform: translate(20px, -11px);
+ }
+ @media #{$xl} {
+  padding: 35px 18px;
+  background-color: transparent;
+  box-shadow: unset;
+ }
+ @media #{$md} {
+  padding: 0px;
+ }
+}
+ 
+
+.header-btn-two-up {
+  transform: translate(0px, -20px);
+}

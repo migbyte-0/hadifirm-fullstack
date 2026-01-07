@@ -1,0 +1,212 @@
+/*--------------------------------------------------------------
+TIMELINE CSS
+--------------------------------------------------------------*/
+
+/*=======================================================================
+Professionals skill Area Start Hear
+=========================================================================*/
+
+.professionals-shap::after {
+  content: "";
+  background-image: url(../images/svg/star-black.svg);
+  width: 110px;
+  height: 90px;
+  position: absolute;
+  top: 50px;
+  left: -50px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+
+/*=======================================================================
+Pagination Area  Start Hear
+=========================================================================*/
+
+/* Pagination */
+
+.pagination-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-number, .pagination-button {
+  font-size: 1.1rem;
+  background-color: var(--main-secondary);
+  border: none;
+  margin: 0rem 0.25rem;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: .2rem;
+  transition: all .6s ease 0s;
+  color: var(--white);
+}
+
+.hidden {
+  display: none;
+}
+
+.pagination-number:hover {
+  background: var(--main-tertiary);
+}
+
+.pagination-button:not(.disabled) {
+  background: var(--main-tertiary);
+  border-radius: 0;
+}
+
+.pagination-number.active {
+  color: var(--text-dark);
+  background: var(--main-tertiary);
+}
+
+
+
+/*=======================================================================
+Time Line Area  Start Hear
+=========================================================================*/
+
+.timeline {
+  position: relative;
+  margin: 100px auto;
+}
+
+.timeline-box {
+  padding: 10px 50px;
+  position: relative; 
+}
+
+.timeline-box-one {
+  position: relative;
+  top: -96px;
+}
+
+.timeline-box-two {
+  position: relative;
+  top: -20px;
+}
+
+.timeline-box-three {
+  position: relative;
+  top: 45px;
+}
+
+.text-box {
+  position: relative;
+  border-radius: 6px;
+}
+
+.timeline-box {
+  .img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    left: -63px;
+    top: 93px;
+    z-index: 10;
+    background: var(--main-tertiary);
+    position: relative;
+  }
+
+  .img-one {
+    top: 38px;
+  }
+
+  .img-two {
+    top: 37px;
+  }
+
+  .img-three {
+    top: 40px;
+  }
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 121%;
+  top: -41px;
+  margin-left: -3px;
+  background-color: var(--text-light); 
+}
+
+/* Section line  */
+
+.line {
+  position: relative;
+}
+
+.line-1 {
+  position: absolute;
+  left: 15%;
+  top: 0px;
+  width: 1px;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.1;
+  content: "";
+  z-index: 9;
+}
+
+
+// Skill Bar 
+.skill-item {
+  padding-bottom: 25px;
+}
+.skill-text {
+  color: var(--white); 
+  font-size: 16px; 
+  font-weight: 400; 
+  text-transform: capitalize;
+  padding-bottom: 15px;
+}
+
+.skill-bar-wrap {
+  background-color: #ffffff05;
+  display: block;
+  width: 100%;
+  height: 10px;
+}
+
+.skill-progress {
+  display: block;
+  width: auto;
+  height: 10px;
+  background: linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%);
+}
+
+.skill-wrap-2 {
+  .skill-bar-wrap {  
+    height: 5px;
+  }
+
+  .skill-progress {
+    height: 5px;
+  }
+}
+.skill-text-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 11px;
+  padding-bottom: 15px;
+  .skill-text {
+    padding-bottom: 0px;
+  }
+}
+
+.skill-purcent {  
+  font-size: 16px; 
+  font-weight: 400; 
+  background: var(--gray, linear-gradient(125deg, #D89A26 14.31%, #FFCD70 86.5%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
