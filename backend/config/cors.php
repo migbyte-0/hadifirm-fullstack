@@ -19,7 +19,8 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    // Use CORS_ALLOWED_ORIGINS env variable, fallback to '*' for development
+    'allowed_origins' => array_filter(explode(',', env('CORS_ALLOWED_ORIGINS', '*'))),
 
     'allowed_origins_patterns' => [],
 
@@ -29,6 +30,7 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => false,
+    // Set to true if your frontend needs to send cookies/auth headers
+    'supports_credentials' => env('CORS_SUPPORTS_CREDENTIALS', false),
 
 ];
