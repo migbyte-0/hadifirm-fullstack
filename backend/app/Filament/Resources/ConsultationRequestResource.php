@@ -162,9 +162,9 @@ class ConsultationRequestResource extends Resource
                         $message = WhatsappTemplate::getMessage('accept_request', 'ar', [
                             'name' => $record->full_name,
                             'date' => $record->appointment_date->format('Y/m/d'),
-                            'time' => $record->appointment_time,
-                            'type' => $record->consultation_type,
-                        ]) ?? "مرحباً {$record->full_name}، تم قبول طلب الاستشارة الخاص بك. موعدك: {$record->appointment_date->format('Y/m/d')} الساعة {$record->appointment_time}";
+                            'time' => $record->appointment_time->format('h:i A'),
+                            'consultation_type' => $record->consultation_type,
+                        ]) ?? "مرحباً {$record->full_name}، تم قبول طلب الاستشارة الخاص بك. موعدك: {$record->appointment_date->format('Y/m/d')} الساعة {$record->appointment_time->format('h:i A')}";
                         
                         $whatsappUrl = $record->getWhatsAppLink($message);
                         
@@ -202,10 +202,11 @@ class ConsultationRequestResource extends Resource
                             'name' => $record->full_name,
                             'phone' => $record->phone_number,
                             'date' => $record->appointment_date->format('Y/m/d'),
-                            'time' => $record->appointment_time,
-                            'type' => $record->consultation_type,
+                            'time' => $record->appointment_time->format('h:i A'),
+                            'consultation_type' => $record->consultation_type,
+                            'notes' => $record->notes ?? 'لا توجد ملاحظات',
                             'status' => $record->status_label,
-                        ]) ?? "طلب استشارة جديد:\nالاسم: {$record->full_name}\nالهاتف: {$record->phone_number}\nالنوع: {$record->consultation_type}\nالتاريخ: {$record->appointment_date->format('Y/m/d')}\nالوقت: {$record->appointment_time}";
+                        ]) ?? "طلب استشارة جديد:\nالاسم: {$record->full_name}\nالهاتف: {$record->phone_number}\nالنوع: {$record->consultation_type}\nالتاريخ: {$record->appointment_date->format('Y/m/d')}\nالوقت: {$record->appointment_time->format('h:i A')}";
                         
                         $whatsappUrl = 'https://wa.me/?text=' . urlencode($message);
                         
