@@ -45,20 +45,6 @@ class WhatsappTemplateResource extends Resource
                             ->maxLength(255)
                             ->helperText('مفتاح فريد للقالب (مثال: accept_request, share_request)'),
 
-                        Forms\Components\Select::make('type')
-                            ->label('نوع القالب')
-                            ->options([
-                                'accept' => 'قبول الطلب',
-                                'reject' => 'رفض الطلب',
-                                'share' => 'مشاركة الطلب',
-                                'reminder' => 'تذكير',
-                                'confirmation' => 'تأكيد الموعد',
-                                'follow_up' => 'متابعة',
-                                'general' => 'عام',
-                            ])
-                            ->required()
-                            ->native(false),
-
                         Forms\Components\Toggle::make('is_active')
                             ->label('مفعل')
                             ->default(true)
@@ -68,11 +54,23 @@ class WhatsappTemplateResource extends Resource
 
                 Forms\Components\Section::make('محتوى الرسالة')
                     ->schema([
-                        Forms\Components\Textarea::make('template')
-                            ->label('نص الرسالة')
+                        Forms\Components\Textarea::make('message_ar')
+                            ->label('نص الرسالة (عربي)')
                             ->required()
                             ->rows(6)
                             ->helperText('يمكنك استخدام المتغيرات التالية: {name}, {phone}, {consultation_type}, {date}, {time}, {notes}')
+                            ->columnSpanFull(),
+
+                        Forms\Components\Textarea::make('message_en')
+                            ->label('نص الرسالة (إنجليزي)')
+                            ->rows(6)
+                            ->helperText('اختياري - نسخة إنجليزية من الرسالة')
+                            ->columnSpanFull(),
+
+                        Forms\Components\Textarea::make('description')
+                            ->label('الوصف')
+                            ->rows(3)
+                            ->helperText('وصف اختياري للقالب')
                             ->columnSpanFull(),
 
                         Forms\Components\Placeholder::make('preview')
@@ -117,31 +115,7 @@ class WhatsappTemplateResource extends Resource
                     ->copyMessage('تم نسخ المفتاح')
                     ->fontFamily('mono'),
 
-                Tables\Columns\TextColumn::make('type')
-                    ->label('النوع')
-                    ->badge()
-                    ->formatStateUsing(fn (string $state): string => match ($state) {
-                        'accept' => 'قبول',
-                        'reject' => 'رفض',
-                        'share' => 'مشاركة',
-                        'reminder' => 'تذكير',
-                        'confirmation' => 'تأكيد',
-                        'follow_up' => 'متابعة',
-                        'general' => 'عام',
-                        default => $state,
-                    })
-                    ->color(fn (string $state): string => match ($state) {
-                        'accept' => 'success',
-                        'reject' => 'danger',
-                        'share' => 'info',
-                        'reminder' => 'warning',
-                        'confirmation' => 'success',
-                        'follow_up' => 'gray',
-                        'general' => 'gray',
-                        default => 'gray',
-                    }),
-
-                Tables\Columns\TextColumn::make('template')
+                Tables\Columns\TextColumn::make('message_ar')
                     ->label('نص الرسالة')
                     ->limit(60)
                     ->wrap(),
@@ -157,18 +131,6 @@ class WhatsappTemplateResource extends Resource
                     ->sortable(),
             ])
             ->filters([
-                Tables\Filters\SelectFilter::make('type')
-                    ->label('النوع')
-                    ->options([
-                        'accept' => 'قبول',
-                        'reject' => 'رفض',
-                        'share' => 'مشاركة',
-                        'reminder' => 'تذكير',
-                        'confirmation' => 'تأكيد',
-                        'follow_up' => 'متابعة',
-                        'general' => 'عام',
-                    ]),
-
                 Tables\Filters\TernaryFilter::make('is_active')
                     ->label('الحالة')
                     ->placeholder('الكل')
@@ -183,7 +145,7 @@ class WhatsappTemplateResource extends Resource
                     ->modalDescription(fn (WhatsappTemplate $record) => str_replace(
                         ['{name}', '{phone}', '{consultation_type}', '{date}', '{time}', '{notes}'],
                         ['أحمد محمد', '0501234567', 'استشارة قانونية', '2024-01-15', '10:00 ص', 'ملاحظات تجريبية'],
-                        $record->template
+                        $record->message_ar
                     ))
                     ->modalSubmitAction(false)
                     ->modalCancelActionLabel('إغلاق'),
@@ -196,7 +158,7 @@ class WhatsappTemplateResource extends Resource
                     Tables\Actions\DeleteBulkAction::make()->label('حذف المحدد'),
                 ]),
             ])
-            ->defaultSort('type');
+            ->defaultSort('name');
     }
 
     public static function getRelations(): array
