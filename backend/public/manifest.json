@@ -1,0 +1,36 @@
+{
+    "name": "لوحة تحكم مكتب المحامي هادي الحصين",
+    "short_name": "لوحة التحكم",
+    "description": "لوحة تحكم إدارة طلبات الاستشارات القانونية",
+    "start_url": "/admin",
+    "scope": "/admin",
+    "display": "standalone",
+    "background_color": "#1e293b",
+    "theme_color": "#f59e0b",
+    "orientation": "any",
+    "dir": "rtl",
+    "lang": "ar",
+    "icons": [
+        {
+            "src": "/images/icons/icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "maskable any"
+        }
+    ],
+    "categories": ["business", "productivity"],
+    "shortcuts": [
+        {
+            "name": "طلبات الاستشارة",
+            "short_name": "الطلبات",
+            "description": "عرض طلبات الاستشارة",
+            "url": "/admin/consultation-requests"
+        },
+        {
+            "name": "لوحة التحكم",
+            "short_name": "الرئيسية",
+            "description": "الصفحة الرئيسية",
+            "url": "/admin"
+        }
+    ]
+}
