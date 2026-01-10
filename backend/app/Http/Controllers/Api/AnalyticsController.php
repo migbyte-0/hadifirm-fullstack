@@ -31,21 +31,21 @@ class AnalyticsController extends Controller
         $analytics = VisitorAnalytics::where('session_id', $request->session_id)->first();
 
         if ($analytics) {
-            // Update existing record
+            // Update existing record - increment pages viewed
             $analytics->update([
-                'page_visited' => $request->page,
-                'last_activity_at' => now(),
+                'pages_viewed' => $analytics->pages_viewed + 1,
             ]);
         } else {
             // Create new record
             $analytics = VisitorAnalytics::create([
                 'session_id' => $request->session_id,
-                'page_visited' => $request->page,
+                'landing_page' => $request->page,
                 'ip_address' => $request->ip(),
                 'user_agent' => $request->userAgent(),
                 'referrer' => $request->referrer,
                 'device_type' => $this->detectDeviceType($request->userAgent()),
                 'browser' => $this->detectBrowser($request->userAgent()),
+                'entered_at' => now(),
                 'country' => null, // Can be implemented with GeoIP
                 'city' => null,
             ]);
@@ -76,8 +76,8 @@ class AnalyticsController extends Controller
 
         VisitorAnalytics::where('session_id', $request->session_id)
             ->update([
-                'time_on_page' => $request->time_on_page,
-                'last_activity_at' => now(),
+                'time_on_site' => $request->time_on_page,
+                'left_at' => now(),
             ]);
 
         return response()->json(['success' => true]);
@@ -103,7 +103,6 @@ class AnalyticsController extends Controller
             ->update([
                 'clicked_consultation' => true,
                 'consultation_clicked_at' => now(),
-                'last_activity_at' => now(),
             ]);
 
         return response()->json(['success' => true]);
