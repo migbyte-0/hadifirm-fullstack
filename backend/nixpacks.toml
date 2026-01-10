@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["php84", "php84Extensions.pdo_pgsql", "php84Extensions.gd", "php84Extensions.bcmath", "php84Extensions.zip", "php84Extensions.intl", "php84Extensions.redis", "php84Extensions.mbstring", "php84Extensions.xml", "php84Extensions.curl", "php84Extensions.openssl", "nodejs", "yarn"]
+nixPkgs = ["php82", "php82Extensions.pdo_pgsql", "php82Extensions.gd", "php82Extensions.bcmath", "php82Extensions.zip", "php82Extensions.intl", "php82Extensions.mbstring", "php82Extensions.xml", "php82Extensions.curl", "nodejs", "yarn"]
 
 [phases.build]
 cmds = [
