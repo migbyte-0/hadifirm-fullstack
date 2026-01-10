@@ -30,15 +30,15 @@ class EngagementStatsWidget extends BaseWidget
 
         // Average time on page (in seconds)
         $avgTimeOnPage = VisitorAnalytics::where('created_at', '>=', $thisMonth)
-            ->whereNotNull('time_on_page')
-            ->avg('time_on_page');
+            ->whereNotNull('time_on_site')
+            ->avg('time_on_site');
         $avgTimeFormatted = $avgTimeOnPage 
             ? gmdate('i:s', (int) $avgTimeOnPage) 
             : '00:00';
 
         // Visitors who stayed more than 30 seconds
         $engagedVisitors = VisitorAnalytics::where('created_at', '>=', $thisMonth)
-            ->where('time_on_page', '>=', 30)
+            ->where('time_on_site', '>=', 30)
             ->count();
         
         $engagementRate = $monthVisitors > 0 
@@ -48,8 +48,8 @@ class EngagementStatsWidget extends BaseWidget
         // Bounce rate (visitors who left within 10 seconds)
         $bouncedVisitors = VisitorAnalytics::where('created_at', '>=', $thisMonth)
             ->where(function ($query) {
-                $query->whereNull('time_on_page')
-                    ->orWhere('time_on_page', '<', 10);
+                $query->whereNull('time_on_site')
+                    ->orWhere('time_on_site', '<', 10);
             })
             ->count();
         
