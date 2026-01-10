@@ -3,7 +3,7 @@
     "short_name": "لوحة التحكم",
     "description": "لوحة تحكم إدارة طلبات الاستشارات القانونية",
     "start_url": "/admin",
-    "scope": "/admin",
+    "scope": "/",
     "display": "standalone",
     "background_color": "#1e293b",
     "theme_color": "#f59e0b",
@@ -23,14 +23,28 @@
         {
             "name": "طلبات الاستشارة",
             "short_name": "الطلبات",
-            "description": "عرض طلبات الاستشارة",
+            "description": "عرض وإدارة طلبات الاستشارة",
             "url": "/admin/consultation-requests"
         },
         {
-            "name": "لوحة التحكم",
-            "short_name": "الرئيسية",
-            "description": "الصفحة الرئيسية",
-            "url": "/admin"
+            "name": "أنواع الاستشارات",
+            "short_name": "الأنواع",
+            "description": "إدارة أنواع الاستشارات",
+            "url": "/admin/consultation-types"
+        },
+        {
+            "name": "المواعيد المتاحة",
+            "short_name": "المواعيد",
+            "description": "إدارة المواعيد المتاحة",
+            "url": "/admin/available-slots"
+        },
+        {
+            "name": "قوالب الواتساب",
+            "short_name": "الواتساب",
+            "description": "إدارة قوالب رسائل الواتساب",
+            "url": "/admin/whatsapp-templates"
         }
-    ]
+    ],
+    "display_override": ["standalone", "minimal-ui"],
+    "prefer_related_applications": false
 }
