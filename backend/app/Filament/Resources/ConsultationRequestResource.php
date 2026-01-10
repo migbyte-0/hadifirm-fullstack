@@ -147,33 +147,132 @@ class ConsultationRequestResource extends Resource
                     ->query(fn ($query) => $query->whereDate('created_at', today())),
             ])
             ->actions([
+                // Direct WhatsApp contact button
+                Action::make('whatsapp')
+                    ->label('واتساب')
+                    ->icon('heroicon-o-chat-bubble-left-ellipsis')
+                    ->color('success')
+                    ->url(fn (ConsultationRequest $record) => $record->getWhatsAppLink(''), shouldOpenInNewTab: true),
+
+                // Quick actions menu (templates)
+                Tables\Actions\ActionGroup::make([
+                    Action::make('send_accept')
+                        ->label('إرسال رسالة القبول')
+                        ->icon('heroicon-o-check-circle')
+                        ->color('success')
+                        ->action(function (ConsultationRequest $record) {
+                            $record->update(['status' => 'accepted']);
+                            
+                            $message = WhatsappTemplate::getMessage('accept_request', 'ar', [
+                                'name' => $record->full_name,
+                                'date' => $record->appointment_date->format('Y/m/d'),
+                                'time' => $record->appointment_time->format('h:i A'),
+                                'consultation_type' => $record->consultation_type,
+                            ]) ?? "مرحباً {$record->full_name}، تم قبول طلب الاستشارة الخاص بك.";
+                            
+                            Notification::make()
+                                ->title('تم قبول الطلب')
+                                ->success()
+                                ->send();
+                        })
+                        ->after(function (ConsultationRequest $record) {
+                            $message = WhatsappTemplate::getMessage('accept_request', 'ar', [
+                                'name' => $record->full_name,
+                                'date' => $record->appointment_date->format('Y/m/d'),
+                                'time' => $record->appointment_time->format('h:i A'),
+                                'consultation_type' => $record->consultation_type,
+                            ]) ?? "مرحباً {$record->full_name}، تم قبول طلب الاستشارة الخاص بك.";
+                            
+                            $whatsappUrl = $record->getWhatsAppLink($message);
+                            
+                            return redirect()->away($whatsappUrl);
+                        }),
+
+                    Action::make('send_reject')
+                        ->label('إرسال رسالة الرفض')
+                        ->icon('heroicon-o-x-circle')
+                        ->color('danger')
+                        ->action(function (ConsultationRequest $record) {
+                            $record->update(['status' => 'rejected']);
+                            
+                            $message = WhatsappTemplate::getMessage('reject_request', 'ar', [
+                                'name' => $record->full_name,
+                            ]) ?? "مرحباً {$record->full_name}، نأسف لإبلاغكم بأنه تعذر قبول طلب الاستشارة.";
+                            
+                            $whatsappUrl = $record->getWhatsAppLink($message);
+                            
+                            Notification::make()
+                                ->title('تم رفض الطلب')
+                                ->warning()
+                                ->send();
+                            
+                            return redirect()->away($whatsappUrl);
+                        }),
+
+                    Action::make('send_reminder')
+                        ->label('إرسال تذكير بالموعد')
+                        ->icon('heroicon-o-bell-alert')
+                        ->color('warning')
+                        ->action(function (ConsultationRequest $record) {
+                            $message = WhatsappTemplate::getMessage('appointment_reminder', 'ar', [
+                                'name' => $record->full_name,
+                                'date' => $record->appointment_date->format('Y/m/d'),
+                                'time' => $record->appointment_time->format('h:i A'),
+                                'consultation_type' => $record->consultation_type,
+                            ]) ?? "مرحباً {$record->full_name}، تذكير بموعدك.";
+                            
+                            $whatsappUrl = $record->getWhatsAppLink($message);
+                            
+                            Notification::make()
+                                ->title('تم فتح رسالة التذكير')
+                                ->info()
+                                ->send();
+                            
+                            return redirect()->away($whatsappUrl);
+                        }),
+
+                    Action::make('share')
+                        ->label('مشاركة الطلب')
+                        ->icon('heroicon-o-share')
+                        ->color('info')
+                        ->action(function (ConsultationRequest $record) {
+                            $message = WhatsappTemplate::getMessage('share_request', 'ar', [
+                                'name' => $record->full_name,
+                                'phone' => $record->phone_number,
+                                'date' => $record->appointment_date->format('Y/m/d'),
+                                'time' => $record->appointment_time->format('h:i A'),
+                                'consultation_type' => $record->consultation_type,
+                                'notes' => $record->notes ?? 'لا توجد ملاحظات',
+                                'status' => $record->status_label,
+                            ]) ?? "طلب استشارة جديد:\nالاسم: {$record->full_name}";
+                            
+                            $whatsappUrl = 'https://wa.me/?text=' . urlencode($message);
+                            
+                            return redirect()->away($whatsappUrl);
+                        }),
+                ])
+                    ->label('رسائل واتساب')
+                    ->icon('heroicon-o-cog-6-tooth')
+                    ->color('gray')
+                    ->button(),
+
+                // Status actions for pending requests
                 Action::make('accept')
                     ->label('قبول')
                     ->icon('heroicon-o-check-circle')
                     ->color('success')
                     ->requiresConfirmation()
                     ->modalHeading('قبول الطلب')
-                    ->modalDescription('هل أنت متأكد من قبول هذا الطلب؟ سيتم فتح واتساب لإرسال رسالة للعميل.')
-                    ->modalSubmitActionLabel('نعم، قبول وإرسال')
+                    ->modalDescription('هل أنت متأكد من قبول هذا الطلب؟')
+                    ->modalSubmitActionLabel('نعم، قبول')
                     ->visible(fn (ConsultationRequest $record) => $record->status === 'pending')
                     ->action(function (ConsultationRequest $record) {
                         $record->update(['status' => 'accepted']);
-                        
-                        $message = WhatsappTemplate::getMessage('accept_request', 'ar', [
-                            'name' => $record->full_name,
-                            'date' => $record->appointment_date->format('Y/m/d'),
-                            'time' => $record->appointment_time->format('h:i A'),
-                            'consultation_type' => $record->consultation_type,
-                        ]) ?? "مرحباً {$record->full_name}، تم قبول طلب الاستشارة الخاص بك. موعدك: {$record->appointment_date->format('Y/m/d')} الساعة {$record->appointment_time->format('h:i A')}";
-                        
-                        $whatsappUrl = $record->getWhatsAppLink($message);
                         
                         Notification::make()
                             ->title('تم قبول الطلب')
                             ->success()
                             ->send();
-
-                        return redirect()->away($whatsappUrl);
                     }),
 
                 Action::make('reject')
@@ -193,26 +292,6 @@ class ConsultationRequestResource extends Resource
                             ->send();
                     }),
 
-                Action::make('share')
-                    ->label('مشاركة')
-                    ->icon('heroicon-o-share')
-                    ->color('info')
-                    ->action(function (ConsultationRequest $record) {
-                        $message = WhatsappTemplate::getMessage('share_request', 'ar', [
-                            'name' => $record->full_name,
-                            'phone' => $record->phone_number,
-                            'date' => $record->appointment_date->format('Y/m/d'),
-                            'time' => $record->appointment_time->format('h:i A'),
-                            'consultation_type' => $record->consultation_type,
-                            'notes' => $record->notes ?? 'لا توجد ملاحظات',
-                            'status' => $record->status_label,
-                        ]) ?? "طلب استشارة جديد:\nالاسم: {$record->full_name}\nالهاتف: {$record->phone_number}\nالنوع: {$record->consultation_type}\nالتاريخ: {$record->appointment_date->format('Y/m/d')}\nالوقت: {$record->appointment_time->format('h:i A')}";
-                        
-                        $whatsappUrl = 'https://wa.me/?text=' . urlencode($message);
-                        
-                        return redirect()->away($whatsappUrl);
-                    }),
-
                 Tables\Actions\ViewAction::make()
                     ->label('عرض'),
                 Tables\Actions\EditAction::make()
@@ -225,6 +304,40 @@ class ConsultationRequestResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\BulkAction::make('bulk_accept')
+                        ->label('قبول المحدد')
+                        ->icon('heroicon-o-check-circle')
+                        ->color('success')
+                        ->requiresConfirmation()
+                        ->modalHeading('قبول الطلبات المحددة')
+                        ->modalDescription('هل أنت متأكد من قبول جميع الطلبات المحددة؟')
+                        ->modalSubmitActionLabel('نعم، قبول الكل')
+                        ->modalCancelActionLabel('إلغاء')
+                        ->action(function ($records) {
+                            $records->each(fn ($record) => $record->update(['status' => 'accepted']));
+                            Notification::make()
+                                ->title('تم قبول الطلبات المحددة')
+                                ->success()
+                                ->send();
+                        }),
+                    
+                    Tables\Actions\BulkAction::make('bulk_reject')
+                        ->label('رفض المحدد')
+                        ->icon('heroicon-o-x-circle')
+                        ->color('danger')
+                        ->requiresConfirmation()
+                        ->modalHeading('رفض الطلبات المحددة')
+                        ->modalDescription('هل أنت متأكد من رفض جميع الطلبات المحددة؟')
+                        ->modalSubmitActionLabel('نعم، رفض الكل')
+                        ->modalCancelActionLabel('إلغاء')
+                        ->action(function ($records) {
+                            $records->each(fn ($record) => $record->update(['status' => 'rejected']));
+                            Notification::make()
+                                ->title('تم رفض الطلبات المحددة')
+                                ->warning()
+                                ->send();
+                        }),
+
                     Tables\Actions\DeleteBulkAction::make()
                         ->label('حذف المحدد')
                         ->modalHeading('حذف الطلبات المحددة')
