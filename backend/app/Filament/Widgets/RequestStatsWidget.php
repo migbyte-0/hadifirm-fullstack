@@ -45,10 +45,7 @@ class RequestStatsWidget extends BaseWidget
                 ->description('تنتظر المراجعة')
                 ->descriptionIcon('heroicon-m-clock')
                 ->color('warning')
-                ->extraAttributes([
-                    'class' => 'cursor-pointer',
-                    'wire:click' => "redirect('/admin/consultation-requests?tableFilters[status][value]=pending')",
-                ]),
+                ->url('/admin/consultation-requests?tableFilters[status][value]=pending'),
 
             Stat::make('طلبات اليوم', number_format($todayRequests))
                 ->description('طلبات جديدة اليوم')
