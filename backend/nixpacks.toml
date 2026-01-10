@@ -1,9 +1,9 @@
 [phases.setup]
-nixPkgs = ["php82", "php82Extensions.pdo_pgsql", "php82Extensions.gd", "php82Extensions.bcmath", "php82Extensions.zip", "php82Extensions.intl", "php82Extensions.redis", "nodejs", "yarn"]
+nixPkgs = ["php84", "php84Extensions.pdo_pgsql", "php84Extensions.gd", "php84Extensions.bcmath", "php84Extensions.zip", "php84Extensions.intl", "php84Extensions.redis", "php84Extensions.mbstring", "php84Extensions.xml", "php84Extensions.curl", "php84Extensions.openssl", "nodejs", "yarn"]
 
 [phases.build]
 cmds = [
-    "composer install --no-dev --optimize-autoloader",
+    "composer install --no-dev --optimize-autoloader --ignore-platform-reqs",
     "php artisan optimize:clear",
     "php artisan config:cache",
     "php artisan route:cache",
