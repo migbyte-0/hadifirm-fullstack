@@ -52,7 +52,8 @@ class ConsultationRequest extends Model
         if (!str_starts_with($phone, '966')) {
             $phone = '966' . ltrim($phone, '0');
         }
-        return 'https://wa.me/' . $phone . '?text=' . urlencode($message);
+        // Use rawurlencode for proper emoji/unicode support in WhatsApp
+        return 'https://wa.me/' . $phone . '?text=' . rawurlencode($message);
     }
 
     public function scopePending($query)

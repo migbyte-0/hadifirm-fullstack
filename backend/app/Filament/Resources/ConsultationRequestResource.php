@@ -217,7 +217,7 @@ class ConsultationRequestResource extends Resource
                                 'status' => $record->status_label,
                             ]) ?? "طلب استشارة جديد:\nالاسم: {$record->full_name}";
                             
-                            return 'https://wa.me/?text=' . urlencode($message);
+                            return 'https://wa.me/?text=' . rawurlencode($message);
                         }, shouldOpenInNewTab: true),
                 ])
                     ->label('رسائل واتساب')
