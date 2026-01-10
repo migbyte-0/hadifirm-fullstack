@@ -22,4 +22,17 @@ class EditConsultationRequest extends EditRecord
     {
         return $this->getResource()::getUrl('index');
     }
+
+    protected function getSavedNotificationTitle(): ?string
+    {
+        return 'تم حفظ التغييرات بنجاح';
+    }
+
+    protected function getFormActions(): array
+    {
+        return [
+            $this->getSaveFormAction()->label('حفظ التغييرات'),
+            $this->getCancelFormAction()->label('إلغاء'),
+        ];
+    }
 }
