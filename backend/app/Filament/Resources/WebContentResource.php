@@ -161,8 +161,13 @@ class WebContentResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->label('حذف المحدد')
+                        ->modalHeading('حذف المحتوى المحدد')
+                        ->modalDescription('هل أنت متأكد من حذف جميع العناصر المحددة؟')
+                        ->modalSubmitActionLabel('نعم، احذف الكل')
+                        ->modalCancelActionLabel('إلغاء'),
+                ])->label('إجراءات جماعية'),
             ])
             ->defaultSort('section');
     }

@@ -104,8 +104,13 @@ class AvailableSlotResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->label('حذف المحدد')
+                        ->modalHeading('حذف المواعيد المحددة')
+                        ->modalDescription('هل أنت متأكد من حذف جميع المواعيد المحددة؟')
+                        ->modalSubmitActionLabel('نعم، احذف الكل')
+                        ->modalCancelActionLabel('إلغاء'),
+                ])->label('إجراءات جماعية'),
             ])
             ->defaultSort('date', 'asc');
     }

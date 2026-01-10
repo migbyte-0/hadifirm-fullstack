@@ -225,8 +225,12 @@ class ConsultationRequestResource extends Resource
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make()
-                        ->label('حذف المحدد'),
-                ]),
+                        ->label('حذف المحدد')
+                        ->modalHeading('حذف الطلبات المحددة')
+                        ->modalDescription('هل أنت متأكد من حذف جميع الطلبات المحددة؟')
+                        ->modalSubmitActionLabel('نعم، احذف الكل')
+                        ->modalCancelActionLabel('إلغاء'),
+                ])->label('إجراءات جماعية'),
             ])
             ->defaultSort('created_at', 'desc')
             ->poll('30s');

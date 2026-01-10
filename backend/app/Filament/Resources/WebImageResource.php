@@ -130,8 +130,13 @@ class WebImageResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->label('حذف المحدد')
+                        ->modalHeading('حذف الصور المحددة')
+                        ->modalDescription('هل أنت متأكد من حذف جميع الصور المحددة؟')
+                        ->modalSubmitActionLabel('نعم، احذف الكل')
+                        ->modalCancelActionLabel('إلغاء'),
+                ])->label('إجراءات جماعية'),
             ]);
     }
 

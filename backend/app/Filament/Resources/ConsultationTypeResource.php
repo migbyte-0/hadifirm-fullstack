@@ -93,9 +93,16 @@ class ConsultationTypeResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->label('حذف المحدد')
+                        ->modalHeading('حذف العناصر المحددة')
+                        ->modalDescription('هل أنت متأكد من حذف جميع العناصر المحددة؟ لا يمكن التراجع عن هذا الإجراء.')
+                        ->modalSubmitActionLabel('نعم، احذف الكل')
+                        ->modalCancelActionLabel('إلغاء')
+                        ->successNotificationTitle('تم حذف العناصر المحددة بنجاح'),
+                ])->label('إجراءات جماعية'),
             ])
+            ->checkIfRecordIsSelectableUsing(fn (): bool => true)
             ->reorderable('sort_order')
             ->defaultSort('sort_order');
     }
