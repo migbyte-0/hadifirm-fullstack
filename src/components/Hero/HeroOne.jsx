@@ -8,6 +8,7 @@ import HeroOneShape from "@/assets/images/shapes/hero-one-shape.png";
 import HeroShapeBg from "@/assets/images/shapes/hero-shape-bg.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAnalytics } from "@/context/AnalyticsContext";
 
 const slides = [
   {
@@ -41,6 +42,12 @@ const slides = [
 
 export default function HeroOne() {
   const [currentSlideNumber, setCurrentSlideNumber] = useState(1);
+  const { trackConsultationClick } = useAnalytics();
+  
+  const handleConsultationClick = () => {
+    trackConsultationClick();
+  };
+  
   const sliderOptions = {
     speed: 1500,
     slidesToShow: 1,
@@ -82,8 +89,9 @@ export default function HeroOne() {
                             <div className="fade-slide left" data-delay="0.4">
                               {slide.btnText && (
                                 <Link
-                                  to="/contact"
+                                  to="/consultation"
                                   className="btn-fill h-btn gap-2 d-flex align-items-center"
+                                  onClick={handleConsultationClick}
                                 >
                                   {slide.btnText}
                                   <img
