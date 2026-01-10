@@ -25,7 +25,7 @@ export const AnalyticsProvider = ({ children }) => {
   useEffect(() => {
     const trackVisit = async () => {
       try {
-        await axios.post(`${API_BASE_URL}/analytics/track-visit`, {
+        await axios.post(`${API_BASE_URL}/analytics/visit`, {
           page: location.pathname,
           session_id: sessionId.current,
           referrer: document.referrer || null,
@@ -51,7 +51,7 @@ export const AnalyticsProvider = ({ children }) => {
       });
       
       navigator.sendBeacon(
-        `${API_BASE_URL}/analytics/track-time`,
+        `${API_BASE_URL}/analytics/time`,
         new Blob([data], { type: 'application/json' })
       );
     };
@@ -63,7 +63,7 @@ export const AnalyticsProvider = ({ children }) => {
       // Also track when navigating within SPA
       const timeOnPage = Math.round((Date.now() - startTimeRef.current) / 1000);
       if (timeOnPage > 0) {
-        axios.post(`${API_BASE_URL}/analytics/track-time`, {
+        axios.post(`${API_BASE_URL}/analytics/time`, {
           session_id: sessionId.current,
           time_on_page: timeOnPage,
         }).catch(() => {});
