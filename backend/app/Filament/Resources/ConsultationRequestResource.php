@@ -160,7 +160,11 @@ class ConsultationRequestResource extends Resource
                         ->label('إرسال رسالة القبول')
                         ->icon('heroicon-o-check-circle')
                         ->color('success')
-                        ->url(function (ConsultationRequest $record) {
+                        ->requiresConfirmation()
+                        ->modalHeading('إرسال رسالة القبول')
+                        ->modalDescription('سيتم تغيير حالة الطلب إلى "مقبول" وفتح واتساب لإرسال الرسالة')
+                        ->modalSubmitActionLabel('إرسال')
+                        ->action(function (ConsultationRequest $record) {
                             $record->update(['status' => 'accepted']);
                             
                             $message = WhatsappTemplate::getMessage('accept_request', 'ar', [
@@ -170,22 +174,49 @@ class ConsultationRequestResource extends Resource
                                 'consultation_type' => $record->consultation_type,
                             ]) ?? "مرحباً {$record->full_name}، تم قبول طلب الاستشارة الخاص بك.";
                             
-                            return $record->getWhatsAppLink($message);
-                        }, shouldOpenInNewTab: true),
+                            Notification::make()
+                                ->title('تم تغيير الحالة إلى مقبول')
+                                ->success()
+                                ->send();
+                        })
+                        ->after(function (ConsultationRequest $record) {
+                            $message = WhatsappTemplate::getMessage('accept_request', 'ar', [
+                                'name' => $record->full_name,
+                                'date' => $record->appointment_date->format('Y/m/d'),
+                                'time' => $record->appointment_time->format('h:i A'),
+                                'consultation_type' => $record->consultation_type,
+                            ]) ?? "مرحباً {$record->full_name}، تم قبول طلب الاستشارة الخاص بك.";
+                            
+                            return redirect()->away($record->getWhatsAppLink($message));
+                        }),
 
                     Action::make('send_reject')
                         ->label('إرسال رسالة الرفض')
                         ->icon('heroicon-o-x-circle')
                         ->color('danger')
-                        ->url(function (ConsultationRequest $record) {
+                        ->requiresConfirmation()
+                        ->modalHeading('إرسال رسالة الرفض')
+                        ->modalDescription('سيتم تغيير حالة الطلب إلى "مرفوض" وفتح واتساب لإرسال الرسالة')
+                        ->modalSubmitActionLabel('إرسال')
+                        ->action(function (ConsultationRequest $record) {
                             $record->update(['status' => 'rejected']);
                             
                             $message = WhatsappTemplate::getMessage('reject_request', 'ar', [
                                 'name' => $record->full_name,
                             ]) ?? "مرحباً {$record->full_name}، نأسف لإبلاغكم بأنه تعذر قبول طلب الاستشارة.";
                             
-                            return $record->getWhatsAppLink($message);
-                        }, shouldOpenInNewTab: true),
+                            Notification::make()
+                                ->title('تم تغيير الحالة إلى مرفوض')
+                                ->warning()
+                                ->send();
+                        })
+                        ->after(function (ConsultationRequest $record) {
+                            $message = WhatsappTemplate::getMessage('reject_request', 'ar', [
+                                'name' => $record->full_name,
+                            ]) ?? "مرحباً {$record->full_name}، نأسف لإبلاغكم بأنه تعذر قبول طلب الاستشارة.";
+                            
+                            return redirect()->away($record->getWhatsAppLink($message));
+                        }),
 
                     Action::make('send_reminder')
                         ->label('إرسال تذكير بالموعد')
