@@ -50,3 +50,15 @@ Route::get('/home-page/text/{homeVersion}', [HomePageController::class, 'getCont
 Route::get('/home-page/media/{homeVersion}', [HomePageController::class, 'getMedia']);
 Route::get('/home-page/items/{homeVersion}', [HomePageController::class, 'getItems']);
 Route::get('/home-page/items/{homeVersion}/{section}', [HomePageController::class, 'getSectionItems']);
+
+// Debug endpoint to check database status
+Route::get('/home-page/debug', function() {
+    $tables = \Illuminate\Support\Facades\DB::select("SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'");
+    $contentCount = \Illuminate\Support\Facades\DB::table('home_page_contents')->count();
+    $itemsCount = \Illuminate\Support\Facades\DB::table('home_page_items')->count();
+    return response()->json([
+        'tables' => array_map(fn($t) => $t->table_name, $tables),
+        'content_count' => $contentCount,
+        'items_count' => $itemsCount,
+    ]);
+});
