@@ -16,7 +16,7 @@ export function HomeContentProvider({ children, homeVersion = 'home_two' }) {
     const fetchContent = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`${API_BASE_URL}/home-page/${homeVersion}`);
+        const response = await axios.get(`${API_BASE_URL}/home-page/content/${homeVersion}`);
         
         if (response.data.success) {
           setContent(response.data.data.content || {});

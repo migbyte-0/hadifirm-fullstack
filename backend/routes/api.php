@@ -44,11 +44,9 @@ Route::prefix('settings')->group(function () {
 });
 
 // Home Page Content Routes (CMS)
-Route::prefix('home-page')->group(function () {
-    Route::get('/{homeVersion?}', [HomePageController::class, 'getAllContent'])->where('homeVersion', 'home_one|home_two|home_three|home_four|home_five');
-    Route::get('/{homeVersion}/section/{section}', [HomePageController::class, 'getSection']);
-    Route::get('/{homeVersion}/content', [HomePageController::class, 'getContent']);
-    Route::get('/{homeVersion}/media', [HomePageController::class, 'getMedia']);
-    Route::get('/{homeVersion}/items', [HomePageController::class, 'getItems']);
-    Route::get('/{homeVersion}/items/{section}', [HomePageController::class, 'getSectionItems']);
-});
+Route::get('/home-page/content/{homeVersion}', [HomePageController::class, 'getAllContent']);
+Route::get('/home-page/section/{homeVersion}/{section}', [HomePageController::class, 'getSection']);
+Route::get('/home-page/text/{homeVersion}', [HomePageController::class, 'getContent']);
+Route::get('/home-page/media/{homeVersion}', [HomePageController::class, 'getMedia']);
+Route::get('/home-page/items/{homeVersion}', [HomePageController::class, 'getItems']);
+Route::get('/home-page/items/{homeVersion}/{section}', [HomePageController::class, 'getSectionItems']);
