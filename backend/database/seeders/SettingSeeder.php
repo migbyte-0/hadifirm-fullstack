@@ -94,10 +94,22 @@ class SettingSeeder extends Seeder
                 'type' => 'text',
                 'description' => 'رقم الواتساب لإرسال الإشعارات',
             ],
+            
+            // Home Screen Settings
+            [
+                'group' => 'general',
+                'key' => 'active_home_screen',
+                'value' => '1',
+                'type' => 'text',
+                'description' => 'تصميم الصفحة الرئيسية النشط (1-5)',
+            ],
         ];
 
         foreach ($settings as $setting) {
-            Setting::create($setting);
+            Setting::updateOrCreate(
+                ['key' => $setting['key']],
+                $setting
+            );
         }
     }
 }
