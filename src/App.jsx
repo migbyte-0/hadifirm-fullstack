@@ -1,10 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AnalyticsProvider } from "@/context/AnalyticsContext";
-import HomeOne from "@/pages";
-import HomeTwo from "@/pages/home-two";
-import HomeThree from "@/pages/home-three";
-import HomeFour from "@/pages/home-four";
-import HomeFive from "@/pages/home-five";
+import DynamicHome from "@/components/DynamicHome/DynamicHome";
 import Services from "@/pages/services";
 import About from "@/pages/about";
 import ServiceDetail from "@/pages/service-detail";
@@ -30,12 +26,8 @@ function App() {
     <BrowserRouter>
       <AnalyticsProvider>
         <Routes>
-          <Route path="/" element={<HomeOne />} />
+          <Route path="/" element={<DynamicHome />} />
           <Route path="/consultation" element={<ConsultationPage />} />
-          <Route path="/home-two" element={<HomeTwo />} />
-          <Route path="/home-three" element={<HomeThree />} />
-          <Route path="/home-four" element={<HomeFour />} />
-          <Route path="/home-five" element={<HomeFive />} />
           {/* Inner pages */}
           <Route path="/services" element={<Services />} />
           <Route path="/service-detail" element={<ServiceDetail />} />
