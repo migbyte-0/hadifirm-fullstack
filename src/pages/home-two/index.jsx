@@ -1,40 +1,43 @@
 import LayoutTwo from "@/Layout/LayoutTwo";
-import HeroTwo from "@/components/Hero/HeroTwo";
-import VideoOne from "@/components/Video/VideoOne";
-import ServiceTwo from "@/components/Service/ServiceTwo";
-import CallServiceOne from "@/components/CallService/CallServiceOne";
-import SpecialServiceOne from "@/components/SpecialService/SpecialServiceOne";
-import LegalPracticeServiceOne from "@/components/LegalPracticeService/LegalPracticeServiceOne";
-import PortfolioTwo from "@/components/Portfolio/PortfolioTwo";
-import CtaTwo from "@/components/CTA/CtaTwo";
-import TestimonialTwo from "@/components/Testimonial/TestimonialTwo";
-import TeamTwo from "@/components/Team/TeamTwo";
-import CounterTwo from "@/components/Counter/CounterTwo";
-import ContactOne from "@/components/Contact/ContactOne";
-import FaqOne from "@/components/Faq/FaqOne";
-import BlogOne from "@/components/Blog/BlogOne";
-import PartnerOne from "@/components/Partner/PartnerOne";
+import { HomeContentProvider } from "@/context/HomeContentContext";
+import HeroTwoDynamic from "@/components/Hero/HeroTwoDynamic";
+import VideoOneDynamic from "@/components/Video/VideoOneDynamic";
+import ServiceTwoDynamic from "@/components/Service/ServiceTwoDynamic";
+import CallServiceOneDynamic from "@/components/CallService/CallServiceOneDynamic";
+import SpecialServiceOneDynamic from "@/components/SpecialService/SpecialServiceOneDynamic";
+import LegalPracticeServiceOneDynamic from "@/components/LegalPracticeService/LegalPracticeServiceOneDynamic";
+import PortfolioTwoDynamic from "@/components/Portfolio/PortfolioTwoDynamic";
+import CtaTwoDynamic from "@/components/CTA/CtaTwoDynamic";
+import TestimonialTwoDynamic from "@/components/Testimonial/TestimonialTwoDynamic";
+import TeamTwoDynamic from "@/components/Team/TeamTwoDynamic";
+import CounterTwoDynamic from "@/components/Counter/CounterTwoDynamic";
+import ContactOneDynamic from "@/components/Contact/ContactOneDynamic";
+import FaqOneDynamic from "@/components/Faq/FaqOneDynamic";
+import BlogOneDynamic from "@/components/Blog/BlogOneDynamic";
+import PartnerOneDynamic from "@/components/Partner/PartnerOneDynamic";
 
 export default function HomeTwo() {
   return (
-    <LayoutTwo>
-      <main id="wrapper" className="wrapper">
-        <HeroTwo />
-        <VideoOne />
-        <ServiceTwo />
-        <CallServiceOne />
-        <SpecialServiceOne />
-        <LegalPracticeServiceOne />
-        <PortfolioTwo />
-        <CtaTwo />
-        <TestimonialTwo />
-        <TeamTwo />
-        <CounterTwo />
-        <ContactOne />
-        <FaqOne />
-        <BlogOne />
-        <PartnerOne />
-      </main>
-    </LayoutTwo>
+    <HomeContentProvider homeVersion="home_two">
+      <LayoutTwo>
+        <main id="wrapper" className="wrapper">
+          <HeroTwoDynamic />
+          <VideoOneDynamic />
+          <ServiceTwoDynamic />
+          <CallServiceOneDynamic />
+          <SpecialServiceOneDynamic />
+          <LegalPracticeServiceOneDynamic />
+          <PortfolioTwoDynamic />
+          <CtaTwoDynamic />
+          <TestimonialTwoDynamic />
+          <TeamTwoDynamic />
+          <CounterTwoDynamic />
+          <ContactOneDynamic />
+          <FaqOneDynamic />
+          <BlogOneDynamic />
+          <PartnerOneDynamic />
+        </main>
+      </LayoutTwo>
+    </HomeContentProvider>
   );
 }

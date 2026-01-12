@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ConsultationController;
 use App\Http\Controllers\Api\AnalyticsController;
 use App\Http\Controllers\Api\ContentController;
+use App\Http\Controllers\Api\HomePageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,14 @@ Route::prefix('settings')->group(function () {
     Route::get('/', [ContentController::class, 'getAllSettings']);
     Route::get('/group/{group}', [ContentController::class, 'getSettingsByGroup']);
     Route::get('/{key}', [ContentController::class, 'getSetting']);
+});
+
+// Home Page Content Routes (CMS)
+Route::prefix('home-page')->group(function () {
+    Route::get('/{homeVersion?}', [HomePageController::class, 'getAllContent'])->where('homeVersion', 'home_one|home_two|home_three|home_four|home_five');
+    Route::get('/{homeVersion}/section/{section}', [HomePageController::class, 'getSection']);
+    Route::get('/{homeVersion}/content', [HomePageController::class, 'getContent']);
+    Route::get('/{homeVersion}/media', [HomePageController::class, 'getMedia']);
+    Route::get('/{homeVersion}/items', [HomePageController::class, 'getItems']);
+    Route::get('/{homeVersion}/items/{section}', [HomePageController::class, 'getSectionItems']);
 });

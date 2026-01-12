@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             AvailableSlotSeeder::class,
             WhatsappTemplateSeeder::class,
             SettingSeeder::class,
+            HomeTwoContentSeeder::class,
         ]);
     }
 }
