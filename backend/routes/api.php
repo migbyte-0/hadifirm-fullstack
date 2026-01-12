@@ -62,3 +62,25 @@ Route::get('/home-page/debug', function() {
         'items_count' => $itemsCount,
     ]);
 });
+
+// Seed endpoint - TEMPORARY for debugging
+Route::get('/home-page/seed', function() {
+    try {
+        \Illuminate\Support\Facades\Artisan::call('db:seed', [
+            '--class' => 'HomeTwoContentSeeder',
+            '--force' => true,
+        ]);
+        $contentCount = \Illuminate\Support\Facades\DB::table('home_page_contents')->count();
+        $itemsCount = \Illuminate\Support\Facades\DB::table('home_page_items')->count();
+        return response()->json([
+            'success' => true,
+            'content_count' => $contentCount,
+            'items_count' => $itemsCount,
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'error' => $e->getMessage(),
+        ]);
+    }
+});
