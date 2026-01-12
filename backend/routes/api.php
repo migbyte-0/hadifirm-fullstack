@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\ConsultationController;
 use App\Http\Controllers\Api\AnalyticsController;
 use App\Http\Controllers\Api\ContentController;
 use App\Http\Controllers\Api\HomePageController;
+use App\Http\Controllers\Api\ContactPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,3 +51,11 @@ Route::get('/home-page/text/{homeVersion}', [HomePageController::class, 'getCont
 Route::get('/home-page/media/{homeVersion}', [HomePageController::class, 'getMedia']);
 Route::get('/home-page/items/{homeVersion}', [HomePageController::class, 'getItems']);
 Route::get('/home-page/items/{homeVersion}/{section}', [HomePageController::class, 'getSectionItems']);
+
+// Contact Page Content Routes (CMS)
+Route::get('/contact-page', [ContactPageController::class, 'getAllContent']);
+Route::get('/contact-page/section/{section}', [ContactPageController::class, 'getSection']);
+Route::get('/contact-page/content', [ContactPageController::class, 'getContent']);
+Route::get('/contact-page/media', [ContactPageController::class, 'getMedia']);
+Route::get('/contact-page/items', [ContactPageController::class, 'getItems']);
+Route::get('/contact-page/items/{section}', [ContactPageController::class, 'getSectionItems']);

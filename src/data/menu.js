@@ -1,124 +1,62 @@
 const menuOne = [
   {
-    name: "Home",
-    link: "#",
-    childs: [
-      {
-        name: "Home Page Layout 1",
-        link: "/",
-      },
-      {
-        name: "Home Page Layout 2",
-        link: "/home-two",
-      },
-      {
-        name: "Home Page Layout 3",
-        link: "/home-three",
-      },
-      {
-        name: "Home Page Layout 4",
-        link: "/home-four",
-      },
-      {
-        name: "Home Page Layout 5",
-        link: "/home-five",
-      },
-    ],
+    name: "الرئيسية",
+    link: "/",
   },
   {
-    name: "Services",
+    name: "الخدمات",
     link: "#",
     childs: [
       {
-        name: "Services",
+        name: "خدماتنا القانونية",
         link: "/services",
       },
       {
-        name: "Service Detail",
+        name: "تفاصيل الخدمة",
         link: "/service-detail",
       },
     ],
   },
   {
-    name: "Pages",
+    name: "الصفحات",
     link: "#",
     childs: [
       {
-        name: "About",
+        name: "عن المكتب",
         link: "/about",
       },
       {
-        name: "Case Study",
+        name: "دراسات الحالة",
         link: "/case-study",
       },
       {
-        name: "Case Study 2",
+        name: "دراسات الحالة 2",
         link: "/case-study-two",
       },
       {
-        name: "Case Study Details",
+        name: "تفاصيل القضية",
         link: "/case-detail",
       },
       {
-        name: "Testimonials",
+        name: "آراء العملاء",
         link: "/testimonials",
       },
       {
-        name: "Attorneys",
+        name: "فريق المحامين",
         link: "/attorneys",
       },
       {
-        name: "Attorney Detail",
+        name: "تفاصيل المحامي",
         link: "/attorney-detail",
       },
       {
-        name: "Faq",
+        name: "الأسئلة الشائعة",
         link: "/faq",
       },
-      {
-        name: "Error",
-        link: "/error",
-      },
     ],
   },
   {
-    name: "Shop",
-    link: "#",
-    childs: [
-      {
-        name: "Shop",
-        link: "/shop",
-      },
-      {
-        name: "Shop Layout 2",
-        link: "/shop-two",
-      },
-      {
-        name: "Shop Details",
-        link: "/shop-detail",
-      },
-    ],
-  },
-  {
-    name: "Blog",
-    link: "#",
-    childs: [
-      {
-        name: "Blog Layout 1",
-        link: "/blog",
-      },
-      {
-        name: "Blog Layout 2",
-        link: "/blog-two",
-      },
-      {
-        name: "Blog Details",
-        link: "/blog-detail",
-      },
-    ],
-  },
-  {
-    name: "Contact",
+    name: "تواصل معنا",
     link: "/contact",
   },
 ];
