@@ -2,458 +2,195 @@
 
 namespace Database\Seeders;
 
-use App\Models\HomePageContent;
-use App\Models\HomePageItem;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class HomeTwoContentSeeder extends Seeder
 {
     public function run(): void
     {
         $homeVersion = 'home_two';
+        $now = now();
+
+        // Clear existing data first
+        DB::table('home_page_contents')->where('home_version', $homeVersion)->delete();
+        DB::table('home_page_items')->where('home_version', $homeVersion)->delete();
 
         // ========================================
-        // HERO SECTION
+        // ALL CONTENT
         // ========================================
-        $heroContent = [
-            ['key' => 'subtitle', 'value' => 'ملتزمون بحماية حقوقك ومستقبلك', 'type' => 'text'],
-            ['key' => 'title_line1', 'value' => 'نحن الأفضل في', 'type' => 'text'],
-            ['key' => 'title_highlight', 'value' => 'مكتب المحاماة', 'type' => 'text'],
-            ['key' => 'description', 'value' => 'نقدم خدمات قانونية متميزة تشمل الترافع أمام جميع المحاكم والجهات القضائية، وتقديم الاستشارات القانونية المتخصصة في مختلف المجالات.', 'type' => 'textarea'],
-            ['key' => 'button_primary_text', 'value' => 'استشارة مجانية', 'type' => 'text'],
-            ['key' => 'button_primary_link', 'value' => '/consultation', 'type' => 'text'],
-            ['key' => 'button_secondary_text', 'value' => 'تواصل معنا', 'type' => 'text'],
-            ['key' => 'button_secondary_link', 'value' => '/contact', 'type' => 'text'],
-            ['key' => 'circle_text', 'value' => 'مكتب المحامي هادي الحصين مرحباً بكم', 'type' => 'text'],
-            ['key' => 'marquee_text', 'value' => 'نحن الأفضل في مكتب المحاماة', 'type' => 'text'],
-            ['key' => 'phone_number', 'value' => '+966501234567', 'type' => 'text'],
+        $allContent = [
+            // HERO SECTION
+            ['section' => 'hero', 'key' => 'subtitle', 'value' => 'ملتزمون بحماية حقوقك ومستقبلك', 'type' => 'text'],
+            ['section' => 'hero', 'key' => 'title_line1', 'value' => 'نحن الأفضل في', 'type' => 'text'],
+            ['section' => 'hero', 'key' => 'title_highlight', 'value' => 'مكتب المحاماة', 'type' => 'text'],
+            ['section' => 'hero', 'key' => 'description', 'value' => 'نقدم خدمات قانونية متميزة تشمل الترافع أمام جميع المحاكم والجهات القضائية، وتقديم الاستشارات القانونية المتخصصة في مختلف المجالات.', 'type' => 'textarea'],
+            ['section' => 'hero', 'key' => 'button_primary_text', 'value' => 'استشارة مجانية', 'type' => 'text'],
+            ['section' => 'hero', 'key' => 'button_primary_link', 'value' => '/consultation', 'type' => 'text'],
+            ['section' => 'hero', 'key' => 'button_secondary_text', 'value' => 'تواصل معنا', 'type' => 'text'],
+            ['section' => 'hero', 'key' => 'button_secondary_link', 'value' => '/contact', 'type' => 'text'],
+            ['section' => 'hero', 'key' => 'circle_text', 'value' => 'مكتب المحامي هادي الحصين مرحباً بكم', 'type' => 'text'],
+            ['section' => 'hero', 'key' => 'marquee_text', 'value' => 'نحن الأفضل في مكتب المحاماة', 'type' => 'text'],
+            ['section' => 'hero', 'key' => 'phone_number', 'value' => '+966501234567', 'type' => 'text'],
+
+            // VIDEO SECTION
+            ['section' => 'video', 'key' => 'title', 'value' => 'مكتب المحامي هادي الحصين', 'type' => 'text'],
+            ['section' => 'video', 'key' => 'video_url', 'value' => 'https://www.youtube.com/embed/YOUR_VIDEO_ID', 'type' => 'text'],
+
+            // CALL SERVICE SECTION
+            ['section' => 'call_service', 'key' => 'text', 'value' => 'تبحث عن استشارة قانونية مجانية؟', 'type' => 'text'],
+            ['section' => 'call_service', 'key' => 'phone_number', 'value' => '+966501234567', 'type' => 'text'],
+            ['section' => 'call_service', 'key' => 'phone_display', 'value' => '(966) 501-234567', 'type' => 'text'],
+
+            // SPECIAL SERVICES SECTION
+            ['section' => 'special_services', 'key' => 'subtitle', 'value' => 'أفضل خدماتنا', 'type' => 'text'],
+            ['section' => 'special_services', 'key' => 'title', 'value' => 'خدماتنا', 'type' => 'text'],
+            ['section' => 'special_services', 'key' => 'title_highlight', 'value' => 'المتميزة', 'type' => 'text'],
+            ['section' => 'special_services', 'key' => 'description', 'value' => 'نقدم مجموعة شاملة من الخدمات القانونية المتخصصة التي تلبي احتياجات عملائنا.', 'type' => 'textarea'],
+
+            // LEGAL PRACTICE AREAS SECTION
+            ['section' => 'practice_areas', 'key' => 'subtitle', 'value' => 'أفضل خدماتنا', 'type' => 'text'],
+            ['section' => 'practice_areas', 'key' => 'title', 'value' => 'مجالات الممارسة', 'type' => 'text'],
+            ['section' => 'practice_areas', 'key' => 'title_highlight', 'value' => 'القانونية', 'type' => 'text'],
+
+            // PORTFOLIO SECTION
+            ['section' => 'portfolio', 'key' => 'subtitle', 'value' => 'دراسات الحالة', 'type' => 'text'],
+            ['section' => 'portfolio', 'key' => 'title', 'value' => 'أحدث', 'type' => 'text'],
+            ['section' => 'portfolio', 'key' => 'title_highlight', 'value' => 'القضايا', 'type' => 'text'],
+
+            // CTA SECTION
+            ['section' => 'cta', 'key' => 'title', 'value' => 'هل تحتاج إلى استشارة قانونية؟', 'type' => 'text'],
+            ['section' => 'cta', 'key' => 'description', 'value' => 'تواصل معنا الآن للحصول على استشارة مجانية من فريق المحامين المتخصصين لدينا', 'type' => 'textarea'],
+            ['section' => 'cta', 'key' => 'button_text', 'value' => 'احجز موعدك الآن', 'type' => 'text'],
+            ['section' => 'cta', 'key' => 'button_link', 'value' => '/consultation', 'type' => 'text'],
+
+            // TESTIMONIALS SECTION
+            ['section' => 'testimonials', 'key' => 'subtitle', 'value' => 'آراء العملاء', 'type' => 'text'],
+            ['section' => 'testimonials', 'key' => 'title', 'value' => 'ماذا يقول', 'type' => 'text'],
+            ['section' => 'testimonials', 'key' => 'title_highlight', 'value' => 'عملاؤنا', 'type' => 'text'],
+
+            // TEAM SECTION
+            ['section' => 'team', 'key' => 'subtitle', 'value' => 'فريقنا', 'type' => 'text'],
+            ['section' => 'team', 'key' => 'title', 'value' => 'تعرف على', 'type' => 'text'],
+            ['section' => 'team', 'key' => 'title_highlight', 'value' => 'محامينا', 'type' => 'text'],
+
+            // COUNTERS SECTION
+            ['section' => 'counters', 'key' => 'title', 'value' => 'إنجازاتنا بالأرقام', 'type' => 'text'],
+
+            // CONTACT SECTION
+            ['section' => 'contact', 'key' => 'subtitle', 'value' => 'تواصل معنا', 'type' => 'text'],
+            ['section' => 'contact', 'key' => 'title', 'value' => 'اطلب', 'type' => 'text'],
+            ['section' => 'contact', 'key' => 'title_highlight', 'value' => 'استشارتك', 'type' => 'text'],
+            ['section' => 'contact', 'key' => 'form_name_placeholder', 'value' => 'الاسم الكامل', 'type' => 'text'],
+            ['section' => 'contact', 'key' => 'form_email_placeholder', 'value' => 'البريد الإلكتروني', 'type' => 'text'],
+            ['section' => 'contact', 'key' => 'form_phone_placeholder', 'value' => 'رقم الهاتف', 'type' => 'text'],
+            ['section' => 'contact', 'key' => 'form_service_placeholder', 'value' => 'نوع الخدمة', 'type' => 'text'],
+            ['section' => 'contact', 'key' => 'form_message_placeholder', 'value' => 'رسالتك', 'type' => 'text'],
+            ['section' => 'contact', 'key' => 'form_button_text', 'value' => 'إرسال الطلب', 'type' => 'text'],
+
+            // FAQ SECTION
+            ['section' => 'faq', 'key' => 'subtitle', 'value' => 'الأسئلة الشائعة', 'type' => 'text'],
+            ['section' => 'faq', 'key' => 'title', 'value' => 'أسئلة', 'type' => 'text'],
+            ['section' => 'faq', 'key' => 'title_highlight', 'value' => 'متكررة', 'type' => 'text'],
+
+            // BLOG SECTION
+            ['section' => 'blog', 'key' => 'subtitle', 'value' => 'المدونة', 'type' => 'text'],
+            ['section' => 'blog', 'key' => 'title', 'value' => 'آخر', 'type' => 'text'],
+            ['section' => 'blog', 'key' => 'title_highlight', 'value' => 'المقالات', 'type' => 'text'],
+
+            // PARTNERS SECTION
+            ['section' => 'partners', 'key' => 'title', 'value' => 'شركاؤنا', 'type' => 'text'],
         ];
 
-        foreach ($heroContent as $item) {
-            HomePageContent::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'hero', 'key' => $item['key']],
-                ['value' => $item['value'], 'type' => $item['type'], 'is_active' => true]
-            );
+        // Insert all content
+        foreach ($allContent as $item) {
+            DB::table('home_page_contents')->insert([
+                'home_version' => $homeVersion,
+                'section' => $item['section'],
+                'key' => $item['key'],
+                'value' => $item['value'],
+                'type' => $item['type'],
+                'is_active' => true,
+                'order' => 0,
+                'created_at' => $now,
+                'updated_at' => $now,
+            ]);
         }
 
         // ========================================
-        // VIDEO SECTION
+        // ALL ITEMS
         // ========================================
-        $videoContent = [
-            ['key' => 'title', 'value' => 'مكتب المحامي هادي الحصين', 'type' => 'text'],
-            ['key' => 'video_url', 'value' => 'https://www.youtube.com/embed/YOUR_VIDEO_ID', 'type' => 'text'],
+        $allItems = [
+            // Services Slider
+            ['section' => 'services_slider', 'order' => 0, 'content' => ['title' => 'رسوم قانونية معقولة', 'description' => 'نحرص على تقديم خدمات قانونية بأسعار تنافسية ومناسبة لجميع العملاء.']],
+            ['section' => 'services_slider', 'order' => 1, 'content' => ['title' => 'دعم متواصل على مدار الساعة', 'description' => 'فريقنا متاح دائماً للرد على استفساراتكم وتقديم الدعم القانوني اللازم.']],
+            ['section' => 'services_slider', 'order' => 2, 'content' => ['title' => 'خطط دفع مرنة', 'description' => 'نوفر خيارات دفع متعددة تناسب ظروفكم المالية وتسهل عليكم الحصول على خدماتنا.']],
+
+            // Special Services
+            ['section' => 'special_services', 'order' => 0, 'content' => ['title' => 'الدفاع الجنائي', 'description' => 'نقدم خدمات الدفاع في القضايا الجنائية بكفاءة عالية.']],
+            ['section' => 'special_services', 'order' => 1, 'content' => ['title' => 'القضايا الأسرية', 'description' => 'متخصصون في قضايا الأحوال الشخصية والأسرة.']],
+            ['section' => 'special_services', 'order' => 2, 'content' => ['title' => 'الاعتداء والضرب', 'description' => 'نترافع في قضايا الاعتداء بمختلف أنواعها.']],
+
+            // Practice Areas
+            ['section' => 'practice_areas', 'order' => 0, 'content' => ['title' => 'القانون الجنائي', 'description' => 'دفاع متخصص في القضايا الجنائية']],
+            ['section' => 'practice_areas', 'order' => 1, 'content' => ['title' => 'قانون الأسرة', 'description' => 'قضايا الطلاق والحضانة والنفقة']],
+            ['section' => 'practice_areas', 'order' => 2, 'content' => ['title' => 'القانون التجاري', 'description' => 'العقود التجارية والشركات']],
+            ['section' => 'practice_areas', 'order' => 3, 'content' => ['title' => 'القانون العقاري', 'description' => 'قضايا الملكية والعقارات']],
+            ['section' => 'practice_areas', 'order' => 4, 'content' => ['title' => 'قانون العمل', 'description' => 'حماية حقوق العمال وأصحاب العمل']],
+            ['section' => 'practice_areas', 'order' => 5, 'content' => ['title' => 'القضايا المالية', 'description' => 'النزاعات المالية والمصرفية']],
+
+            // Portfolio
+            ['section' => 'portfolio', 'order' => 0, 'content' => ['title' => 'قضية تجارية كبرى', 'category' => 'تجاري', 'description' => 'فزنا بقضية تجارية بقيمة 10 مليون ريال']],
+            ['section' => 'portfolio', 'order' => 1, 'content' => ['title' => 'قضية أحوال شخصية', 'category' => 'أسري', 'description' => 'نجاح في قضية حضانة معقدة']],
+            ['section' => 'portfolio', 'order' => 2, 'content' => ['title' => 'قضية جنائية', 'category' => 'جنائي', 'description' => 'براءة موكلنا في قضية جنائية']],
+
+            // Testimonials
+            ['section' => 'testimonials', 'order' => 0, 'content' => ['name' => 'أحمد محمد', 'position' => 'رجل أعمال', 'content' => 'خدمة قانونية ممتازة وفريق محترف جداً. أنصح بهم بشدة.', 'rating' => 5]],
+            ['section' => 'testimonials', 'order' => 1, 'content' => ['name' => 'فاطمة علي', 'position' => 'مديرة شركة', 'content' => 'ساعدوني في حل قضية معقدة بكفاءة عالية. شكراً لكم.', 'rating' => 5]],
+            ['section' => 'testimonials', 'order' => 2, 'content' => ['name' => 'خالد عبدالله', 'position' => 'مستثمر', 'content' => 'فريق محترف ومتفاني. أفضل مكتب محاماة تعاملت معه.', 'rating' => 5]],
+
+            // Team
+            ['section' => 'team', 'order' => 0, 'content' => ['name' => 'المحامي هادي الحصين', 'position' => 'المؤسس والمدير', 'bio' => 'خبرة أكثر من 20 عاماً في المحاماة']],
+            ['section' => 'team', 'order' => 1, 'content' => ['name' => 'المحامي سعد العتيبي', 'position' => 'محامي رئيسي', 'bio' => 'متخصص في القضايا الجنائية']],
+            ['section' => 'team', 'order' => 2, 'content' => ['name' => 'المحامية نورة الشمري', 'position' => 'محامية', 'bio' => 'متخصصة في قانون الأسرة']],
+            ['section' => 'team', 'order' => 3, 'content' => ['name' => 'المحامي فهد القحطاني', 'position' => 'محامي', 'bio' => 'متخصص في القانون التجاري']],
+
+            // Counters
+            ['section' => 'counters', 'order' => 0, 'content' => ['label' => 'قضية ناجحة', 'value' => 1250, 'suffix' => '+']],
+            ['section' => 'counters', 'order' => 1, 'content' => ['label' => 'عميل سعيد', 'value' => 850, 'suffix' => '+']],
+            ['section' => 'counters', 'order' => 2, 'content' => ['label' => 'سنة خبرة', 'value' => 20, 'suffix' => '+']],
+            ['section' => 'counters', 'order' => 3, 'content' => ['label' => 'محامي متخصص', 'value' => 15, 'suffix' => '']],
+
+            // FAQ
+            ['section' => 'faq', 'order' => 0, 'content' => ['question' => 'ما هي تكلفة الاستشارة الأولية؟', 'answer' => 'نقدم استشارة أولية مجانية لمدة 30 دقيقة لتقييم قضيتك وتحديد الخطوات التالية.']],
+            ['section' => 'faq', 'order' => 1, 'content' => ['question' => 'كم يستغرق حل القضية عادةً؟', 'answer' => 'تعتمد مدة القضية على نوعها وتعقيدها. نحرص على إبقائك على اطلاع دائم بمستجدات قضيتك.']],
+            ['section' => 'faq', 'order' => 2, 'content' => ['question' => 'هل يمكنني الدفع بالتقسيط؟', 'answer' => 'نعم، نوفر خطط دفع مرنة تناسب ظروفك المالية. تواصل معنا لمعرفة المزيد.']],
+            ['section' => 'faq', 'order' => 3, 'content' => ['question' => 'ما هي مجالات تخصصكم؟', 'answer' => 'نتخصص في القانون الجنائي، الأحوال الشخصية، القانون التجاري، العقارات، وقانون العمل.']],
+
+            // Blog
+            ['section' => 'blog', 'order' => 0, 'content' => ['title' => 'أهمية التوثيق في العقود التجارية', 'excerpt' => 'تعرف على أهمية التوثيق القانوني للعقود التجارية وكيفية حماية حقوقك.', 'date' => '2024-01-15']],
+            ['section' => 'blog', 'order' => 1, 'content' => ['title' => 'حقوق المرأة في نظام الأحوال الشخصية', 'excerpt' => 'نظرة شاملة على حقوق المرأة في النظام السعودي للأحوال الشخصية.', 'date' => '2024-01-10']],
+            ['section' => 'blog', 'order' => 2, 'content' => ['title' => 'كيف تحمي حقوقك كموظف', 'excerpt' => 'دليل شامل لحماية حقوقك في بيئة العمل وفقاً لنظام العمل السعودي.', 'date' => '2024-01-05']],
+
+            // Partners
+            ['section' => 'partners', 'order' => 0, 'content' => ['name' => 'شريك 1', 'logo_alt' => 'شعار الشريك 1']],
+            ['section' => 'partners', 'order' => 1, 'content' => ['name' => 'شريك 2', 'logo_alt' => 'شعار الشريك 2']],
+            ['section' => 'partners', 'order' => 2, 'content' => ['name' => 'شريك 3', 'logo_alt' => 'شعار الشريك 3']],
+            ['section' => 'partners', 'order' => 3, 'content' => ['name' => 'شريك 4', 'logo_alt' => 'شعار الشريك 4']],
+            ['section' => 'partners', 'order' => 4, 'content' => ['name' => 'شريك 5', 'logo_alt' => 'شعار الشريك 5']],
         ];
 
-        foreach ($videoContent as $item) {
-            HomePageContent::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'video', 'key' => $item['key']],
-                ['value' => $item['value'], 'type' => $item['type'], 'is_active' => true]
-            );
-        }
-
-        // ========================================
-        // SERVICES SLIDER SECTION
-        // ========================================
-        $services = [
-            [
-                'title' => 'رسوم قانونية معقولة',
-                'description' => 'نحرص على تقديم خدمات قانونية بأسعار تنافسية ومناسبة لجميع العملاء.',
-            ],
-            [
-                'title' => 'دعم متواصل على مدار الساعة',
-                'description' => 'فريقنا متاح دائماً للرد على استفساراتكم وتقديم الدعم القانوني اللازم.',
-            ],
-            [
-                'title' => 'خطط دفع مرنة',
-                'description' => 'نوفر خيارات دفع متعددة تناسب ظروفكم المالية وتسهل عليكم الحصول على خدماتنا.',
-            ],
-        ];
-
-        foreach ($services as $index => $service) {
-            HomePageItem::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'services_slider', 'order' => $index],
-                ['content' => $service, 'is_active' => true]
-            );
-        }
-
-        // ========================================
-        // CALL SERVICE SECTION
-        // ========================================
-        $callServiceContent = [
-            ['key' => 'text', 'value' => 'تبحث عن استشارة قانونية مجانية؟', 'type' => 'text'],
-            ['key' => 'phone_number', 'value' => '+966501234567', 'type' => 'text'],
-            ['key' => 'phone_display', 'value' => '(966) 501-234567', 'type' => 'text'],
-        ];
-
-        foreach ($callServiceContent as $item) {
-            HomePageContent::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'call_service', 'key' => $item['key']],
-                ['value' => $item['value'], 'type' => $item['type'], 'is_active' => true]
-            );
-        }
-
-        // ========================================
-        // SPECIAL SERVICES SECTION
-        // ========================================
-        $specialServicesContent = [
-            ['key' => 'subtitle', 'value' => 'أفضل خدماتنا', 'type' => 'text'],
-            ['key' => 'title', 'value' => 'خدماتنا', 'type' => 'text'],
-            ['key' => 'title_highlight', 'value' => 'المتميزة', 'type' => 'text'],
-            ['key' => 'description', 'value' => 'نقدم مجموعة شاملة من الخدمات القانونية المتخصصة التي تلبي احتياجات عملائنا.', 'type' => 'textarea'],
-        ];
-
-        foreach ($specialServicesContent as $item) {
-            HomePageContent::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'special_services', 'key' => $item['key']],
-                ['value' => $item['value'], 'type' => $item['type'], 'is_active' => true]
-            );
-        }
-
-        $specialServices = [
-            ['title' => 'الدفاع الجنائي', 'description' => 'نقدم خدمات الدفاع في القضايا الجنائية بكفاءة عالية.'],
-            ['title' => 'القضايا الأسرية', 'description' => 'متخصصون في قضايا الأحوال الشخصية والأسرة.'],
-            ['title' => 'الاعتداء والضرب', 'description' => 'نترافع في قضايا الاعتداء بمختلف أنواعها.'],
-        ];
-
-        foreach ($specialServices as $index => $service) {
-            HomePageItem::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'special_services', 'order' => $index],
-                ['content' => $service, 'is_active' => true]
-            );
-        }
-
-        // ========================================
-        // LEGAL PRACTICE AREAS SECTION
-        // ========================================
-        $practiceAreasContent = [
-            ['key' => 'subtitle', 'value' => 'أفضل خدماتنا', 'type' => 'text'],
-            ['key' => 'title', 'value' => 'مجالات الممارسة', 'type' => 'text'],
-            ['key' => 'title_highlight', 'value' => 'القانونية', 'type' => 'text'],
-        ];
-
-        foreach ($practiceAreasContent as $item) {
-            HomePageContent::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'practice_areas', 'key' => $item['key']],
-                ['value' => $item['value'], 'type' => $item['type'], 'is_active' => true]
-            );
-        }
-
-        $practiceAreas = [
-            ['title' => 'الدفاع الجنائي', 'description' => 'نقدم خدمات الدفاع في القضايا الجنائية.'],
-            ['title' => 'مراجعة العقود', 'description' => 'صياغة ومراجعة العقود القانونية.'],
-            ['title' => 'قضايا الهجرة', 'description' => 'استشارات وخدمات قانونية للهجرة.'],
-            ['title' => 'القانون التجاري', 'description' => 'خدمات قانونية للشركات والأعمال.'],
-        ];
-
-        foreach ($practiceAreas as $index => $area) {
-            HomePageItem::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'practice_areas', 'order' => $index],
-                ['content' => $area, 'is_active' => true]
-            );
-        }
-
-        // ========================================
-        // PORTFOLIO/CASE STUDY SECTION
-        // ========================================
-        $portfolioContent = [
-            ['key' => 'subtitle', 'value' => 'أحدث دراسات الحالة', 'type' => 'text'],
-            ['key' => 'title', 'value' => 'تصفح أعمالنا', 'type' => 'text'],
-            ['key' => 'title_highlight', 'value' => 'دراسات الحالة', 'type' => 'text'],
-            ['key' => 'button_text', 'value' => 'استشارة مجانية', 'type' => 'text'],
-        ];
-
-        foreach ($portfolioContent as $item) {
-            HomePageContent::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'portfolio', 'key' => $item['key']],
-                ['value' => $item['value'], 'type' => $item['type'], 'is_active' => true]
-            );
-        }
-
-        $caseStudies = [
-            ['title' => 'القانون التجاري', 'link' => '/case-detail'],
-            ['title' => 'مراجعة العقود', 'link' => '/case-detail'],
-            ['title' => 'الدفاع الجنائي', 'link' => '/case-detail'],
-            ['title' => 'قانون الشركات', 'link' => '/case-detail'],
-            ['title' => 'قضايا الهجرة', 'link' => '/case-detail'],
-        ];
-
-        foreach ($caseStudies as $index => $study) {
-            HomePageItem::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'case_studies', 'order' => $index],
-                ['content' => $study, 'is_active' => true]
-            );
-        }
-
-        // ========================================
-        // CTA SECTION
-        // ========================================
-        $ctaContent = [
-            ['key' => 'title', 'value' => 'يمكننا مساعدتك!', 'type' => 'text'],
-            ['key' => 'description', 'value' => 'سريع وسهل، بدون أي التزام.', 'type' => 'text'],
-            ['key' => 'button_text', 'value' => 'استشارة مجانية', 'type' => 'text'],
-            ['key' => 'button_link', 'value' => '/consultation', 'type' => 'text'],
-        ];
-
-        foreach ($ctaContent as $item) {
-            HomePageContent::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'cta', 'key' => $item['key']],
-                ['value' => $item['value'], 'type' => $item['type'], 'is_active' => true]
-            );
-        }
-
-        // ========================================
-        // TESTIMONIALS SECTION
-        // ========================================
-        $testimonialsContent = [
-            ['key' => 'subtitle', 'value' => 'آراء عملائنا', 'type' => 'text'],
-            ['key' => 'title', 'value' => 'ماذا يقول', 'type' => 'text'],
-            ['key' => 'title_highlight', 'value' => 'عملاؤنا', 'type' => 'text'],
-            ['key' => 'button_text', 'value' => 'استشارة مجانية', 'type' => 'text'],
-        ];
-
-        foreach ($testimonialsContent as $item) {
-            HomePageContent::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'testimonials', 'key' => $item['key']],
-                ['value' => $item['value'], 'type' => $item['type'], 'is_active' => true]
-            );
-        }
-
-        $testimonials = [
-            [
-                'name' => 'أحمد محمد',
-                'location' => 'الرياض',
-                'role' => 'رجل أعمال',
-                'content' => 'تجربة ممتازة مع المكتب، فريق محترف وخدمات قانونية متميزة. أنصح بالتعامل معهم.',
-                'rating' => '5',
-                'reviews_count' => '12.5k',
-            ],
-            [
-                'name' => 'فاطمة العلي',
-                'location' => 'جدة',
-                'role' => 'محامية',
-                'content' => 'خدمات قانونية احترافية ودعم متواصل. سعيدة جداً بالنتائج التي حققناها معاً.',
-                'rating' => '5',
-                'reviews_count' => '10.5k',
-            ],
-            [
-                'name' => 'خالد السعيد',
-                'location' => 'الدمام',
-                'role' => 'مدير شركة',
-                'content' => 'أفضل مكتب محاماة تعاملت معه. كفاءة عالية واحترافية في التعامل.',
-                'rating' => '5',
-                'reviews_count' => '15.5k',
-            ],
-        ];
-
-        foreach ($testimonials as $index => $testimonial) {
-            HomePageItem::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'testimonials', 'order' => $index],
-                ['content' => $testimonial, 'is_active' => true]
-            );
-        }
-
-        // ========================================
-        // TEAM SECTION
-        // ========================================
-        $teamContent = [
-            ['key' => 'subtitle', 'value' => 'أفضل خدماتنا', 'type' => 'text'],
-            ['key' => 'title', 'value' => 'فريق العمل', 'type' => 'text'],
-            ['key' => 'title_highlight', 'value' => 'المتميز', 'type' => 'text'],
-        ];
-
-        foreach ($teamContent as $item) {
-            HomePageContent::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'team', 'key' => $item['key']],
-                ['value' => $item['value'], 'type' => $item['type'], 'is_active' => true]
-            );
-        }
-
-        $teamMembers = [
-            [
-                'name' => 'أ. هادي الحصين',
-                'role' => 'محامي تجاري',
-                'linkedin' => '#',
-                'twitter' => '#',
-                'facebook' => '#',
-            ],
-            [
-                'name' => 'أ. سارة أحمد',
-                'role' => 'محامية أسرية',
-                'linkedin' => '#',
-                'twitter' => '#',
-                'facebook' => '#',
-            ],
-            [
-                'name' => 'أ. محمد علي',
-                'role' => 'محامي جنائي',
-                'linkedin' => '#',
-                'twitter' => '#',
-                'facebook' => '#',
-            ],
-            [
-                'name' => 'أ. نورة السالم',
-                'role' => 'مستشار قانوني',
-                'linkedin' => '#',
-                'twitter' => '#',
-                'facebook' => '#',
-            ],
-        ];
-
-        foreach ($teamMembers as $index => $member) {
-            HomePageItem::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'team', 'order' => $index],
-                ['content' => $member, 'is_active' => true]
-            );
-        }
-
-        // ========================================
-        // COUNTER SECTION
-        // ========================================
-        $counters = [
-            ['number' => '2', 'suffix' => 'k+', 'label' => 'مشروع مكتمل'],
-            ['number' => '95', 'suffix' => '%', 'label' => 'نسبة النجاح'],
-            ['number' => '08', 'suffix' => '', 'label' => 'سنوات الخبرة'],
-        ];
-
-        foreach ($counters as $index => $counter) {
-            HomePageItem::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'counters', 'order' => $index],
-                ['content' => $counter, 'is_active' => true]
-            );
-        }
-
-        // ========================================
-        // CONTACT/CONSULTANCY SECTION
-        // ========================================
-        $contactContent = [
-            ['key' => 'title', 'value' => 'يمكننا مساعدتك! سريع وسهل، ولا يوجد', 'type' => 'text'],
-            ['key' => 'title_highlight', 'value' => 'أي التزام.', 'type' => 'text'],
-            ['key' => 'description', 'value' => 'هناك العديد من الأشكال المتاحة لنصوص لوريم إيبسوم، ولكن الأغلبية.', 'type' => 'textarea'],
-            ['key' => 'form_name_placeholder', 'value' => 'الاسم الكامل', 'type' => 'text'],
-            ['key' => 'form_phone_placeholder', 'value' => '(966) 501-234567', 'type' => 'text'],
-            ['key' => 'form_email_placeholder', 'value' => 'example@email.com', 'type' => 'text'],
-            ['key' => 'form_message_placeholder', 'value' => 'رسالتك', 'type' => 'text'],
-            ['key' => 'form_button_text', 'value' => 'استشارة مجانية', 'type' => 'text'],
-        ];
-
-        foreach ($contactContent as $item) {
-            HomePageContent::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'contact', 'key' => $item['key']],
-                ['value' => $item['value'], 'type' => $item['type'], 'is_active' => true]
-            );
-        }
-
-        // ========================================
-        // FAQ SECTION
-        // ========================================
-        $faqContent = [
-            ['key' => 'subtitle', 'value' => 'الأسئلة الشائعة', 'type' => 'text'],
-            ['key' => 'title', 'value' => 'نقدم لكم', 'type' => 'text'],
-            ['key' => 'title_highlight', 'value' => 'الأسئلة والأجوبة', 'type' => 'text'],
-            ['key' => 'description', 'value' => 'نجيب على أكثر الأسئلة شيوعاً حول خدماتنا القانونية وطريقة عملنا.', 'type' => 'textarea'],
-            ['key' => 'button_text', 'value' => 'جميع القضايا', 'type' => 'text'],
-        ];
-
-        foreach ($faqContent as $item) {
-            HomePageContent::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'faq', 'key' => $item['key']],
-                ['value' => $item['value'], 'type' => $item['type'], 'is_active' => true]
-            );
-        }
-
-        $faqs = [
-            [
-                'question' => 'ما هي أنواع القضايا التي تتعاملون معها؟',
-                'answer' => 'نتعامل مع مجموعة واسعة من القضايا تشمل القضايا التجارية، الجنائية، الأسرية، العمالية، والعقارية.',
-            ],
-            [
-                'question' => 'كيف يمكنني حجز استشارة قانونية؟',
-                'answer' => 'يمكنك حجز استشارة من خلال موقعنا الإلكتروني أو الاتصال بنا مباشرة. نوفر استشارات أولية مجانية.',
-            ],
-            [
-                'question' => 'ما هي تكلفة الخدمات القانونية؟',
-                'answer' => 'تختلف التكلفة حسب نوع القضية وتعقيدها. نقدم تقديراً واضحاً للتكاليف قبل البدء في أي إجراء.',
-            ],
-            [
-                'question' => 'هل تقدمون خدمات للشركات والمؤسسات؟',
-                'answer' => 'نعم، نقدم خدمات قانونية شاملة للشركات تشمل تأسيس الشركات، العقود، والاستشارات القانونية المستمرة.',
-            ],
-            [
-                'question' => 'كم تستغرق القضية عادةً؟',
-                'answer' => 'يعتمد ذلك على نوع القضية وتعقيدها. نحرص على إبقاء عملائنا على اطلاع دائم بتطورات قضاياهم.',
-            ],
-        ];
-
-        foreach ($faqs as $index => $faq) {
-            HomePageItem::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'faqs', 'order' => $index],
-                ['content' => $faq, 'is_active' => true]
-            );
-        }
-
-        // ========================================
-        // BLOG SECTION
-        // ========================================
-        $blogContent = [
-            ['key' => 'subtitle', 'value' => 'آخر الأخبار والمقالات', 'type' => 'text'],
-            ['key' => 'title', 'value' => 'مدونة القانون', 'type' => 'text'],
-            ['key' => 'title_highlight', 'value' => 'والمستجدات النظامية', 'type' => 'text'],
-        ];
-
-        foreach ($blogContent as $item) {
-            HomePageContent::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'blog', 'key' => $item['key']],
-                ['value' => $item['value'], 'type' => $item['type'], 'is_active' => true]
-            );
-        }
-
-        $blogs = [
-            [
-                'title' => 'أهمية التوثيق الرسمي في حماية الحقوق المالية.',
-                'author' => 'إدارة المكتب',
-                'category' => 'قانوني',
-                'date' => '30 ديسمبر 2025',
-                'link' => '/blog-detail',
-            ],
-            [
-                'title' => 'دليل المنشآت في التعامل مع القضايا العمالية والتجارية.',
-                'author' => 'إدارة المكتب',
-                'category' => 'قانوني',
-                'date' => '30 ديسمبر 2025',
-                'link' => '/blog-detail',
-            ],
-            [
-                'title' => 'الأنظمة الجديدة في المحاكم السعودية وكيفية الاستفادة منها.',
-                'author' => 'إدارة المكتب',
-                'category' => 'قانوني',
-                'date' => '30 ديسمبر 2025',
-                'link' => '/blog-detail',
-            ],
-        ];
-
-        foreach ($blogs as $index => $blog) {
-            HomePageItem::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'blogs', 'order' => $index],
-                ['content' => $blog, 'is_active' => true]
-            );
-        }
-
-        // ========================================
-        // PARTNERS SECTION
-        // ========================================
-        $partners = [
-            ['name' => 'شريك 1', 'link' => '#'],
-            ['name' => 'شريك 2', 'link' => '#'],
-            ['name' => 'شريك 3', 'link' => '#'],
-            ['name' => 'شريك 4', 'link' => '#'],
-            ['name' => 'شريك 5', 'link' => '#'],
-        ];
-
-        foreach ($partners as $index => $partner) {
-            HomePageItem::updateOrCreate(
-                ['home_version' => $homeVersion, 'section' => 'partners', 'order' => $index],
-                ['content' => $partner, 'is_active' => true]
-            );
+        // Insert all items
+        foreach ($allItems as $item) {
+            DB::table('home_page_items')->insert([
+                'home_version' => $homeVersion,
+                'section' => $item['section'],
+                'content' => json_encode($item['content']),
+                'order' => $item['order'],
+                'is_active' => true,
+                'created_at' => $now,
+                'updated_at' => $now,
+            ]);
         }
     }
 }
