@@ -157,12 +157,36 @@ class HomeTwoContent extends Page
                                             ->label('صورة الخلفية/البانر')
                                             ->image()
                                             ->directory('home-two/video')
-                                            ->visibility('public'),
+                                            ->visibility('public')
+                                            ->deletable()
+                                            ->deleteUploadedFileUsing(function ($file) {
+                                                if ($file) {
+                                                    Storage::disk('public')->delete($file);
+                                                    HomePageMedia::where('home_version', $this->homeVersion)
+                                                        ->where('section', 'video')
+                                                        ->where('key', 'banner')
+                                                        ->delete();
+                                                }
+                                            }),
+                                        Forms\Components\Toggle::make('video_show_play_icon')
+                                            ->label('إظهار أيقونة التشغيل')
+                                            ->default(true)
+                                            ->helperText('قم بإيقاف التشغيل لإخفاء زر تشغيل الفيديو'),
                                         Forms\Components\FileUpload::make('video_icon_media')
                                             ->label('أيقونة التشغيل')
                                             ->directory('home-two/video')
                                             ->visibility('public')
-                                            ->acceptedFileTypes(['image/svg+xml', 'image/png']),
+                                            ->acceptedFileTypes(['image/svg+xml', 'image/png'])
+                                            ->deletable()
+                                            ->deleteUploadedFileUsing(function ($file) {
+                                                if ($file) {
+                                                    Storage::disk('public')->delete($file);
+                                                    HomePageMedia::where('home_version', $this->homeVersion)
+                                                        ->where('section', 'video')
+                                                        ->where('key', 'icon')
+                                                        ->delete();
+                                                }
+                                            }),
                                     ])->columns(2),
                             ]),
 
@@ -756,7 +780,7 @@ class HomeTwoContent extends Page
     {
         $sections = [
             'hero' => ['subtitle', 'title_line1', 'title_highlight', 'description', 'button_primary_text', 'button_primary_link', 'button_secondary_text', 'button_secondary_link', 'circle_text', 'marquee_text', 'phone_number'],
-            'video' => ['title', 'video_url'],
+            'video' => ['title', 'video_url', 'show_play_icon'],
             'call_service' => ['text', 'phone_number', 'phone_display'],
             'special_services' => ['subtitle', 'title', 'title_highlight', 'description'],
             'practice_areas' => ['subtitle', 'title', 'title_highlight'],
@@ -840,8 +864,14 @@ class HomeTwoContent extends Page
         ];
 
         foreach ($mediaFields as $dataKey => $info) {
+            // Check if media field exists and has a value
             if (isset($data[$dataKey]) && $data[$dataKey]) {
                 $filePath = $data[$dataKey];
+                
+                // Check if file exists in storage
+                if (!Storage::disk('public')->exists($filePath)) {
+                    continue;
+                }
                 
                 // Get file info
                 $fileName = basename($filePath);
@@ -865,7 +895,38 @@ class HomeTwoContent extends Page
                         'is_active' => true,
                     ]
                 );
+            } else {
+                // If the field is empty/null, delete the media record
+                HomePageMedia::where('home_version', $this->homeVersion)
+                    ->where('section', $info['section'])
+                    ->where('key', $info['key'])
+                    ->delete();
             }
+        }
+        
+        // Clear media cache after save
+        HomePageMedia::clearCache($this->homeVersion);
+    }
+
+    /**
+     * Delete a media file and its database record
+     */
+    public function deleteMedia(string $section, string $key): void
+    {
+        $media = HomePageMedia::where('home_version', $this->homeVersion)
+            ->where('section', $section)
+            ->where('key', $key)
+            ->first();
+
+        if ($media) {
+            // Delete physical file
+            if ($media->file_path && Storage::disk('public')->exists($media->file_path)) {
+                Storage::disk('public')->delete($media->file_path);
+            }
+            // Delete database record
+            $media->delete();
+            // Clear cache
+            HomePageMedia::clearCache($this->homeVersion);
         }
     }
 }

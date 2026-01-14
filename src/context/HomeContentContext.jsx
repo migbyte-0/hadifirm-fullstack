@@ -96,12 +96,17 @@ export function useHeroContent() {
 export function useVideoContent() {
   const { getText, getMediaUrl, loading } = useHomeContent();
   
+  const showPlayIconValue = getText('video', 'show_play_icon', '1');
+  // Handle both string and boolean values
+  const showPlayIcon = showPlayIconValue === '1' || showPlayIconValue === 'true' || showPlayIconValue === true;
+  
   return {
     loading,
     title: getText('video', 'title', 'مكتب المحامي هادي الحصين'),
     videoUrl: getText('video', 'video_url', ''),
     bannerImage: getMediaUrl('video', 'banner'),
     iconImage: getMediaUrl('video', 'icon'),
+    showPlayIcon,
   };
 }
 
