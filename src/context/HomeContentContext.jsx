@@ -100,6 +100,9 @@ export function useVideoContent() {
   // Handle both string and boolean values
   const showPlayIcon = showPlayIconValue === '1' || showPlayIconValue === 'true' || showPlayIconValue === true;
   
+  const showBannerValue = getText('video', 'show_banner', '1');
+  const showBanner = showBannerValue === '1' || showBannerValue === 'true' || showBannerValue === true;
+  
   return {
     loading,
     title: getText('video', 'title', 'مكتب المحامي هادي الحصين'),
@@ -107,6 +110,7 @@ export function useVideoContent() {
     bannerImage: getMediaUrl('video', 'banner'),
     iconImage: getMediaUrl('video', 'icon'),
     showPlayIcon,
+    showBanner,
   };
 }
 

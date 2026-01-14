@@ -36,6 +36,7 @@ class HomeTwoContentSeeder extends Seeder
             // VIDEO SECTION
             ['section' => 'video', 'key' => 'title', 'value' => 'مكتب المحامي هادي الحصين', 'type' => 'text'],
             ['section' => 'video', 'key' => 'video_url', 'value' => 'https://www.youtube.com/embed/YOUR_VIDEO_ID', 'type' => 'text'],
+            ['section' => 'video', 'key' => 'show_banner', 'value' => '1', 'type' => 'text'],
             ['section' => 'video', 'key' => 'show_play_icon', 'value' => '1', 'type' => 'text'],
 
             // CALL SERVICE SECTION

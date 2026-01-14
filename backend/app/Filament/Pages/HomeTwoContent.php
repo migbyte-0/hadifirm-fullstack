@@ -153,6 +153,10 @@ class HomeTwoContent extends Page
                                             ->label('رابط الفيديو (YouTube Embed)')
                                             ->url()
                                             ->placeholder('https://www.youtube.com/embed/VIDEO_ID'),
+                                        Forms\Components\Toggle::make('video_show_banner')
+                                            ->label('إظهار قسم البانر/الفيديو')
+                                            ->default(true)
+                                            ->helperText('قم بإيقاف التشغيل لإخفاء قسم الفيديو بالكامل من الصفحة'),
                                         Forms\Components\FileUpload::make('video_banner_media')
                                             ->label('صورة الخلفية/البانر')
                                             ->image()
@@ -780,7 +784,7 @@ class HomeTwoContent extends Page
     {
         $sections = [
             'hero' => ['subtitle', 'title_line1', 'title_highlight', 'description', 'button_primary_text', 'button_primary_link', 'button_secondary_text', 'button_secondary_link', 'circle_text', 'marquee_text', 'phone_number'],
-            'video' => ['title', 'video_url', 'show_play_icon'],
+            'video' => ['title', 'video_url', 'show_banner', 'show_play_icon'],
             'call_service' => ['text', 'phone_number', 'phone_display'],
             'special_services' => ['subtitle', 'title', 'title_highlight', 'description'],
             'practice_areas' => ['subtitle', 'title', 'title_highlight'],

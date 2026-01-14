@@ -3,9 +3,14 @@ import VideoBanner from "@/assets/images/banners/video-banner.webp";
 import VideoIcon from "@/assets/images/svg/video-icon.svg";
 
 export default function VideoOneDynamic() {
-  const { title, bannerImage, iconImage, showPlayIcon, loading } = useVideoContent();
+  const { title, bannerImage, iconImage, showPlayIcon, showBanner, loading } = useVideoContent();
 
   if (loading) {
+    return null;
+  }
+
+  // If banner is hidden, don't render anything
+  if (!showBanner) {
     return null;
   }
 
