@@ -20,6 +20,13 @@ class HomeTwoContentSeeder extends Seeder
         // ALL CONTENT
         // ========================================
         $allContent = [
+            // HEADER/NAVIGATION SETTINGS
+            ['section' => 'header', 'key' => 'show_pages_menu', 'value' => '1', 'type' => 'text'],
+            ['section' => 'header', 'key' => 'show_services_menu', 'value' => '1', 'type' => 'text'],
+            ['section' => 'header', 'key' => 'show_consultation_button', 'value' => '1', 'type' => 'text'],
+            ['section' => 'header', 'key' => 'consultation_button_text', 'value' => 'استشارة مجانية', 'type' => 'text'],
+            ['section' => 'header', 'key' => 'consultation_button_link', 'value' => '/contact', 'type' => 'text'],
+
             // HERO SECTION
             ['section' => 'hero', 'key' => 'subtitle', 'value' => 'ملتزمون بحماية حقوقك ومستقبلك', 'type' => 'text'],
             ['section' => 'hero', 'key' => 'title_line1', 'value' => 'نحن الأفضل في', 'type' => 'text'],

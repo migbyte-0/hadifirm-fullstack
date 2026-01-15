@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
-import Offcanvas from "@/components/Menu/Offcanvas";
+import OffcanvasDynamic from "@/components/Menu/OffcanvasDynamic";
 import Preloader from "@/components/Preloader/Preloader";
 import FooterTwo from "@/components/Footer/FooterTwo";
 import BackdropModal from "@/components/Modal/BackdropModal";
 import BackToTop from "@/components/BackToTop/BackToTop";
 import AnimationPlugin from "@/Plugins/AnimatePlugin";
-import HeaderTwo from "@/components/Header/HeaderTwo";
+import HeaderTwoDynamic from "@/components/Header/HeaderTwoDynamic";
 
 LayoutTwo.propTypes = {
   children: PropTypes.any,
@@ -15,8 +15,8 @@ LayoutTwo.propTypes = {
 export default function LayoutTwo({ children, preloader = false }) {
   return (
     <>
-      <HeaderTwo />
-      <Offcanvas />
+      <HeaderTwoDynamic />
+      <OffcanvasDynamic />
       {preloader && <Preloader />}
       {children}
       <FooterTwo />

@@ -72,6 +72,41 @@ class HomeTwoContent extends Page
                 Forms\Components\Tabs::make('sections')
                     ->tabs([
                         // ==========================================
+                        // HEADER/NAVIGATION SETTINGS TAB
+                        // ==========================================
+                        Forms\Components\Tabs\Tab::make('header')
+                            ->label('الهيدر والتنقل')
+                            ->icon('heroicon-o-bars-3')
+                            ->schema([
+                                Forms\Components\Section::make('إعدادات القائمة الرئيسية')
+                                    ->schema([
+                                        Forms\Components\Toggle::make('header_show_pages_menu')
+                                            ->label('إظهار قائمة "الصفحات"')
+                                            ->default(true)
+                                            ->helperText('قم بإيقاف التشغيل لإخفاء قائمة الصفحات من القائمة الرئيسية'),
+                                        Forms\Components\Toggle::make('header_show_services_menu')
+                                            ->label('إظهار قائمة "الخدمات"')
+                                            ->default(true)
+                                            ->helperText('قم بإيقاف التشغيل لإخفاء قائمة الخدمات من القائمة الرئيسية'),
+                                    ])->columns(2),
+                                Forms\Components\Section::make('زر الاستشارة المجانية')
+                                    ->schema([
+                                        Forms\Components\Toggle::make('header_show_consultation_button')
+                                            ->label('إظهار زر الاستشارة')
+                                            ->default(true)
+                                            ->helperText('قم بإيقاف التشغيل لإخفاء زر الاستشارة المجانية'),
+                                        Forms\Components\TextInput::make('header_consultation_button_text')
+                                            ->label('نص زر الاستشارة')
+                                            ->default('استشارة مجانية')
+                                            ->placeholder('استشارة مجانية'),
+                                        Forms\Components\TextInput::make('header_consultation_button_link')
+                                            ->label('رابط زر الاستشارة')
+                                            ->default('/contact')
+                                            ->placeholder('/contact'),
+                                    ])->columns(2),
+                            ]),
+
+                        // ==========================================
                         // HERO SECTION TAB
                         // ==========================================
                         Forms\Components\Tabs\Tab::make('hero')
@@ -783,6 +818,7 @@ class HomeTwoContent extends Page
     protected function saveTextContent(array $data): void
     {
         $sections = [
+            'header' => ['show_pages_menu', 'show_services_menu', 'show_consultation_button', 'consultation_button_text', 'consultation_button_link'],
             'hero' => ['subtitle', 'title_line1', 'title_highlight', 'description', 'button_primary_text', 'button_primary_link', 'button_secondary_text', 'button_secondary_link', 'circle_text', 'marquee_text', 'phone_number'],
             'video' => ['title', 'video_url', 'show_banner', 'show_play_icon'],
             'call_service' => ['text', 'phone_number', 'phone_display'],

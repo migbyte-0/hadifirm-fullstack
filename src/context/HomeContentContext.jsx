@@ -70,6 +70,22 @@ export function useHomeContent() {
   return context;
 }
 
+// Header/Navigation settings hook
+export function useHeaderSettings() {
+  const { getText, loading } = useHomeContent();
+  
+  const toBool = (val) => val === '1' || val === 'true' || val === true;
+  
+  return {
+    loading,
+    showPagesMenu: toBool(getText('header', 'show_pages_menu', '1')),
+    showServicesMenu: toBool(getText('header', 'show_services_menu', '1')),
+    showConsultationButton: toBool(getText('header', 'show_consultation_button', '1')),
+    consultationButtonText: getText('header', 'consultation_button_text', 'استشارة مجانية'),
+    consultationButtonLink: getText('header', 'consultation_button_link', '/contact'),
+  };
+}
+
 // Export individual section hooks for convenience
 export function useHeroContent() {
   const { getText, getMedia, getMediaUrl, loading } = useHomeContent();
